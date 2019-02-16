@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,JS语法,JS基础,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="首屏图片的延迟加载  原理：作用：保证页面打开的速度  对于首屏内容的图片，首先给对应区域一张默认的图片占着位置（默认图片需要非常的小，一般维持在5kb以内），当首屏内容都加载完成后（或者也可以给一个延迟的时间），再开始加载真实的图片。">
+<meta name="keywords" content="前端,JS语法,JS基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS中延迟加载思想和单张图片的延迟加载">
+<meta property="og:url" content="http://yoursite.com/2019/02/16/JS中延迟加载思想和单张图片的延迟加载/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="首屏图片的延迟加载  原理：作用：保证页面打开的速度  对于首屏内容的图片，首先给对应区域一张默认的图片占着位置（默认图片需要非常的小，一般维持在5kb以内），当首屏内容都加载完成后（或者也可以给一个延迟的时间），再开始加载真实的图片。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中延迟加载思想和单张图片的延迟加载/1539775410360.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中延迟加载思想和单张图片的延迟加载/1539852454522.png">
+<meta property="og:updated_time" content="2019-02-16T06:24:35.265Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS中延迟加载思想和单张图片的延迟加载">
+<meta name="twitter:description" content="首屏图片的延迟加载  原理：作用：保证页面打开的速度  对于首屏内容的图片，首先给对应区域一张默认的图片占着位置（默认图片需要非常的小，一般维持在5kb以内），当首屏内容都加载完成后（或者也可以给一个延迟的时间），再开始加载真实的图片。">
+<meta name="twitter:image" content="http://yoursite.com/2019/02/16/JS中延迟加载思想和单张图片的延迟加载/1539775410360.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/02/16/JS中延迟加载思想和单张图片的延迟加载/">
+
+
+
+
+
+  <title>JS中延迟加载思想和单张图片的延迟加载 | Hexo</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'your-analytics-id', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/JS中延迟加载思想和单张图片的延迟加载/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS中延迟加载思想和单张图片的延迟加载</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-16T00:00:00+08:00">
+                2019-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS基础/" itemprop="url" rel="index">
+                    <span itemprop="name">JS基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong><code>首屏图片的延迟加载</code></strong></p>
+<blockquote>
+<p>原理：<br><img src="/2019/02/16/JS中延迟加载思想和单张图片的延迟加载/1539775410360.png" alt="Alt text"><br><code>作用</code>：保证页面打开的速度</p>
+<ol>
+<li>对于首屏内容的图片，首先给对应区域一张默认的图片占着位置（默认图片需要非常的小，一般维持在5kb以内），当首屏内容都加载完成后（或者也可以给一个延迟的时间），再开始加载真实的图片。</li>
+</ol>
+</blockquote>
+<a id="more"></a>
+<ol start="2">
+<li>对于其它屏中的图片：也是给一张默认的图片占位，当滚动条滚动到对应区域的时候，我们再开始加载真实的图片<blockquote>
+<p>扩展：数据的异步加载，开始只是把前两屏的数据加载绑定出来，后面的数据不进行处理，当页面滚动到对应区域的时候再重新请求数据然后绑定渲染数据</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#banner</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">20px</span> auto;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">576px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">360px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid silver;</span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">url</span>(<span class="string">"../images/de1.gif"</span>) no-repeat center center;</span><br><span class="line">    <span class="comment">/*给当前的区域在加一个默认图占位，告诉用户此处的图片正在加载中*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#banner</span> <span class="selector-tag">img</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: none; <span class="comment">/*在开始的时候IMG的SRC属性没有地址，这样的话，在IE浏览器中容器中</span></span><br><span class="line"><span class="comment">    会显示一张碎图，不美观，所以我们让其默认是隐藏的，当真实图片加载完成后显示*/</span></span><br><span class="line">    <span class="attribute">width</span>: <span class="number">576px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">360px</span>;</span><br><span class="line">    <span class="comment">/*max-width: 576%;*/</span></span><br><span class="line">    <span class="comment">/*height: 0;*/</span></span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight htmlbars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id="banner"&gt;</span><br><span class="line">    &lt;!--trueImg是当前IMG标签的自定义属性，存储的是真实图片的地址--&gt;</span><br><span class="line">    &lt;img src="" trueImg="../images/1.jpg" /&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> banner = <span class="built_in">document</span>.getElementById(<span class="string">"banner"</span>);</span><br><span class="line"><span class="keyword">var</span> img = banner.getElementsByTagName(<span class="string">"img"</span>)[<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>代码讲解：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    img.src = img.getAttribute(<span class="string">"trueImg"</span>);</span><br><span class="line">    img.style.display = <span class="string">"block"</span>;</span><br><span class="line">&#125;, <span class="number">1500</span>);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>以上处理还是不完整的：如果我们获取的真实图片地址是错误的，当赋值给IMG的SRC属性的时候,不仅控制台会报错，而且页面中会出现碎图/叉子图，影响视觉效果。<br>获取图片的地址，验证地址的有效性，如果是有效的才进行赋值操作，否则不进行赋值操作。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tempImg = <span class="keyword">new</span> Image(); <span class="comment">//创建一个临时的img标签，两种方式都可以</span></span><br><span class="line">tempImg.src = img.getAttribute(<span class="string">"trueImg"</span>);</span><br><span class="line">tempImg.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">//当图片能够正常的加载</span></span><br><span class="line">   img.src = img.getAttribute(<span class="string">"trueImg"</span>);</span><br><span class="line">    img.style.display = <span class="string">"block"</span>;</span><br><span class="line">    tempImg = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p><code>渐进效果</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> duration = <span class="number">1400</span>, interval = <span class="number">150</span>, total = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> stemp = (interval * total) / duration;</span><br><span class="line"><span class="keyword">var</span> timer = <span class="built_in">window</span>.setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> opacity = utils.getCss(img, <span class="string">"opacity"</span>);</span><br><span class="line">    opacity += stemp;</span><br><span class="line">    <span class="keyword">if</span> (opacity &gt;= total) &#123;</span><br><span class="line">        <span class="built_in">window</span>.clearInterval(timer);</span><br><span class="line">    &#125;</span><br><span class="line">    img.style.opacity = opacity;</span><br><span class="line">    <span class="built_in">console</span>.log(img.opacity);</span><br><span class="line">&#125;, interval);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p><code>从左上角到右下角缓慢变大的效果</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> duration = <span class="number">1000</span>,interval = <span class="number">100</span>, total = <span class="number">360</span>;</span><br><span class="line"><span class="keyword">var</span> stemp = (interval * total) / duration;</span><br><span class="line"><span class="keyword">var</span> timer = <span class="built_in">window</span>.setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> height = utils.getCss(img, <span class="string">"height"</span>);</span><br><span class="line">    height += stemp;</span><br><span class="line">    <span class="keyword">if</span>(height &gt;= total)&#123;</span><br><span class="line">        <span class="built_in">window</span>.clearInterval(timer);</span><br><span class="line">    &#125;</span><br><span class="line">    img.style.height = height + <span class="string">"px"</span>;</span><br><span class="line">&#125;,interval);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<hr>
+<p><strong><code>其他屏的图片延迟加载</code></strong></p>
+<blockquote>
+<p>计算图：<br><img src="/2019/02/16/JS中延迟加载思想和单张图片的延迟加载/1539852454522.png" alt="Alt text"><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#banner</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">20px</span> auto;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">576px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">360px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid silver;</span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">url</span>(<span class="string">"../images/de1.gif"</span>) no-repeat center center;</span><br><span class="line">    <span class="comment">/*给当前的区域在加一个默认图占位，告诉用户此处的图片正在加载中*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#banner</span> <span class="selector-tag">img</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: none; <span class="comment">/*在开始的时候IMG的SRC属性没有地址，这样的话，在IE浏览器中容器中</span></span><br><span class="line"><span class="comment">    会显示一张碎图，不美观，所以我们让其默认是隐藏的，当真实图片加载完成后显示*/</span></span><br><span class="line">    <span class="attribute">width</span>: <span class="number">576px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">360px</span>;</span><br><span class="line">    <span class="comment">/*max-width: 576%;*/</span></span><br><span class="line">    <span class="comment">/*height: 0;*/</span></span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#other</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">800px</span> auto;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">576px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">360px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid silver;</span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">url</span>(<span class="string">"../images/de1.gif"</span>) no-repeat center center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#other</span> <span class="selector-tag">img</span>&#123;</span><br><span class="line">      <span class="attribute">display</span>: none;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">576px</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">360px</span>;</span><br><span class="line">      <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight htmlbars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--trueImg是当前IMG标签的自定义属性，存储的是真实图片的地址--&gt;</span><br><span class="line">&lt;img src="" trueImg="../images/1.jpg" /&gt;</span><br><span class="line">&lt;div id="other"&gt;</span><br><span class="line">    &lt;img src="" trueImg="../images/1.jpg" /&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> other = <span class="built_in">document</span>.getElementById(<span class="string">"other"</span>);</span><br><span class="line"><span class="keyword">var</span> otherImg = other.getElementsByTagName(<span class="string">"img"</span>)[<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>动画效果</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">animation</span>(<span class="params">img</span>)</span>&#123;</span><br><span class="line">    <span class="comment">/*渐进效果*/</span></span><br><span class="line">    <span class="keyword">var</span> duration = <span class="number">1000</span>, interval = <span class="number">100</span>, total = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> stemp = (interval * total) / duration;</span><br><span class="line">    <span class="keyword">var</span> timer = <span class="built_in">window</span>.setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> opacity = utils.getCss(img, <span class="string">"opacity"</span>);</span><br><span class="line">        opacity += stemp;</span><br><span class="line">        <span class="keyword">if</span> (opacity &gt;= total) &#123;</span><br><span class="line">            <span class="built_in">window</span>.clearInterval(timer);</span><br><span class="line">        &#125;</span><br><span class="line">        img.style.opacity = opacity;</span><br><span class="line">        <span class="built_in">console</span>.log(img.opacity);</span><br><span class="line">    &#125;, interval);</span><br><span class="line"><span class="comment">/*从左上角到右下角缓慢变大的效果*/</span></span><br><span class="line"><span class="comment">//        var duration = 1000,interval = 100, total = 360;</span></span><br><span class="line"><span class="comment">//        var stemp = (interval * total) / duration;</span></span><br><span class="line"><span class="comment">//        console.log(stemp);</span></span><br><span class="line"><span class="comment">//        var timer = window.setInterval(function ()&#123;</span></span><br><span class="line"><span class="comment">//            var height = utils.getCss(img, "height");</span></span><br><span class="line"><span class="comment">//            height += stemp;</span></span><br><span class="line"><span class="comment">//            if(height &gt;= total)&#123;</span></span><br><span class="line"><span class="comment">//                window.clearInterval(timer);</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line"><span class="comment">//            img.style.height = height + "px";</span></span><br><span class="line"><span class="comment">//        &#125;,interval);</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>一张图片懒加载:</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">oneImgLazyLoad</span>(<span class="params">Img</span>)</span>&#123;</span><br><span class="line">       <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">           <span class="keyword">var</span> tempImg = <span class="keyword">new</span> Image(); <span class="comment">//创建一个临时的img标签，两种方式都可以</span></span><br><span class="line">           tempImg.src = Img.getAttribute(<span class="string">"trueImg"</span>);</span><br><span class="line">           tempImg.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">//当图片能够正常的加载</span></span><br><span class="line">               Img.src = Img.getAttribute(<span class="string">"trueImg"</span>);</span><br><span class="line">               Img.style.display = <span class="string">"block"</span>;</span><br><span class="line">               tempImg = <span class="literal">null</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           animation(Img);</span><br><span class="line">       &#125;, <span class="number">1000</span>);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p><code>首屏图片懒加载:</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oneImgLazyLoad(img);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p><code>其他屏图片懒加载:</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onscroll = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(other.count)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> distanceImg = other.offsetHeight + utils.offset(other).top;</span><br><span class="line">        <span class="keyword">var</span> distanceClient = utils.win(<span class="string">"scrollTop"</span>) + utils.win(<span class="string">"clientHeight"</span>);</span><br><span class="line">        other.count = <span class="literal">false</span>; <span class="comment">//设置一个自定义属性，用来表示图片是否已经加载完成，默认值是false，表示没有加载完成</span></span><br><span class="line">        <span class="keyword">if</span>(distanceImg &lt; distanceClient)&#123;</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">             当条件成立，加载真实图片，第一次加载完成后，我们在让页面继续滚动的过程中，</span></span><br><span class="line"><span class="comment">             distanceImg &lt; distanceClient一直成立，又从新开始执行了下面的操作，导致了重复给一个容器中的图片进行加载</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            oneImgLazyLoad(otherImg);</span><br><span class="line">            other.count = <span class="literal">true</span>; <span class="comment">//表示图片已经加载完成(不管时候正常加载，只要处理过一次，以后都不在处理了)</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<hr>
+<p><strong><code>多张图片的延迟加载</code></strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">ul</span>,<span class="selector-tag">li</span>&#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">img</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*最外层容器是不设定固定宽高的*/</span></span><br><span class="line"><span class="selector-id">#news</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#news</span> <span class="selector-tag">li</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">80px</span>;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">1px</span> dashed silver;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#news</span> <span class="selector-tag">li</span> &gt; <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(1)</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">75px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">75px</span>;</span><br><span class="line">    <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">"../images/de3.gif"</span>) no-repeat center center;</span><br><span class="line">    <span class="attribute">background-size</span>: <span class="number">100%</span> <span class="number">100%</span>; <span class="comment">/*设置背景图片大小，表示当前容器有多大，图片就有多大*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#news</span> <span class="selector-tag">li</span> &gt; <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(2)</span>&#123;</span><br><span class="line">    <span class="attribute">margin-left</span>:<span class="number">80px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">80px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#news</span> <span class="selector-tag">li</span> &gt; <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(2)</span> <span class="selector-tag">h2</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="comment">/*实现文字超出一行的3样式*/</span></span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">    <span class="attribute">text-overflow</span>: ellipsis; <span class="comment">/*超过的部分用省略号代替*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#news</span> <span class="selector-tag">li</span> &gt; <span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(2)</span> <span class="selector-tag">p</span>&#123;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">color</span>: silver;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight htmlbars"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id="news"&gt;&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> news = <span class="built_in">document</span>.getElementById(<span class="string">"news"</span>);</span><br><span class="line"><span class="keyword">var</span> imgList = news.getElementsByTagName(<span class="string">"img"</span>);</span><br><span class="line"><span class="keyword">var</span> data = <span class="literal">null</span>;</span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string">1. 获取需要绑定的数据（AJAX）：data2.txt中的json格式的字符串</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"> ~<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">//[1]新建一个XMLHttpRequest对象</span></span><br><span class="line">        <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest;</span><br><span class="line">        <span class="comment">//[2]打开数据文件</span></span><br><span class="line">        xhr.open(<span class="string">'get'</span>, <span class="string">'data2.txt'</span>, <span class="literal">false</span>);</span><br><span class="line">        <span class="comment">//[3]检查请求状态</span></span><br><span class="line">        xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="comment">//URL地址后面加的随机数是在清除每一次请求数据的时候（GET请求）产生的缓存</span></span><br><span class="line">            <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span> &amp;&amp; <span class="regexp">/^2\d&#123;2&#125;$/</span>.test(xhr.status))&#123;</span><br><span class="line">                <span class="keyword">var</span> res = xhr.responseText;</span><br><span class="line">                data = utils.jsonParse(res);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//[4]发送请求</span></span><br><span class="line">        xhr.send();</span><br><span class="line">    &#125;();</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>数据绑定：把data中存储的数据绑定在页面中（文档碎片的方式）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> ~<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(data)&#123;</span><br><span class="line">        <span class="keyword">var</span> frg = <span class="built_in">document</span>.createDocumentFragment();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; data.length; i++) &#123;</span><br><span class="line">            <span class="keyword">var</span> oLi = <span class="built_in">document</span>.createElement(<span class="string">"li"</span>);</span><br><span class="line">            oLi.innerHTML = <span class="string">'&lt;div&gt;&lt;img src="" trueImg="'</span> + data[i].imgSrc + <span class="string">'"/&gt;&lt;/div&gt;'</span> +</span><br><span class="line">                    <span class="string">'&lt;div&gt;&lt;h2&gt;'</span>+ data[i].title +<span class="string">'&lt;/h2&gt;'</span> +</span><br><span class="line">                    <span class="string">'&lt;p&gt;'</span>+ data[i].content  + <span class="string">'&lt;/p&gt;&lt;/div&gt;'</span>;</span><br><span class="line">            frg.appendChild(oLi);</span><br><span class="line">        &#125;</span><br><span class="line">        news.appendChild(frg);</span><br><span class="line">        frg = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>图片延迟加载</p>
+<blockquote>
+<p>先编写一个方法，实现单张图片的延迟加载</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">lazyImg</span>(<span class="params">img</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> tempImg = <span class="keyword">new</span> Image;</span><br><span class="line">    tempImg.src = img.getAttribute(<span class="string">"trueImg"</span>);</span><br><span class="line">    tempImg.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        img.src = <span class="keyword">this</span>.src;</span><br><span class="line">        img.style.display = <span class="string">"block"</span>;</span><br><span class="line">        fadeIn(img);</span><br><span class="line">        tempImg = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    img.isLoad = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>循环处理每一张图片<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleAllImg</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; imgList.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> currImg = imgList[i];</span><br><span class="line">        <span class="comment">//当前的图片进行处理了，就不再从新进行处理了</span></span><br><span class="line">        <span class="keyword">if</span>(currImg.isLoad)&#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> currImgPar = currImg.parentNode;</span><br><span class="line">        <span class="keyword">var</span> A = currImgPar.offsetHeight + utils.offset(currImgPar).top;</span><br><span class="line">        <span class="keyword">var</span> B = utils.win(<span class="string">"scrollTop"</span>) + utils.win(<span class="string">"clientHeight"</span>);</span><br><span class="line">        <span class="comment">//只有A&lt;B的时候再进行处理：当前图片是隐藏的，我们计算的A的值其实是计算它父级容器的值</span></span><br><span class="line">        <span class="keyword">if</span>(A &lt; B)&#123;</span><br><span class="line">            lazyImg(currImg);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>动画效果</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fadeIn</span>(<span class="params">img</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> duration = <span class="number">2000</span>,interval = <span class="number">100</span>, total = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> step = (total * interval) / duration;</span><br><span class="line">    <span class="keyword">var</span> timer = <span class="built_in">window</span>.setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> opacity = utils.getCss(img, <span class="string">"opacity"</span>);</span><br><span class="line">        opacity += step;</span><br><span class="line">        <span class="keyword">if</span> (opacity &gt;= total) &#123;</span><br><span class="line">            <span class="built_in">window</span>.clearInterval(timer);</span><br><span class="line">        &#125;</span><br><span class="line">        img.style.opacity = opacity;</span><br><span class="line">    &#125;, interval);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>什么时候进行延迟加载图片（定时器设置2000ms，以及滚动条滚动的时候）<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.setTimeout(handleAllImg, <span class="number">1000</span>);</span><br><span class="line">![Alt text](./JS中DOM详细讲解.pdf)</span><br><span class="line"><span class="built_in">window</span>.onscroll = handleAllImg;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+            <a href="/tags/JS语法/" rel="tag"># JS语法</a>
+          
+            <a href="/tags/JS基础/" rel="tag"># JS基础</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/16/JS中盒子模型中的常用的前8个属性/" rel="next" title="JS中盒子模型中的常用的前8个属性">
+                <i class="fa fa-chevron-left"></i> JS中盒子模型中的常用的前8个属性
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/16/JS中常用方法之获取元素的具体样式/" rel="prev" title="JS中常用方法之获取元素的具体样式">
+                JS中常用方法之获取元素的具体样式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="John Doe">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/your-user-name" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/your-user-name" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/your-user-name" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://douban.com/people/your-user-name" target="_blank" title="douban">
+                      
+                        <i class="fa fa-fw fa-globe"></i>douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.zhihu.com/people/your-user-name" target="_blank" title="zhihu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>zhihu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>

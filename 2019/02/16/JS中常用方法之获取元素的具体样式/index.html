@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,JS语法,JS基础,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="元素.style.属性名 需要我们把元素的样式都写在行内样式上才可以（写在样式表中是不管用的） 12console.log(box.style.height); //-&amp;gt;&quot;&quot;console.log(box.style.width); //-&amp;gt;&quot;200px&quot;    在真实项目中，这种方式不常用，因为不能为了获取值而把所有的样式都写在行内（无法实现css与html分离）">
+<meta name="keywords" content="前端,JS语法,JS基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS中常用方法之获取元素的具体样式">
+<meta property="og:url" content="http://yoursite.com/2019/02/16/JS中常用方法之获取元素的具体样式/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="元素.style.属性名 需要我们把元素的样式都写在行内样式上才可以（写在样式表中是不管用的） 12console.log(box.style.height); //-&amp;gt;&quot;&quot;console.log(box.style.width); //-&amp;gt;&quot;200px&quot;    在真实项目中，这种方式不常用，因为不能为了获取值而把所有的样式都写在行内（无法实现css与html分离）">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中常用方法之获取元素的具体样式/1538712390910.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中常用方法之获取元素的具体样式/1538712419852.png">
+<meta property="og:updated_time" content="2019-02-16T06:20:26.218Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS中常用方法之获取元素的具体样式">
+<meta name="twitter:description" content="元素.style.属性名 需要我们把元素的样式都写在行内样式上才可以（写在样式表中是不管用的） 12console.log(box.style.height); //-&amp;gt;&quot;&quot;console.log(box.style.width); //-&amp;gt;&quot;200px&quot;    在真实项目中，这种方式不常用，因为不能为了获取值而把所有的样式都写在行内（无法实现css与html分离）">
+<meta name="twitter:image" content="http://yoursite.com/2019/02/16/JS中常用方法之获取元素的具体样式/1538712390910.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/02/16/JS中常用方法之获取元素的具体样式/">
+
+
+
+
+
+  <title>JS中常用方法之获取元素的具体样式 | Hexo</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'your-analytics-id', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/JS中常用方法之获取元素的具体样式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS中常用方法之获取元素的具体样式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-16T00:00:00+08:00">
+                2019-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS基础/" itemprop="url" rel="index">
+                    <span itemprop="name">JS基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+<li>元素.style.属性名<blockquote>
+<p>需要我们把元素的样式都写在行内样式上才可以（写在样式表中是不管用的）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(box.style.height); <span class="comment">//-&gt;""</span></span><br><span class="line"><span class="built_in">console</span>.log(box.style.width); <span class="comment">//-&gt;"200px"</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ol>
+<p><strong>在真实项目中，这种方式不常用，因为不能为了获取值而把所有的样式都写在行内（无法实现css与html分离）</strong><br><a id="more"></a></p>
+<ol start="2">
+<li><p>使用<code>window.getComputedStyle</code>这个方法获得所有经过浏览器计算过的样式</p>
+<blockquote>
+<p>所有经浏览器计算过的样式是指：只要当前元素标签可以在页面中呈现出来，那么它的所有样式都是经过浏览器计算过的（渲染过的），哪怕有些样式没有写，我们也可以获取到（获取的属性值是默认值）<br>方法形参：<br><code>window.getComputedStyle</code>([当前要操作的元素对象]，[当前元素的伪类(一般我们不用写伪类，直接写<code>null</code>)])<br>获取的结果是<code>CssStyleDeclaration</code>这个类的实例：包括了当前元素的所有样式属性和值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.getComputedStyle);  <span class="comment">//-&gt; ƒunction getComputedStyle() &#123; [native code] &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.getComputedStyle(box, <span class="literal">null</span>));  <span class="comment">//200px</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.getComputedStyle(box, <span class="literal">null</span>)[<span class="string">"height"</span>]);  <span class="comment">//200px</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>方法虽然好用，但是在IE6~8下是不兼容的，因为window下没有getComputedStyle这个属性 -&gt; 在IE6~8下执行会报错</p>
+<blockquote>
+<p><code>console.log(window.getComputedStyle);  //undefined</code><br>在IE6~8下我们可以使用currentStyle来获取所有金经过浏览器计算过的样式<br><code>console.log(box.currentStyle.height);  //200px</code></p>
+</blockquote>
+</li>
+</ol>
+<p><strong><code>getCss方法：获取当前元素所有经过浏览器计算过的样式中的【attar】对应的值</code></strong><br> 1.使用<code>try/catch</code>来处理兼容</p>
+<blockquote>
+<p>前提：必须保证try中的代码在不兼容浏览器中执行的时候出错，这样才可以用<code>catch</code>捕获到异常信息，进行其他处理，不管是什么浏览器，都需要把<code>try</code>中的代码执行一遍，如果当时是IE8，<code>window.getComputedStyle</code>本身是不兼容的，但是也要先把它执行一遍，报错了再把<code>currEle.currentStyle</code>执行一遍（比较消耗性能）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.myGetCss = <span class="function"><span class="keyword">function</span> (<span class="params">attar</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> val = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="comment">//google等浏览器下</span></span><br><span class="line">        val = <span class="built_in">window</span>.getComputedStyle(<span class="keyword">this</span>, <span class="literal">null</span>)[attar];</span><br><span class="line">    &#125;<span class="keyword">catch</span>(e)&#123; <span class="comment">//IE8浏览器下</span></span><br><span class="line">        val = <span class="keyword">this</span>.currentStyle[attar];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(box.myGetCss(<span class="string">"height"</span>));</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p><code>上述方法在IE8以下的浏览器都是不兼容的： 对象不支持“myGetCss”属性或方法</code></p>
+</blockquote>
+<p><code>currEle:[Object]</code>当前要操作的元素对象<br><code>attar:[String</code>]要获取的样式属性的名称<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCss</span>(<span class="params">curEle, attar</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;<span class="comment">//google等浏览器下</span></span><br><span class="line">        val = <span class="built_in">window</span>.getComputedStyle(curEle, <span class="literal">null</span>)[attar];</span><br><span class="line">    &#125;<span class="keyword">catch</span>(e)&#123; <span class="comment">//IE8浏览器下</span></span><br><span class="line">        val = curEle.currentStyle[attar];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(getCss(box,<span class="string">"height"</span>));</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>从报错原因出发：判读当前浏览器中是否存在这个属性或者方法，存在就兼容，不存在就不能兼容<blockquote>
+<p>第一种写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function getCss(curEle, attar)&#123;</span><br><span class="line">    var val = null;</span><br><span class="line">    if(&quot;getComputedStyle&quot; in window)&#123;</span><br><span class="line">         如果返回的是true，代表window下面存在getComputedStyle这个属性，兼容</span><br><span class="line">        val = window.getComputedStyle(curEle, null)[attar];</span><br><span class="line">    &#125;else&#123; //当前浏览器下面不存在这个属性，不兼容</span><br><span class="line">        val = curEle.currentStyle[attar];</span><br><span class="line">    &#125;</span><br><span class="line">    return val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>第二种写法:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCss</span>(<span class="params">curEle, attar</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> val = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="built_in">window</span>.getComputedStyle === <span class="string">"function"</span>)&#123;</span><br><span class="line">    <span class="comment">//如果返回的是true，代表window下面存在getComputedStyle这个属性，兼容</span></span><br><span class="line">        val = <span class="built_in">window</span>.getComputedStyle(curEle, <span class="literal">null</span>)[attar];</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123; <span class="comment">//当前浏览器下面不存在这个属性，不兼容</span></span><br><span class="line">        val = curEle.currentStyle[attar];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>第三种写法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCss</span>(<span class="params">curEle, attar</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">var</span> val = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.getComputedStyle)&#123;</span><br><span class="line">    <span class="comment">//如果返回的是true，代表window下面存在getComputedStyle这个属性，兼容</span></span><br><span class="line">        val = <span class="built_in">window</span>.getComputedStyle(curEle, <span class="literal">null</span>)[attar];</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123; <span class="comment">//当前浏览器下面不存在这个属性，不兼容</span></span><br><span class="line">        val = curEle.currentStyle[attar];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>3.通过检测浏览器版本和类型来处理兼容</p>
+<blockquote>
+<p><code>window.navigator.userAgent</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">google：</span><br><span class="line">Mozilla/<span class="number">5.0</span> (Windows NT <span class="number">10.0</span>; WOW64) AppleWebKit/<span class="number">537.36</span> (KHTML, like Gecko) Chrome/<span class="number">69.0</span><span class="number">.3497</span><span class="number">.81</span> Safari/<span class="number">537.36</span></span><br><span class="line">IE7：</span><br><span class="line">Mozilla/<span class="number">4.0</span> (compatible; MSIE <span class="number">7.0</span>; Windows NT <span class="number">10.0</span>; WOW64; Trident/<span class="number">7.0</span>; .NET4<span class="number">.0</span>C; .NET4<span class="number">.0</span>E; .NET CLR <span class="number">2.0</span><span class="number">.50727</span>; .NET CLR <span class="number">3.0</span><span class="number">.30729</span>; .NET CLR <span class="number">3.5</span><span class="number">.30729</span>; LCTE)</span><br><span class="line">IE8：</span><br><span class="line">Mozilla/<span class="number">4.0</span> (compatible; MSIE <span class="number">8.0</span>; Windows NT <span class="number">10.0</span>; WOW64; Trident/<span class="number">7.0</span>; .NET4<span class="number">.0</span>C; .NET4<span class="number">.0</span>E; .NET CLR <span class="number">2.0</span><span class="number">.50727</span>; .NET CLR <span class="number">3.0</span><span class="number">.30729</span>; .NET CLR <span class="number">3.5</span><span class="number">.30729</span>; LCTE)</span><br><span class="line">IE10：</span><br><span class="line">Mozilla/<span class="number">5.0</span> (compatible; MSIE <span class="number">10.0</span>; Windows NT <span class="number">10.0</span>; WOW64; Trident/<span class="number">7.0</span>; .NET4<span class="number">.0</span>C; .NET4<span class="number">.0</span>E; .NET CLR <span class="number">2.0</span><span class="number">.50727</span>; .NET CLR <span class="number">3.0</span><span class="number">.30729</span>; .NET CLR <span class="number">3.5</span><span class="number">.30729</span>; LCTE)</span><br><span class="line">IE11：</span><br><span class="line">Mozilla/<span class="number">5.0</span> (Windows NT <span class="number">10.0</span>; WOW64; Trident/<span class="number">7.0</span>; .NET4<span class="number">.0</span>C; .NET4<span class="number">.0</span>E; .NET CLR <span class="number">2.0</span><span class="number">.50727</span>; .NET CLR <span class="number">3.0</span><span class="number">.30729</span>; .NET CLR <span class="number">3.5</span><span class="number">.30729</span>; LCTE; rv:<span class="number">11.0</span>) like Gecko</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCss</span>(<span class="params">curEle, attar</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> val = reg = <span class="literal">null</span>;</span><br><span class="line">    reg = <span class="regexp">/^Mozilla\/5.0/i</span>; <span class="comment">//正则匹配浏览器的版本，i表示忽略大小写</span></span><br><span class="line">    <span class="keyword">if</span>(reg.test(<span class="built_in">window</span>.navigator.userAgent))&#123;</span><br><span class="line">    <span class="comment">//如果返回的是true，兼容</span></span><br><span class="line">       val = <span class="built_in">window</span>.getComputedStyle(curEle, <span class="literal">null</span>)[attar];</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;<span class="comment">//当前浏览器下面不存在这个属性，不兼容</span></span><br><span class="line">       val = curEle.currentStyle[attar];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(getCss(box, <span class="string">"height"</span>));</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>上述方法无法区分具体的浏览器</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCss</span>(<span class="params">curEle, attar</span>)</span>&#123;</span><br><span class="line">       <span class="keyword">var</span> val = <span class="literal">null</span>,</span><br><span class="line">           reg = <span class="literal">null</span>;</span><br><span class="line">       reg = <span class="regexp">/MSIE (6|7|8)/i</span>; <span class="comment">//正则匹配浏览器的版本，i表示忽略大小写, 一定记得带上小括号</span></span><br><span class="line">       <span class="keyword">if</span>(reg.test(<span class="built_in">window</span>.navigator.userAgent))&#123;</span><br><span class="line">           <span class="comment">//如果返回的是true，代表IE6-7-8，不兼容</span></span><br><span class="line">           val = curEle.currentStyle[attar];</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;<span class="comment">//当前浏览器下面不存在这个属性，不兼容</span></span><br><span class="line">           val = <span class="built_in">window</span>.getComputedStyle(curEle, <span class="literal">null</span>)[attar];</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> val;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><strong>判断当前浏览器的版本以及类型的方法</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getBrowserInfo</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> agent = navigator.userAgent.toLowerCase() ; <span class="comment">//将获取的字符串全部变成小写字母</span></span><br><span class="line">    <span class="keyword">var</span> regStr_ie = <span class="regexp">/msie [\d.]+;/gi</span> ; <span class="comment">//gi: 全局匹配，忽略大小写</span></span><br><span class="line">    <span class="keyword">var</span> regStr_ff = <span class="regexp">/firefox\/[\d.]+/gi</span></span><br><span class="line">    <span class="keyword">var</span> regStr_chrome = <span class="regexp">/chrome\/[\d.]+/gi</span> ;</span><br><span class="line">    <span class="keyword">var</span> regStr_saf = <span class="regexp">/safari\/[\d.]+/gi</span> ;</span><br><span class="line"><span class="comment">//IE</span></span><br><span class="line">    <span class="keyword">if</span>(agent.indexOf(<span class="string">"msie"</span>) &gt; <span class="number">0</span>) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.match(regStr_ie) ;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//firefox</span></span><br><span class="line">    <span class="keyword">if</span>(agent.indexOf(<span class="string">"firefox"</span>) &gt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.match(regStr_ff) ;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//Chrome</span></span><br><span class="line">    <span class="keyword">if</span>(agent.indexOf(<span class="string">"chrome"</span>) &gt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.match(regStr_chrome) ;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//Safari</span></span><br><span class="line">    <span class="keyword">if</span>(agent.indexOf(<span class="string">"safari"</span>) &gt; <span class="number">0</span> &amp;&amp; agent.indexOf(<span class="string">"chrome"</span>) &lt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.match(regStr_saf) ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> browser = getBrowserInfo() ;</span><br><span class="line"><span class="keyword">var</span> verinfo = (browser+<span class="string">""</span>).replace(<span class="regexp">/[^0-9.]/ig</span>,<span class="string">""</span>);  <span class="comment">//匹配除了".数字"之外的符号，用""替换</span></span><br><span class="line"><span class="built_in">console</span>.log(browser);</span><br><span class="line"><span class="built_in">console</span>.log(verinfo);</span><br></pre></td></tr></table></figure></p>
+<p><strong>标准浏览器和IE浏览器获取的有些样式结果还是不一样的，对于部分样式属性，不同浏览器获取的结果不一样，主要是由于<code>getComputedStyle</code>和<code>currentStyle</code>在某些方面不一样</strong><br><code>console.log(getCss(box, &quot;font-family&quot;));
+    console.log(getCss(box, &quot;border&quot;));</code></p>
+<blockquote>
+<p>google： <img src="/2019/02/16/JS中常用方法之获取元素的具体样式/1538712390910.png" alt="Alt text"><br>IE8以下：<img src="/2019/02/16/JS中常用方法之获取元素的具体样式/1538712419852.png" alt="Alt text"></p>
+</blockquote>
+<hr>
+<h3 id="获取元素具体样式（升级版）"><a href="#获取元素具体样式（升级版）" class="headerlink" title="获取元素具体样式（升级版）"></a>获取元素具体样式（升级版）</h3><blockquote>
+<p>第一次升级：把获取到样式值的”单位去掉”<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCss</span>(<span class="params">curEle, attar</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> val = <span class="literal">null</span>,</span><br><span class="line">        reg = <span class="literal">null</span>;</span><br><span class="line">    reg = <span class="regexp">/^(-?\d+(\.\d+)?)(px|pt|rem|em)?$/</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="string">"getComputedStyle"</span> <span class="keyword">in</span> <span class="built_in">window</span>)&#123;</span><br><span class="line">    <span class="comment">//如果返回的是true，代表window下面存在getComputedStyle这个属性，兼容</span></span><br><span class="line">        val = <span class="built_in">window</span>.getComputedStyle(curEle, <span class="literal">null</span>)[attar];</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123; <span class="comment">//当前浏览器下面不存在这个属性，不兼容</span></span><br><span class="line">        val = curEle.currentStyle[attar];</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//        return parseFloat(val); //这样写肯定是不行的，对于某一些样式属性的值是不能去单位的</span></span><br><span class="line">    <span class="comment">//例如：float、position、margin、padding、border这些复合值，以及background等等</span></span><br><span class="line">    <span class="keyword">return</span> reg.test(val) ? <span class="built_in">parseFloat</span>(val) : val;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(getCss(box, <span class="string">"height"</span>));</span><br><span class="line"><span class="built_in">console</span>.log(getCss(box, <span class="string">"border"</span>));</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>第二次升级：有些样式属性在不同的浏览器中是不兼容的,例如：opacity(设置元素透明度)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCss</span>(<span class="params">curEle, attar</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> val = <span class="literal">null</span>,</span><br><span class="line">                reg = <span class="literal">null</span>;</span><br><span class="line">        reg = <span class="regexp">/=(\d+)/i</span>;<span class="comment">//正则表达式还可以写成：/^alpha\(opacity=(\d+(?:\.\d)?)\)$/i</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="string">"getComputedStyle"</span> <span class="keyword">in</span> <span class="built_in">window</span>)&#123;</span><br><span class="line">            <span class="comment">//如果返回的是true，代表window下面存在getComputedStyle这个属性，兼容</span></span><br><span class="line">            val = <span class="built_in">window</span>.getComputedStyle(curEle, <span class="literal">null</span>)[attar];</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123; <span class="comment">//当前浏览器下面不存在这个属性，不兼容</span></span><br><span class="line">        <span class="comment">//如果传递进来的是opacity,说明想获取的是透明度的值，但是在IE8以下的浏览器获取透明度</span></span><br><span class="line">        <span class="comment">//需要使用filter</span></span><br><span class="line">            <span class="keyword">if</span>(attar === <span class="string">"opacity"</span>)&#123;</span><br><span class="line">                val = curEle.currentStyle[<span class="string">"filter"</span>];</span><br><span class="line">                <span class="comment">//"alpha(opacity=10)"把获取到的结果进行剖析，获取里面的数字，让数字乘以100才和标准的浏览器保持了一致</span></span><br><span class="line">                val = reg.test(val) ? <span class="built_in">parseFloat</span>(reg.exec(val)[<span class="number">1</span>])/<span class="number">100</span> : <span class="number">1</span>; <span class="comment">//1 默认没有透明度</span></span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                val = curEle.currentStyle[attar];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//        return parseFloat(val); //这样写肯定是不行的，对于某一些样式属性的值是不能去单位的</span></span><br><span class="line">        <span class="comment">//例如：float、position、margin、padding、border这些复合值，以及background等等</span></span><br><span class="line">        <span class="keyword">return</span> reg.test(val) ? <span class="built_in">parseFloat</span>(val) : val;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//    console.log(getCss(box, "height"));</span></span><br><span class="line"><span class="comment">//    console.log(getCss(box, "border"));</span></span><br><span class="line">    <span class="built_in">console</span>.log(getCss(box, <span class="string">"opacity"</span>));</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+            <a href="/tags/JS语法/" rel="tag"># JS语法</a>
+          
+            <a href="/tags/JS基础/" rel="tag"># JS基础</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/16/JS中延迟加载思想和单张图片的延迟加载/" rel="next" title="JS中延迟加载思想和单张图片的延迟加载">
+                <i class="fa fa-chevron-left"></i> JS中延迟加载思想和单张图片的延迟加载
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/16/AJAX基础知识/" rel="prev" title="AJAX基础知识">
+                AJAX基础知识 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="John Doe">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/your-user-name" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/your-user-name" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/your-user-name" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://douban.com/people/your-user-name" target="_blank" title="douban">
+                      
+                        <i class="fa fa-fw fa-globe"></i>douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.zhihu.com/people/your-user-name" target="_blank" title="zhihu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>zhihu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取元素具体样式（升级版）"><span class="nav-number">1.</span> <span class="nav-text">获取元素具体样式（升级版）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>

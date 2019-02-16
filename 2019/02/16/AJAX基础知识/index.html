@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,JS语法,JS基础，AJAX,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="async javascript and xml异步的JS和XML客户端的JS代码中，用来向服务器发送请求（还可以传递给服务器端数据），然后把服务器端返回的内容获取到（Ajax一般是运行在客户端的浏览器中的）">
+<meta name="keywords" content="前端,JS语法,JS基础，AJAX">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AJAX基础知识">
+<meta property="og:url" content="http://yoursite.com/2019/02/16/AJAX基础知识/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="async javascript and xml异步的JS和XML客户端的JS代码中，用来向服务器发送请求（还可以传递给服务器端数据），然后把服务器端返回的内容获取到（Ajax一般是运行在客户端的浏览器中的）">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/AJAX基础知识/1547868158725.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/AJAX基础知识/1547965320731.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/AJAX基础知识/1547971086759.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/AJAX基础知识/1548041530610.png">
+<meta property="og:updated_time" content="2019-02-16T06:15:16.479Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AJAX基础知识">
+<meta name="twitter:description" content="async javascript and xml异步的JS和XML客户端的JS代码中，用来向服务器发送请求（还可以传递给服务器端数据），然后把服务器端返回的内容获取到（Ajax一般是运行在客户端的浏览器中的）">
+<meta name="twitter:image" content="http://yoursite.com/2019/02/16/AJAX基础知识/1547868158725.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/02/16/AJAX基础知识/">
+
+
+
+
+
+  <title>AJAX基础知识 | Hexo</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'your-analytics-id', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/AJAX基础知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">AJAX基础知识</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-16T00:00:00+08:00">
+                2019-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS基础/" itemprop="url" rel="index">
+                    <span itemprop="name">JS基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  10
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p><code>async javascript and xml</code><br>异步的JS和XML<br>客户端的JS代码中，用来向服务器发送请求（还可以传递给服务器端数据），然后把服务器端返回的内容获取到（Ajax一般是运行在客户端的浏览器中的）<br><a id="more"></a><br><strong><code>XML</code></strong><br>可扩展的标记性语言（在XML文件中使用的标签都是自己扩展的）<br>利用自己扩展的有规则的标记来存储相关数据<br><img src="/2019/02/16/AJAX基础知识/1547868158725.png" alt="Alt text"></p>
+</blockquote>
+<p><strong><code>AJAX的四步</code></strong></p>
+<blockquote>
+<p><strong>第一步</strong>：创建一个AJAX对象（下面这种写法在IE）及更低版本的浏览器中不支持<br><code>var xhr = new XMLHttpRequest;</code></p>
+</blockquote>
+<blockquote>
+<p><strong>第二步</strong>：发送前的基本信息配置：<br>    ‘get’：配置请求方式（GET、POST、PUT、DELETE、HEAD）<br>    ‘../data.txt’：打开一个URL地址（配置向哪个服务器地址发送请求）<br>    false：同步还是异步（true代表异步，false代表同步），默认值是true<br>    username: 向服务器提供请求的用户名<br>    userpass: 向服务器提供请求的用户密码<br>    这两个参数一般都不写，只有当服务器做了安全的限制时，只允许特定的用户访问，才传递参数过去<br><code>xhr.open(&#39;get&#39;, &#39;../data.txt&#39;, false, [username], [userpass]);</code></p>
+</blockquote>
+<blockquote>
+<p><strong>第三步</strong>：给onreadystatechang这个事件绑定一个方法，监听状态的改变（只要状态发生改变，就会触发这个事件，继而执行绑定的方法）<br><code>xhr.readtState</code>: Ajax状态码，可以代表当前AJAX处理的进度<br>| 状态码 |     代码标识|   解释|<br>| :——–| :——–| :——: |<br>| 0    |   UNSENT   |  当前的请求还没有开始发送|<br>| 1    |   OPENED   |  URL地址已经打开（发送前的参数配置已经完成）|<br>| 2    |   HEADERS_RECEIVED|  响应头信息已经接收|<br>| 3    |   LOADING|  主要返回的内容正在服务器端进行准备处理|<br>| 4    |   DONE|  响应主体的内容已经成功返回到客户端|<br><code>xhr.status</code>：HTTP网络状态码，描述了服务器响应内容的状态<br>| HTTP网络状态码|解释|<br>| :——– | :—— |<br>| 200 OR /^2\d{2}$/(200或者以2开头的2位数) |  响应主体的内容已经成功返回了|<br>| 301    |  永久重定向/永久转移，一个网站更改了地址，但是用户用以前的地址访问时，地址就会跳转为新的地址|<br>| 302    |  临时重定向/临时转移，服务器的负载均衡，当一台服务器已经超负荷了之后，会将用户的请求跳转到其他的服务器上进行处理|<br>| 304    |  本次获取的内容是读取缓存中的内容，这样会加快页面显示的速度|<br>| 400    |  客户端传递给服务器端的参数出现错误|<br>| 401    |  无权限访问|<br>| 404    |  客户端访问的地址不存在|<br>| 500    |  未知的服务器错误|<br>| 503    |  服务器已经超负荷了，一台服务器能承受10000人同时访问，那么第10001个人进行访问时，如果没有做服务器的负载均衡，那么返回的状态码就是503|<br><code>xhr.onreadystatechange = function(){</code><br>        <code>if(xhr.readyState === 4 &amp;&amp; /^2\d{2}$/.test(xhr.status)){</code><br>               <code>xhr.responseText;</code><br>         <code>}</code><br><code>}</code></p>
+</blockquote>
+<blockquote>
+<p><strong>第四步`</strong><br>发送请求：参数是请求主体中传递给服务器的内容<br><code>xhr.send(null);</code></p>
+</blockquote>
+<p><strong><code>AJAX的核心只有3步，第三步监听状态其实跟AJAX发送请求没有关系，因此不列为核心步骤。关键的一步是第三步：发送请求，如果没有第三步，则前面的步骤都是没有意义的</code></strong></p>
+<hr>
+<h3 id="AJAX详细知识"><a href="#AJAX详细知识" class="headerlink" title="AJAX详细知识"></a>AJAX详细知识</h3><h4 id="HTTP-METHOD-客户端向服务器端发送请求"><a href="#HTTP-METHOD-客户端向服务器端发送请求" class="headerlink" title="HTTP METHOD:客户端向服务器端发送请求"></a><strong><code>HTTP METHOD:客户端向服务器端发送请求</code></strong></h4><p>以下的请求方式不管哪一种都可以服务器传递数据，也可以从服务器获取到数据，而且从本质意义上来讲是没有任何区别的，例如：用POST做的事情，用GET也能做，而接下来的区别都是目前开发约定俗成的规范<br><strong><em>GET</em></strong></p>
+<blockquote>
+<p>一般应用于从服务器获取数据（给服务器的数据少，从服务器拿的数据多），项目中最常用的请求方式是GET<br>使用GET请求给服务器传递内容，一般都使用“URL问号传参的方式”<br><code>xhr.open(&#39;get&#39;, &#39;/getList?name=12&#39;);</code></p>
+</blockquote>
+<p><strong><em>POST</em></strong></p>
+<blockquote>
+<p>一般应用于向服务器推送数据（给服务器的数据多，从服务器拿的数据少）<br>使用POST请求给服务器传递内容，一般都使用“请求主体的方式”<br><code>xhr.open(&#39;post&#39;, &#39;/getList&#39;);</code><br><code>xhr.send(&#39;{&quot;name&quot;:&#39;zhuxiaolu&#39;,&quot;age&quot;:12}&#39;)</code></p>
+</blockquote>
+<p><strong><em>PUT</em></strong></p>
+<blockquote>
+<p>一般应用于给服务器上增加资源文件（上传图片功能）</p>
+</blockquote>
+<p><strong><em>DELETE</em></strong></p>
+<blockquote>
+<p>一般应用于从服务器上删除资源文件</p>
+</blockquote>
+<p><strong><em>HEAD</em></strong></p>
+<blockquote>
+<p>一般应用于只获取服务器的响应头信息</p>
+</blockquote>
+<h4 id="GET-与-POST-的区别"><a href="#GET-与-POST-的区别" class="headerlink" title="GET 与 POST 的区别"></a><strong><code>GET 与 POST 的区别</code></strong></h4><p><strong><em>大小问题</em></strong></p>
+<blockquote>
+<p><code>GET</code>请求传递给服务器的内容存在大小的限制，而<code>POST</code>理论上是没有限制的</p>
+</blockquote>
+<p><strong><em>缓存问题</em></strong></p>
+<blockquote>
+<p><code>GET</code>请求会出现缓存（这个缓存不一定是304），<code>POST</code>是没有缓存的<br>在项目中，<code>GET</code>请求一般不会让其出现缓存，则<code>清理缓存</code>: 在URL末尾追加一个随机数，让客户端每次请求的URL都是不一样的，则不会出现缓存</p>
+</blockquote>
+<p><strong><em>安全问题</em></strong></p>
+<blockquote>
+<p>一般来说<code>GET</code>不安全，因为通过URL传递参数是对外暴露的，容易泄露。而<code>POST</code>相对于安全些</p>
+</blockquote>
+<hr>
+<h3 id="同步（SYNC）与异步-ASYNC"><a href="#同步（SYNC）与异步-ASYNC" class="headerlink" title="同步（SYNC）与异步(ASYNC)"></a>同步（SYNC）与异步(ASYNC)</h3><blockquote>
+<p>JS是单线程的，最好使用异步编程</p>
+<ul>
+<li>定时器是异步编程</li>
+<li>事件绑定是异步编程</li>
+<li>回调函数可以理解为异步编程</li>
+<li>在AJAX中可以使用异步编程</li>
+</ul>
+</blockquote>
+<h4 id="如何理解同步与异步编程？"><a href="#如何理解同步与异步编程？" class="headerlink" title="如何理解同步与异步编程？"></a><em>如何理解同步与异步编程？</em></h4><p>现在有一个饭店，将饭店里的服务员理解成为线程，因为JS是单线程的，因此饭店中只有一个服务员</p>
+<blockquote>
+<p><code>同步</code>：<br>在上午10：00，饭店进来一位顾客 -&gt; 服务员服务顾客 -&gt; 顾客点菜 -&gt; 服务员给后厨菜单 -&gt; 后厨完成菜品需要5分钟 -&gt; 服务员在一旁等待菜品完成，不进行任何活动，即使此时进来另外一位顾客，也不进行服务，直到第一位顾客的菜品完成，服务员方可服务第二位顾客,以此类推。。。<br><code>异步</code>：<br>在上午10:00 ，饭店进来一位顾客  -&gt; 服务员服务顾客 -&gt; 顾客点菜 -&gt; 服务员给后厨菜单 -&gt; 后厨完成菜品需要5分钟 -&gt; 在10: 02，进来第二位顾客 -&gt; 服务员服务第二位顾客 -&gt; 第二位顾客点菜 -&gt; 服务员给后厨菜单 -&gt; 后厨完成菜品需要3分钟 -&gt; 在10:04进来一百位顾客 -&gt; 服务员服务这一百位顾客 -&gt; 在这期间，第一位顾客的菜品和第二位的菜品，后厨已经完成，但是服务员不会停止正在执行的任务，直到这100位顾客服务完，才会服务第二位顾客（这里需要注意，并不是第一位顾客先开始等待，就先服务它，而是按照等待时间的长短来服务的，第一位顾客的等待时长为5分钟，第二位顾客的等待时长为3分钟，因此先服务第二位顾客）。。。</p>
+</blockquote>
+<h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a><em>案例</em></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">   <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      count ++;</span><br><span class="line">       <span class="built_in">console</span>.log(count); <span class="comment">//后输出，输出结果为：1</span></span><br><span class="line">   &#125;, <span class="number">100</span>);</span><br><span class="line">   <span class="built_in">console</span>.log(count); <span class="comment">//先输出，输出结果为：0</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2019/02/16/AJAX基础知识/1547965320731.png" alt="Alt text"><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        count ++;</span><br><span class="line">        <span class="built_in">console</span>.log(count);<span class="comment">//后输出，输出结果为：1</span></span><br><span class="line">    &#125;, <span class="number">0</span>); <span class="comment">//将定时器的时间设置为0，也不是立马执行，而是需要等待一段时间，</span></span><br><span class="line">    <span class="comment">//浏览器都有自己的一段默认时间 ：谷歌 5~6ms, IE 10~13ms</span></span><br><span class="line">    <span class="built_in">console</span>.log(count); <span class="comment">//先输出，输出结果为：0</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/2019/02/16/AJAX基础知识/1547971086759.png" alt="Alt text"><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">   <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">"A"</span>); <span class="comment">//后输出</span></span><br><span class="line">   &#125;, <span class="number">10</span>);</span><br><span class="line">   <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">"B"</span>); <span class="comment">//先输出</span></span><br><span class="line">   &#125;, <span class="number">6</span>);</span><br><span class="line">   <span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">while</span>(i &lt; <span class="number">100000000</span>)&#123;</span><br><span class="line">       i ++;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">//多个定时器，如果执行完成循环到达时间了，先执行时间的短的定时器，不是先设置哪个再执行哪个</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/2019/02/16/AJAX基础知识/1548041530610.png" alt="Alt text"></p>
+<blockquote>
+<p><strong><em>ajax中的同步</em></strong>： 当ajax的任务开始的时候，需要到readystate === 4的时候，任务才结束，此时才可以处理其他的事情<br><strong><em>ajax的异步</em></strong>： 当ajax的任务开始的时候，不需要到readystate === 4的时候，依然可以继续做其他的任务，并且只有当其他的任务完成之后，才看readystate是否到4，到达4的时候，做一些相关操作<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> xhr = createXHR();</span><br><span class="line">    xhr.open(<span class="string">'get'</span>, <span class="string">'/index.html'</span>, <span class="literal">false</span>); <span class="comment">//false是同步</span></span><br><span class="line">    xhr.send(<span class="literal">null</span>); <span class="comment">//只有send之后，ajax向服务器发送请求的任务才开始，没有send之前，不算任务</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//绑定在open前，可以输出1，绑定在open之后，不能输出1,因为，在执行xhr.open()的时候，xhr.state已经变成1了，这时onreadystatechange还没有绑定呢，因此不会输出1</span></span><br><span class="line">    <span class="keyword">var</span> xhr = createXHR();</span><br><span class="line">    xhr.open(<span class="string">'get'</span>, <span class="string">'ajax1.html'</span>, <span class="literal">true</span>); <span class="comment">//true表示异步</span></span><br><span class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(xhr.readyState); <span class="comment">//输出结果为2,3,4</span></span><br><span class="line">    &#125;;</span><br><span class="line">    xhr.send(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> xhr = createXHR();</span><br><span class="line">    xhr.open(<span class="string">'get'</span>, <span class="string">'ajax1.html'</span>, <span class="literal">false</span>); <span class="comment">//false表示同步</span></span><br><span class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(xhr.readyState); <span class="comment">//输出结果为4</span></span><br><span class="line">    &#125;;</span><br><span class="line">    xhr.send(<span class="literal">null</span>);</span><br><span class="line">    <span class="comment">//因为这题ajax采用的同步编程，当为onreadstatechange绑定事件的时候，readystate = 1，</span></span><br><span class="line">    <span class="comment">// 而当执行xhr.send（）时，ajax任务进入等待队列，直到readysatte === 4时，才会执行别的任务，因为此时readystate = 4，继而执行onreadystatecahnge方法，输出的结果为4</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> xhr = createXHR();</span><br><span class="line">        xhr.open(<span class="string">'get'</span>, <span class="string">'ajax1.html'</span>, <span class="literal">true</span>); <span class="comment">//true表示同步</span></span><br><span class="line">        xhr.send(<span class="literal">null</span>);</span><br><span class="line">        xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(xhr.readyState); <span class="comment">//输出的结果：2 3 4</span></span><br><span class="line">        &#125;;</span><br><span class="line">    <span class="comment">//因为这题ajax采用的是异步编程，即使onreadystatechange绑定方法在send的后面，请求过程中还是会执行其他的操作，所以会输出2,3,4</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> xhr = createXHR();</span><br><span class="line">    xhr.open(<span class="string">'get'</span>, <span class="string">'ajax1.html'</span>, <span class="literal">false</span>); <span class="comment">//false表示同步</span></span><br><span class="line">    xhr.send(<span class="literal">null</span>);</span><br><span class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(xhr.readyState); <span class="comment">//无输出结果</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">//因为这题ajax采用的同步编程，当执行xhr.send（）时，ajax任务进入等待队列，直到readysatte === 4时，才会执行别的任务，紧接着为onreadstatechange绑定事件，此时的readystate = 4，而readstate不会再改变，因此绑定的方法永远不会执行，即无输出结果</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>获取浏览器的时间 （保证是异步编程，才可以得到状态2，同步是得不到状态2的）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = createXHR();</span><br><span class="line">xhr.open(<span class="string">'head'</span>, <span class="string">'ajax1.html'</span>, <span class="literal">true</span>); <span class="comment">//true表示同步</span></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(xhr.readyState === <span class="number">2</span>)&#123;</span><br><span class="line">        <span class="comment">//xhr.getResponseHeader：获取服务器的响应头信息</span></span><br><span class="line">        <span class="keyword">var</span> time = xhr.getResponseHeader(<span class="string">'Date'</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>(time)); <span class="comment">//Mon Jan 21 2019 13:14:04 GMT+0800 (中国标准时间)</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//当xhr.readyState === 4时，也可以获取到请求头时间，但是为什么要在2的时候获取呢，</span></span><br><span class="line">    <span class="comment">// 因为是为了更快的获取服务器事件，减少时间差，例如京东倒计时，必须要将客户端获取到的时间与服务器时间差值最小</span></span><br><span class="line">&#125;;</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+            <a href="/tags/JS语法/" rel="tag"># JS语法</a>
+          
+            <a href="/tags/JS基础，AJAX/" rel="tag"># JS基础，AJAX</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/16/JS中常用方法之获取元素的具体样式/" rel="next" title="JS中常用方法之获取元素的具体样式">
+                <i class="fa fa-chevron-left"></i> JS中常用方法之获取元素的具体样式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/16/真实项目中的开发流程及API接口文档/" rel="prev" title="真实项目中的开发流程及API接口文档">
+                真实项目中的开发流程及API接口文档 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="John Doe">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/your-user-name" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/your-user-name" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/your-user-name" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://douban.com/people/your-user-name" target="_blank" title="douban">
+                      
+                        <i class="fa fa-fw fa-globe"></i>douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.zhihu.com/people/your-user-name" target="_blank" title="zhihu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>zhihu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#AJAX详细知识"><span class="nav-number">1.</span> <span class="nav-text">AJAX详细知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP-METHOD-客户端向服务器端发送请求"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP METHOD:客户端向服务器端发送请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GET-与-POST-的区别"><span class="nav-number">1.2.</span> <span class="nav-text">GET 与 POST 的区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步（SYNC）与异步-ASYNC"><span class="nav-number">2.</span> <span class="nav-text">同步（SYNC）与异步(ASYNC)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#如何理解同步与异步编程？"><span class="nav-number">2.1.</span> <span class="nav-text">如何理解同步与异步编程？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#案例"><span class="nav-number">2.2.</span> <span class="nav-text">案例</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>

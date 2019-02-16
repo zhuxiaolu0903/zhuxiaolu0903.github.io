@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,JS语法,JS基础,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1234&amp;lt;div id=&quot;box&quot; class=&quot;test test1 test2&quot; index=&quot;0&quot;&amp;gt;     生活是一面镜子。你对它笑，它就对你笑；你对它哭，它也对你哭。活着一天，就是有福气，就该珍惜。当我哭泣我没有鞋子穿的时候，我发现有人却没有脚。     人生是个圆，有的人走了一辈子也没有走出命运画出的圆圈 &amp;lt;/div&amp;gt;">
+<meta name="keywords" content="前端,JS语法,JS基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS中盒子模型中的常用的前8个属性">
+<meta property="og:url" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1234&amp;lt;div id=&quot;box&quot; class=&quot;test test1 test2&quot; index=&quot;0&quot;&amp;gt;     生活是一面镜子。你对它笑，它就对你笑；你对它哭，它也对你哭。活着一天，就是有福气，就该珍惜。当我哭泣我没有鞋子穿的时候，我发现有人却没有脚。     人生是个圆，有的人走了一辈子也没有走出命运画出的圆圈 &amp;lt;/div&amp;gt;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1538628772616.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1538628905388.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1538629119218.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1538629961229.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1538630107059.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1538630259559.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1538631580316.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1538631106492.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1538632721218.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1538632743796.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1538632854238.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1538632897223.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1538633248866.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1538633282558.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1538643810476.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1538641162608.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/解释图.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/解释图2.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1539335451446.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1539335474353.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1539335427939.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1539335713357.png">
+<meta property="og:updated_time" content="2019-02-16T06:22:18.707Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS中盒子模型中的常用的前8个属性">
+<meta name="twitter:description" content="1234&amp;lt;div id=&quot;box&quot; class=&quot;test test1 test2&quot; index=&quot;0&quot;&amp;gt;     生活是一面镜子。你对它笑，它就对你笑；你对它哭，它也对你哭。活着一天，就是有福气，就该珍惜。当我哭泣我没有鞋子穿的时候，我发现有人却没有脚。     人生是个圆，有的人走了一辈子也没有走出命运画出的圆圈 &amp;lt;/div&amp;gt;">
+<meta name="twitter:image" content="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/1538628772616.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/">
+
+
+
+
+
+  <title>JS中盒子模型中的常用的前8个属性 | Hexo</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'your-analytics-id', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/JS中盒子模型中的常用的前8个属性/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS中盒子模型中的常用的前8个属性</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-16T00:00:00+08:00">
+                2019-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS基础/" itemprop="url" rel="index">
+                    <span itemprop="name">JS基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <figure class="highlight htmlbars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id="box" class="test test1 test2" index="0"&gt;</span><br><span class="line">     生活是一面镜子。你对它笑，它就对你笑；你对它哭，它也对你哭。活着一天，就是有福气，就该珍惜。当我哭泣我没有鞋子穿的时候，我发现有人却没有脚。</span><br><span class="line">     人生是个圆，有的人走了一辈子也没有走出命运画出的圆圈</span><br><span class="line"> &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">font-family</span>: 微软雅黑;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#box</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid <span class="number">#8cadef</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="comment">/*overflow: hidden;*/</span>  <span class="comment">/*溢出部分隐藏*/</span></span><br><span class="line">    <span class="comment">/*overflow: auto; /!*溢出部分自动增加滑动条*!/*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line"><span class="built_in">console</span>.dir(box);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1538628772616.png" alt="Alt text"></p>
+</blockquote>
+<blockquote>
+<p><strong>个别属性解释</strong><br><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1538628905388.png" alt="Alt text"><br><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1538629119218.png" alt="Alt text"><br><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1538629961229.png" alt="Alt text"><br><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1538630107059.png" alt="Alt text"><br><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1538630259559.png" alt="Alt text"><br><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1538631580316.png" alt="Alt text"><br><strong>一、常用属性讲解</strong></p>
+<ol>
+<li>client系列属性<br><code>clientWidth/clientHeight</code>: 内容的宽度 + 左右填充/高度 + 上下填充（和内容是否溢出没有关系）<br><code>clientLeft/clientTop</code>: 左边框的宽度[<code>borderLeft</code>]/上边框的高度[<code>borderTop</code>]<br><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1538631106492.png" alt="Alt text"></li>
+</ol>
+</blockquote>
+<p><strong>内容的宽度/高度：</strong></p>
+<blockquote>
+<p>我们设置的width/height这两个样式就是内容宽度和高度；<br>如果没有设置height的值，容器的高度会根据里面的内容自己进行适应，这样获取的值就是真实内容的高度值；<br>如果设置固定高度的值，不管内容是或溢出，或者时候填满，我们获取的值都是设定的那个height的高度值</p>
+</blockquote>
+<p><strong>真实内容的宽度/高度：</strong></p>
+<blockquote>
+<p>这个代指的是实际内容的宽度和高度（和我们设置的width/height没有必然的联系）<br>例如：设置的高度是200px，如果内容有溢出，那么真实内容的高度是要把溢出内容的高度加上的</p>
+</blockquote>
+<ol start="2">
+<li><p>offset系列</p>
+<blockquote>
+<p><code>offsetWidth/offsetHeight</code>: <code>clientWidth</code> + 左右边框的宽度/<code>clientHeight</code> + 上下边框的高度(和内容是否溢出也是没有任何关系的)<br><code>offsetLeft/offsetTop</code>:  当前元素的外边框距离父级参照物的内边框的偏移量<br><code>offsetParent</code>: 当前元素的户父级参照物</p>
+<p><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1538632721218.png" alt="Alt text"></p>
+</blockquote>
+</li>
+<li><p>scroll系列</p>
+<blockquote>
+<p><code>scrollWidth/scrollHeight</code>: 和<code>clientWidth/clientHeight</code>的计算方式是一模一样的（前提是：容器中的内容没有溢出的情况下）<br>如果容器中内容有溢出，我们获取的结果的规则如下：<br><code>scrollWidth</code>：真实内容的宽度（包含溢出） +  左填充<br><code>scrollHeight</code>: 真实内容的高度（包含溢出） + 上填充<br>获取到的结果都是“约等于”的值，因为：同一个浏览器，是否设置<code>overflow: hidden</code> 对于最终的结果是有影响的;在不同的浏览器中，我们获取到的结果也是不相同的<br><code>scrollLeft/ scrollTop</code>: 滚动条卷去的高度/宽度<br><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1538632743796.png" alt="Alt text"></p>
+<p><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1538632854238.png" alt="Alt text"></p>
+<p><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1538632897223.png" alt="Alt text"></p>
+<p><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1538633248866.png" alt="Alt text"></p>
+<p><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1538633282558.png" alt="Alt text"></p>
+</blockquote>
+<p><strong>二、关于JS盒子模型属性取值的问题</strong></p>
+<blockquote>
+<p>通过这13个属性值获取的结果永远不可能出现小数，都是整数；浏览器在获取结果的时候，还在原来真实结果的基础上进行了四舍五入<br><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1538643810476.png" alt="Alt text"><br><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1538641162608.png" alt="Alt text"><br><strong>三、关于操作浏览器本身的盒子模型信息</strong><br><code>clientWidth/clientHeight</code>是当前浏览器可视窗口的宽度和高度（一屏幕的宽度和高度）<br><code>scrollWidth/scrollHeight</code>是当前页面的真实宽度和高度（浏览器所有屏加起来的宽度和高度，但是是一个约等于的值）<br>我们不管哪种属性，也不管是什么浏览器，也不管是获取还是设置，想要兼容的话，需要写两套<br><code>document.documentElement[attar] || document.body[attar]</code><br>且<code>document.documentElement[attar]</code>必须放在前面<br>例如：<br>获取：<code>document.documentElement.clientWidth || document.body.clientWidth</code><br>设置：<code>document.documentElement.scrollTop = 0;document.body.scrollTop = 0;</code></p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>win: 编写一个有关操作浏览器盒子模型的方法<br>如果只传递attar，没有传递value, 默认的意思是获取<br>如果两个参数都传递了，意思就是设置<br>不严谨的来说，这就是有关于“类的重载”：同一个方法，通过传递参数不同实现了不同的功能<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">win</span>(<span class="params">attar, value</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> val = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> value === <span class="string">'undefined'</span>)&#123;</span><br><span class="line">        val = <span class="built_in">document</span>.documentElement[attar] || <span class="built_in">document</span>.body[attar];</span><br><span class="line">        <span class="keyword">return</span> val</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.documentElement[attar] = value;</span><br><span class="line">    <span class="built_in">document</span>.body[attar] = value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<hr>
+<h3 id="获取元素的偏移量offset"><a href="#获取元素的偏移量offset" class="headerlink" title="获取元素的偏移量offset"></a>获取元素的偏移量offset</h3><blockquote>
+<p><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/解释图.png" alt="Alt text"><br><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/解释图2.png" alt="Alt text"><br><strong>案例剖析：</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line"> <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#outer</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">180px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">180px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">50px</span> auto;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid <span class="number">#176dff</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#a4bbef</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#inner</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">80px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">80px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid <span class="number">#3fc554</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#b2ef39</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#center</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid <span class="number">#fe7259</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#feaaac</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight htmlbars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id="outer"&gt;</span><br><span class="line">     &lt;div id="inner"&gt;</span><br><span class="line">         &lt;div id="center"&gt;&lt;/div&gt;</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> outer = <span class="built_in">document</span>.getElementById(<span class="string">"outer"</span>);</span><br><span class="line"><span class="keyword">var</span> inner = <span class="built_in">document</span>.getElementById(<span class="string">"inner"</span>);</span><br><span class="line"><span class="keyword">var</span> center = <span class="built_in">document</span>.getElementById(<span class="string">"center"</span>);</span><br></pre></td></tr></table></figure>
+<p> <strong><code>parentNode</code></strong></p>
+<blockquote>
+<p>父亲节点，HTML结构层架关系中的上一级元素<br><code>console.log(outer.parentNode); //-&gt;body
+    console.log(inner.parentNode); //-&gt;outer
+    console.log(center.parentNode); //-&gt;inner</code></p>
+</blockquote>
+<p><strong><code>offset 父级参照物</code></strong></p>
+<blockquote>
+<p>  在同一平面中，最外层的元素是里面所有元素的父级参照物（和HTML层级没有必然的联系）<br>一般来说一个页面中所有元素的父级参照物都是<code>body</code><br><code>console.log(outer.offsetParent); //body
+    console.log(inner.offsetParent); //body
+    console.log(center.offsetParent); //body
+    console.log(document.body.offsetParent);  //null</code></p>
+</blockquote>
+<p><strong><code>想要改变父级参照物需要通过position定位来改变：absolute、fixed、relative三个中的任意一个值都可以把父级参照物进行修改</code></strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">outer.style.position = <span class="string">"relative"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(outer.offsetParent); <span class="comment">//body</span></span><br><span class="line"><span class="built_in">console</span>.log(inner.offsetParent); <span class="comment">//outer</span></span><br><span class="line"><span class="built_in">console</span>.log(center.offsetParent); <span class="comment">//outer</span></span><br><span class="line"></span><br><span class="line">outer.style.position = <span class="string">"relative"</span>;</span><br><span class="line">inner.style.position = <span class="string">"relative"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(outer.offsetParent); <span class="comment">//body</span></span><br><span class="line"><span class="built_in">console</span>.log(inner.offsetParent); <span class="comment">//outer</span></span><br><span class="line"><span class="built_in">console</span>.log(center.offsetParent); <span class="comment">//inner</span></span><br></pre></td></tr></table></figure></p>
+<p><strong><code>offsetTop/offsetLeft：当前元素(的外边框)距离其父级参照物（的内边框）的偏移距离</code></strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">outer.style.position = <span class="string">"relative"</span>;</span><br><span class="line">inner.style.position = <span class="string">"relative"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(outer.offsetLeft); <span class="comment">//533</span></span><br><span class="line"><span class="built_in">console</span>.log(inner.offsetLeft); <span class="comment">//50</span></span><br><span class="line"><span class="built_in">console</span>.log(center.offsetLeft); <span class="comment">//50</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>offset：等同于jQuery中的offset方法，实现获取页面中任意一个元素，距离body的偏移（包含左偏移和上偏移），不管当前元素的父级参照物是谁获取的结果是一个对象{left: 距离BODY的左偏移，top: 距离BODY的上偏移}<br>在标准的IE8浏览器中，我们使用offsetLeft/offsetTop其实是把父级参照物的边框已经算在内了，所以我们不需要自己在单独的加上边框了</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">offset</span>(<span class="params">curEle</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">var</span> totalLeft = <span class="number">0</span>, totalTop = <span class="number">0</span>, par = curEle.offsetParent;</span><br><span class="line">    totalLeft += curEle.offsetLeft;</span><br><span class="line">    totalTop += curEle.offsetTop;</span><br><span class="line">    <span class="keyword">while</span>(par.offsetParent != <span class="literal">null</span>)&#123;  <span class="comment">//如果当前元素par不是body</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">window</span>.navigator.userAgent.indexOf(<span class="string">"MSIE 8.0"</span>) === <span class="number">-1</span>)&#123;</span><br><span class="line">            <span class="comment">//不是标准的IE8浏览器，我们才进行累加边框</span></span><br><span class="line">            <span class="comment">//累加父级参照物的边框</span></span><br><span class="line">            totalLeft += par.clientLeft;</span><br><span class="line">            totalTop += par.clientTop;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//累加父级参照物本身的偏移</span></span><br><span class="line">        totalLeft += par.offsetLeft;</span><br><span class="line">        totalTop += par.offsetTop;</span><br><span class="line">        par = par.offsetParent;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="attr">left</span>: totalLeft, <span class="attr">top</span>: totalTop&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(offset(inner));</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="scrollTop-scrollLeft"><a href="#scrollTop-scrollLeft" class="headerlink" title="scrollTop/scrollLeft"></a>scrollTop/scrollLeft</h3> <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">        <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">font-family</span>: 微软雅黑;</span><br><span class="line">        <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-id">#box</span>&#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">        <span class="attribute">margin</span>: <span class="number">100px</span> auto;</span><br><span class="line">        <span class="attribute">padding</span>: <span class="number">30px</span>;</span><br><span class="line">        <span class="attribute">border</span>: <span class="number">1px</span> dashed <span class="number">#8cadef</span>;</span><br><span class="line">        <span class="attribute">line-height</span>: <span class="number">30px</span>;</span><br><span class="line">        <span class="comment">/*overflow: hidden;*/</span>  <span class="comment">/*溢出部分隐藏*/</span></span><br><span class="line">        <span class="attribute">overflow</span>: auto; <span class="comment">/*溢出部分自动增加滑动条*/</span></span><br><span class="line">    &#125;</span><br><span class="line">``` </span><br><span class="line">```<span class="selector-tag">htmlbars</span></span><br><span class="line">&lt;div id="box" class="test test1 test2" index="0"&gt;</span><br><span class="line">    生活是一面镜子。你对它笑，它就对你笑；你对它哭，它也对你哭。活着一天，就是有福气，就该珍惜。当我哭泣我没有鞋子穿的时候，我发现有人却没有脚。</span><br><span class="line">    人生是个圆，有的人走了一辈子也没有走出命运画出的圆圈</span><br><span class="line">    生活是一面镜子。你对它笑，它就对你笑；你对它哭，它也对你哭。活着一天，就是有福气，就该珍惜。当我哭泣我没有鞋子穿的时候，我发现有人却没有脚。</span><br><span class="line">    人生是个圆，有的人走了一辈子也没有走出命运画出的圆圈</span><br><span class="line">    生活是一面镜子。你对它笑，它就对你笑；你对它哭，它也对你哭。活着一天，就是有福气，就该珍惜。当我哭泣我没有鞋子穿的时候，我发现有人却没有脚。</span><br><span class="line">    人生是个圆，有的人走了一辈子也没有走出命运画出的圆圈</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">```  </span><br><span class="line">```<span class="selector-tag">javascript</span></span><br><span class="line"> var box = document.getElementById("box");</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>之前我们学习的盒子模型中：<code>client系列</code>/<code>offset系列</code>/<code>scrollWidth</code>/<code>scrollHeight</code>都是”<code>只读</code>“属性，只能通过属性获取值，不能通过属性修改元素的样式<br>2.<code>scrollTop</code>/<code>scrollLeft</code>:滚动条卷去的高度/宽度（这两个属性是唯一”可读写”属性）<br><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1539335451446.png" alt="Alt text"><br><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1539335474353.png" alt="Alt text"><br><code>box.scrollTop = 0;</code>直接回到了容器的顶部<br>我们的<code>scrollTop</code> 的值是存在边界的（最大值和最小值），我们设置的值比最小值还要小，或者比最大值还要大 都没有用，起到效果的依然是边界值<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">【最小值是零】</span><br><span class="line">    box.scrollTop = <span class="number">-1000</span>; <span class="comment">//页面显示效果：直接回到容器顶部，并没有超出效果</span></span><br><span class="line">    <span class="built_in">console</span>.log(box.scrollTop); <span class="comment">//0</span></span><br><span class="line">【最大值 = 真实高度（scrollHeight） - 一个屏幕的高度（clientHeight）】</span><br><span class="line">    <span class="keyword">var</span> maxTop = box.scrollHeight - box.clientHeight;</span><br><span class="line">    <span class="built_in">console</span>.log(maxTop); <span class="comment">//490</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<p><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1539335427939.png" alt="Alt text"><br><img src="/2019/02/16/JS中盒子模型中的常用的前8个属性/1539335713357.png" alt="Alt text"></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+            <a href="/tags/JS语法/" rel="tag"># JS语法</a>
+          
+            <a href="/tags/JS基础/" rel="tag"># JS基础</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/16/jQuery选择器/" rel="next" title="jQuery选择器">
+                <i class="fa fa-chevron-left"></i> jQuery选择器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/16/JS中延迟加载思想和单张图片的延迟加载/" rel="prev" title="JS中延迟加载思想和单张图片的延迟加载">
+                JS中延迟加载思想和单张图片的延迟加载 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="John Doe">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/your-user-name" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/your-user-name" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/your-user-name" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://douban.com/people/your-user-name" target="_blank" title="douban">
+                      
+                        <i class="fa fa-fw fa-globe"></i>douban</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.zhihu.com/people/your-user-name" target="_blank" title="zhihu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>zhihu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取元素的偏移量offset"><span class="nav-number">1.</span> <span class="nav-text">获取元素的偏移量offset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scrollTop-scrollLeft"><span class="nav-number">2.</span> <span class="nav-text">scrollTop/scrollLeft</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>
