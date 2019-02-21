@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="属性constructor: ƒ String() { [native code] } 属性： 是一个属性含义： 返回创建实例对象的 ==String ==构造函数的引用备注：  每一个对象所属类的原型上都有一个constructor属性，属性值是当前对象所属类（函数）的本身 此属性的值是当前对象所属类（函数）本身的引用，而不是一个包含函数名称的字符串。  返回值：  当前对象所属类（函数）[S">
+<meta name="description" content="属性constructor: ƒ String() { [native code] } 属性： 是一个属性含义： 返回创建实例对象的 ==String ==构造函数的引用备注：  每一个对象所属类的原型上都有一个constructor属性，属性值是当前对象所属类（函数）的本身 此属性的值是当前对象所属类（函数）本身的引用，而不是一个包含函数名称的字符串。">
 <meta name="keywords" content="前端,JS语法,JS基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="String原型上的方法以及属性详细讲解(一)">
-<meta property="og:url" content="http://yoursite.com/2019/02/17/String原型上的方法和属性详细讲解（一）/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/02/18/String原型上的方法和属性详细讲解（一）/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="属性constructor: ƒ String() { [native code] } 属性： 是一个属性含义： 返回创建实例对象的 ==String ==构造函数的引用备注：  每一个对象所属类的原型上都有一个constructor属性，属性值是当前对象所属类（函数）的本身 此属性的值是当前对象所属类（函数）本身的引用，而不是一个包含函数名称的字符串。  返回值：  当前对象所属类（函数）[S">
+<meta property="og:description" content="属性constructor: ƒ String() { [native code] } 属性： 是一个属性含义： 返回创建实例对象的 ==String ==构造函数的引用备注：  每一个对象所属类的原型上都有一个constructor属性，属性值是当前对象所属类（函数）的本身 此属性的值是当前对象所属类（函数）本身的引用，而不是一个包含函数名称的字符串。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-18T06:51:28.767Z">
+<meta property="og:updated_time" content="2019-02-21T07:09:21.180Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String原型上的方法以及属性详细讲解(一)">
-<meta name="twitter:description" content="属性constructor: ƒ String() { [native code] } 属性： 是一个属性含义： 返回创建实例对象的 ==String ==构造函数的引用备注：  每一个对象所属类的原型上都有一个constructor属性，属性值是当前对象所属类（函数）的本身 此属性的值是当前对象所属类（函数）本身的引用，而不是一个包含函数名称的字符串。  返回值：  当前对象所属类（函数）[S">
+<meta name="twitter:description" content="属性constructor: ƒ String() { [native code] } 属性： 是一个属性含义： 返回创建实例对象的 ==String ==构造函数的引用备注：  每一个对象所属类的原型上都有一个constructor属性，属性值是当前对象所属类（函数）的本身 此属性的值是当前对象所属类（函数）本身的引用，而不是一个包含函数名称的字符串。">
 
 
 
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/17/String原型上的方法和属性详细讲解（一）/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/18/String原型上的方法和属性详细讲解（一）/">
 
 
 
@@ -334,7 +334,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/17/String原型上的方法和属性详细讲解（一）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/String原型上的方法和属性详细讲解（一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -363,8 +363,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-17T00:00:00+08:00">
-                2019-02-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-18T00:00:00+08:00">
+                2019-02-18
               </time>
             
 
@@ -417,7 +417,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  9.7k
+                  10k
                 </span>
               
 
@@ -433,7 +433,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  38
+                  40
                 </span>
               
             </div>
@@ -454,12 +454,12 @@
       
 
       
-        <a id="more"></a>
-<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><h5 id="constructor-f-String-native-code"><a href="#constructor-f-String-native-code" class="headerlink" title="constructor: ƒ String() { [native code] }"></a><strong><em><code>constructor: ƒ String() { [native code] }</code></em></strong></h5><blockquote>
+        <h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><h5 id="constructor-f-String-native-code"><a href="#constructor-f-String-native-code" class="headerlink" title="constructor: ƒ String() { [native code] }"></a><strong><em><code>constructor: ƒ String() { [native code] }</code></em></strong></h5><blockquote>
 <p><strong>属性</strong>： 是一个属性<br><strong>含义</strong>： 返回创建实例对象的 ==String ==构造函数的引用<br><strong>备注</strong>：</p>
 <ol>
 <li>每一个对象所属类的原型上都有一个constructor属性，属性值是当前对象所属类（函数）的本身</li>
-<li>此属性的值是当前对象所属类（函数）本身的引用，而不是一个包含函数名称的字符串。</li>
+<li>此属性的值是当前对象所属类（函数）本身的引用，而不是一个包含函数名称的字符串。<a id="more"></a>
+</li>
 </ol>
 <p><strong>返回值</strong>：</p>
 <ul>
@@ -490,7 +490,7 @@
 <p><strong>备注</strong>： 当方法有多个参数时，只有第一参数才是有效参数，后面的参数都是无效的<br><strong>返回值</strong>：</p>
 <ul>
 <li>一个<code>&lt;a&gt;</code>标签字符串，只含有name属性，中间包裹的文字是原始字符串</li>
-<li>“<code>&lt;a name=&quot;参数&quot;&gt;原始字符串&lt;/a&gt;</code>“</li>
+<li>“<code>&lt;a name=&quot;参数&quot;&gt;原始字符串&lt;/a&gt;</code>“: <a name="参数">原始字符串</a></li>
 </ul>
 <p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">"zhuxiaolu"</span>.anchor(<span class="string">"tempA"</span>) === <span class="string">"string"</span>); -&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"zhuxiaolu"</span>.anchor()); -&gt; &lt;a name="undefined"&gt;zhuxiaolu&lt;/a&gt;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"zhuxiaolu"</span>.anchor(<span class="string">"tempA"</span>)); -&gt; &lt;a name="tempA"&gt;zhuxiaolu&lt;/a&gt;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
@@ -511,7 +511,7 @@
 <p><strong>备注</strong>： 当方法有多个参数时，只有第一参数才是有效参数，后面的参数都是无效的<br><strong>返回值</strong>：</p>
 <ul>
 <li>一个<a>标签字符串，只含有href属性，中间包裹的文字是原始字符串</a></li>
-<li>“<code>&lt;a href=&quot;参数&quot;&gt;原始字符串&lt;/a&gt;</code>“<br><strong>运用</strong>：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">"hello"</span>.link(<span class="string">"www.baidu.com"</span>) === <span class="string">"string"</span>); -&gt; <span class="literal">true</span></span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">"hello"</span>.link()); -&gt; &lt;a href="undefined"&gt;hello&lt;/a&gt;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">"hello"</span>.link(<span class="string">"www.baidu.com"</span>)); -&gt; &lt;a href="www.baidu.com"&gt;hello&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<li>“<code>&lt;a href=&quot;参数&quot;&gt;原始字符串&lt;/a&gt;</code>“：<a href="参数">原始字符串</a><br><strong>运用</strong>：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">"hello"</span>.link(<span class="string">"www.baidu.com"</span>) === <span class="string">"string"</span>); -&gt; <span class="literal">true</span></span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">"hello"</span>.link()); -&gt; &lt;a href="undefined"&gt;hello&lt;/a&gt;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">"hello"</span>.link(<span class="string">"www.baidu.com"</span>)); -&gt; &lt;a href="www.baidu.com"&gt;hello&lt;/a&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </blockquote>
@@ -520,25 +520,34 @@
 <p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>： 在字符串的外面包裹一个<code>&lt;big&gt;</code>标签<br><strong>参数</strong>： 无<br><strong>备注</strong>： <code>&lt;big&gt;</code>标签呈现大号字体效果<br><strong>返回值</strong>：</p>
 <ul>
 <li>一个big标签字符串，中间包裹的文字是原始字符串</li>
-<li>“<code>&lt;big&gt;原始字符串&lt;/big&gt;</code>“</li>
+<li>“<code>&lt;big&gt;原始字符串&lt;/big&gt;</code>“：<big>原始字符串</big></li>
 </ul>
-<p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">"zhuxiaolu"</span>.big() === <span class="string">"string"</span>); -&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"zhuxiaolu"</span>.big()); -&gt; &lt;big&gt;zhuxiaolu&lt;/big&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">"hello"</span>.big() === <span class="string">"string"</span>); -&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.big()); -&gt; &lt;big&gt;hello&lt;/big&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<hr>
+<h5 id="small-f-small"><a href="#small-f-small" class="headerlink" title="small: f small)"></a><strong><em><code>small: f small)</code></em></strong></h5><blockquote>
+<p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>： 在字符串的外面包裹一个<code>&lt;small&gt;</code>标签<br><strong>参数</strong>： 无<br><strong>备注</strong>： <code>&lt;small&gt;</code>标签呈现小号字体效果<br><strong>返回值</strong>：</p>
+<ul>
+<li>一个<small>标签字符串，中间包裹的文字是原始字符串</small></li>
+<li>“<code>&lt;small&gt;原始字符串&lt;/small&gt;</code>“：<small>原始字符串</small></li>
+</ul>
+<p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">"hello"</span>.small() === <span class="string">"string"</span>); -&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.small()); -&gt; &lt;small&gt;hello&lt;/small&gt;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <hr>
 <h5 id="blink-f-blink"><a href="#blink-f-blink" class="headerlink" title="blink: f blink()"></a><strong><em><code>blink: f blink()</code></em></strong></h5><blockquote>
 <p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>： 在字符串的外面包裹一个<code>&lt;blink&gt;</code>标签<br><strong>参数</strong>： 无<br><strong>返回值</strong>：</p>
 <ul>
 <li>一个blink标签字符串，中间包裹的文字是原始字符串</li>
-<li>“<code>&lt;blink&gt;原始字符串&lt;/blink&gt;</code>“</li>
+<li>“<code>&lt;blink&gt;原始字符串&lt;/blink&gt;</code>“：<blink>原始字符串</blink></li>
 </ul>
-<p><strong>备注</strong>： blink标签的语义：定义在浏览器显示闪烁的文本。html5不再支持，此标签被废弃。<br><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">"zhuxiaolu"</span>.blink() === <span class="string">"string"</span>); -&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"zhuxiaolu"</span>.blink()); -&gt; &lt;blink&gt;zhuxiaolu&lt;/blink&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>备注</strong>： blink标签的语义：定义在浏览器显示闪烁的文本。html5不再支持，此标签被废弃。<br><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">"hello"</span>.blink() === <span class="string">"string"</span>); -&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.blink()); -&gt; &lt;blink&gt;hello&lt;/blink&gt;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <hr>
 <h5 id="bold-f-bold"><a href="#bold-f-bold" class="headerlink" title="bold: f bold()"></a><strong><em><code>bold: f bold()</code></em></strong></h5><blockquote>
 <p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>： 在字符串的外面包裹一个<code>&lt;b&gt;</code>标签<br><strong>参数</strong>： 无<br><strong>备注</strong>： <strong><b></b></strong>标签是一个加粗文本<br><strong>返回值</strong>：</p>
 <ul>
 <li>一个<code>&lt;b&gt;</code>标签字符串，中间包裹的文字是原始字符串</li>
-<li>“<code>&lt;b&gt;原始字符串&lt;/b&gt;</code>“<br><strong>运用</strong>：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">"zhuxiaolu"</span>.bold() === <span class="string">"string"</span>); -&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"zhuxiaolu"</span>.bold()); -&gt; &lt;b&gt;zhuxiaolu&lt;/b&gt;</span><br></pre></td></tr></table></figure>
+<li>“<code>&lt;b&gt;原始字符串&lt;/b&gt;</code>“：<b>原始字符串</b><br><strong>运用</strong>：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">"hello"</span>.bold() === <span class="string">"string"</span>); -&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.bold()); -&gt; &lt;b&gt;hello&lt;/b&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </blockquote>
@@ -547,7 +556,34 @@
 <p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>： 创建了一个<code>&lt;tt&gt;</code>标签元素将字符串包裹起来, 从而让这个字符串里面的内容具有固定间距。<br><strong>参数</strong>： 无<br><strong>备注</strong>： <code>&lt;tt&gt;</code>标签定义打字机文本，HTML5不支持<code>&lt;tt&gt;</code>标签。请用CSS代替。<br><strong>返回值</strong>：</p>
 <ul>
 <li>一个<code>&lt;tt&gt;</code>标签字符串，中间包裹的文字是原始字符串</li>
-<li>“<code>&lt;tt&gt;原始字符串&lt;/tt&gt;</code>“<br><strong>运用</strong>：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">"hello"</span>.fixed() === <span class="string">"string"</span>); -&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.fixed()); =&gt; &lt;tt&gt;hello&lt;/tt&gt;</span><br></pre></td></tr></table></figure>
+<li>“<code>&lt;tt&gt;原始字符串&lt;/tt&gt;</code>“：<tt>原始字符串</tt><br><strong>运用</strong>：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">"hello"</span>.fixed() === <span class="string">"string"</span>); -&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.fixed()); =&gt; &lt;tt&gt;hello&lt;/tt&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h5 id="strike-f-strike"><a href="#strike-f-strike" class="headerlink" title="strike: f strike()"></a><strong><em><code>strike: f strike()</code></em></strong></h5><blockquote>
+<p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>： 创建了一个<code>&lt;strike&gt;</code>标签元素将字符串包裹起来, 从而让这个字符串里面的内容具有固定间距。<br><strong>参数</strong>： 无<br><strong>备注</strong>： <code>&lt;strike&gt;</code>使字符串展示为被删除的文本。HTML5不支持<code>&lt;strike&gt;</code>标签。请用CSS代替。<br><strong>返回值</strong>：</p>
+<ul>
+<li>一个<code>&lt;strike&gt;</code>标签字符串，中间包裹的文字是原始字符串</li>
+<li>“<code>&lt;strike&gt;原始字符串&lt;/strike&gt;</code>“: <strike>原始字符串</strike><br><strong>运用</strong>：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">"hello"</span>.strike() === <span class="string">"string"</span>); -&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.strike()); =&gt; &lt;strike&gt;hello&lt;/strike&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h5 id="sub-f-sub"><a href="#sub-f-sub" class="headerlink" title="sub: f sub()"></a><strong><em><code>sub: f sub()</code></em></strong></h5><blockquote>
+<p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>： 创建了一个<code>&lt;sub&gt;</code>标签元素将字符串包裹起来, 从而让这个字符串里面的内容具有固定间距。<br><strong>参数</strong>： 无<br><strong>备注</strong>： <code>&lt;sub&gt;</code>使字符串展示为下标。HTML5不支持<code>&lt;sub&gt;</code>标签。请用CSS代替。<br><strong>返回值</strong>：</p>
+<ul>
+<li>一个<code>&lt;sub&gt;</code>标签字符串，中间包裹的文字是原始字符串</li>
+<li>“<code>&lt;sub&gt;原始字符串&lt;/sub&gt;</code>“: <sub>原始字符串</sub><br><strong>运用</strong>：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">"hello"</span>.sub() === <span class="string">"string"</span>); -&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.sub()); =&gt; &lt;sub&gt;hello&lt;/sub&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h5 id="sub-f-sup"><a href="#sub-f-sup" class="headerlink" title="sub: f sup()"></a><strong><em><code>sub: f sup()</code></em></strong></h5><blockquote>
+<p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>： 创建了一个<code>&lt;sub&gt;</code>标签元素将字符串包裹起来, 从而让这个字符串里面的内容具有固定间距。<br><strong>参数</strong>： 无<br><strong>备注</strong>： <code>&lt;sub&gt;</code>使字符串展示为下标。HTML5不支持<code>&lt;sub&gt;</code>标签。请用CSS代替。<br><strong>返回值</strong>：</p>
+<ul>
+<li>一个<code>&lt;sub&gt;</code>标签字符串，中间包裹的文字是原始字符串</li>
+<li>“<code>&lt;sub&gt;原始字符串&lt;/sub&gt;</code>“: <sub>原始字符串</sub><br><strong>运用</strong>：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">"hello"</span>.sub() === <span class="string">"string"</span>); -&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.sub()); =&gt; &lt;sub&gt;hello&lt;/sub&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </blockquote>
@@ -597,7 +633,7 @@
 </ul>
 </blockquote>
 <hr>
-<h4 id="根据位置索引，在原始字符串中查找对应字符（以Unicode编码表示）"><a href="#根据位置索引，在原始字符串中查找对应字符（以Unicode编码表示）" class="headerlink" title="根据位置索引，在原始字符串中查找对应字符（以Unicode编码表示）"></a>根据位置索引，在原始字符串中查找对应字符（以Unicode编码表示）</h4><h5 id="charAt-f-charAt-pos"><a href="#charAt-f-charAt-pos" class="headerlink" title="charAt: f charAt(pos)"></a><strong><em><code>charAt: f charAt(pos)</code></em></strong></h5><blockquote>
+<h4 id="根据位置索引，返回对应字符-以Unicode编码表示的方法"><a href="#根据位置索引，返回对应字符-以Unicode编码表示的方法" class="headerlink" title="根据位置索引，返回对应字符 | 以Unicode编码表示的方法"></a>根据位置索引，返回对应字符 | 以Unicode编码表示的方法</h4><h5 id="charAt-f-charAt-pos"><a href="#charAt-f-charAt-pos" class="headerlink" title="charAt: f charAt(pos)"></a><strong><em><code>charAt: f charAt(pos)</code></em></strong></h5><blockquote>
 <p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>： 根据参数索引，获取指定位置的字符<br><strong>参数</strong>： 0到多个任意类型的值</p>
 <ul>
 <li>含义: 指定的位置的索引</li>
@@ -657,44 +693,63 @@
 <p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.codePointAt()); =&gt; <span class="string">"104"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.codePointAt(<span class="string">"0"</span>)); =&gt; <span class="string">"104"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.codePointAt(<span class="literal">false</span>)); =&gt; <span class="string">"104"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.codePointAt([<span class="number">0</span>])); =&gt; <span class="string">"104"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.codePointAt(<span class="number">5</span>)); =&gt; <span class="string">"undefined"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.codePointAt(<span class="number">-1</span>)); =&gt; <span class="string">"undefined"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.coePointAt(<span class="number">1.6</span>)); =&gt; <span class="string">"101"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.codePointAt(&#123;<span class="attr">age</span>: <span class="number">1</span>&#125;)); =&gt; <span class="string">"104"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.codePointAt(<span class="regexp">/^\d$/</span>)); =&gt; <span class="string">"104"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.codePointAt(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)); =&gt; <span class="string">"104"</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <hr>
-<h5 id="concat-f-concat-string2-string3-stringN"><a href="#concat-f-concat-string2-string3-stringN" class="headerlink" title="concat: f concat(string2, string3[, ..., stringN])"></a><strong><em><code>concat: f concat(string2, string3[, ..., stringN])</code></em></strong></h5><blockquote>
-<p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>： 将原始字符串和参数字符串拼接成为一个新的字符串<br><strong>参数</strong>： 0到多个任意类型的值</p>
-<ul>
-<li>含义: 指定的位置的索引</li>
-<li>备注：<ol>
-<li>该方法会自动将参数装换为String类型，利用==toString()==方法，因此它接收任意类型的参数<ol start="2">
-<li>如果没有传递参数，则返回的新字符串为原始字符串（可以用于复制字符串）</li>
-</ol>
-</li>
-</ol>
-</li>
-</ul>
-<p><strong>备注</strong>：原始字符串不会被改变, 将拼接好的新字符串返回<br><strong>返回值</strong>：</p>
-<ul>
-<li>返回新拼接好的字符串</li>
-</ul>
-<p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.concat()); =&gt; <span class="string">"hello"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.concat(<span class="string">" world"</span>)); =&gt; <span class="string">"hello world"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.concat(<span class="number">2</span>)); =&gt; <span class="string">"hello2"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.concat([<span class="number">1</span>])); =&gt; <span class="string">"hello1"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.concat(&#123;<span class="attr">age</span>: <span class="number">20</span>&#125;)); =&gt; <span class="string">"hello[object Object]"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.concat(<span class="regexp">/^\d$/</span>)); =&gt; <span class="string">"hello/^\d$/"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.concat(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)); =&gt; <span class="string">"hellofunction()&#123;&#125;"</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<hr>
-<h4 id="判断子字符串时候包含在原始字符串中（返回子字符串中第一个字符串在原始字符串中的索引）"><a href="#判断子字符串时候包含在原始字符串中（返回子字符串中第一个字符串在原始字符串中的索引）" class="headerlink" title="判断子字符串时候包含在原始字符串中（返回子字符串中第一个字符串在原始字符串中的索引）"></a>判断子字符串时候包含在原始字符串中（返回子字符串中第一个字符串在原始字符串中的索引）</h4><h5 id="endsWith-f-endsWith-searchString-endPosition"><a href="#endsWith-f-endsWith-searchString-endPosition" class="headerlink" title="endsWith: f endsWith(searchString, ?endPosition)"></a><strong><em><code>endsWith: f endsWith(searchString, ?endPosition)</code></em></strong></h5><blockquote>
+<h4 id="判断是否以某一个字符串开头（结尾）的方法"><a href="#判断是否以某一个字符串开头（结尾）的方法" class="headerlink" title="判断是否以某一个字符串开头（结尾）的方法"></a>判断是否以某一个字符串开头（结尾）的方法</h4><h5 id="startsWith-f-startsWith-searchString-position"><a href="#startsWith-f-startsWith-searchString-position" class="headerlink" title="startsWith: f startsWith(searchString [, position])"></a><strong><em><code>startsWith: f startsWith(searchString [, position])</code></em></strong></h5><blockquote>
 <p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>：</p>
 <ul>
-<li>用来判断当前字符串是否是以另外一个给定的子字符串“结尾”的，根据判断结果返回 true 或 false。</li>
-<li>加上第二个参数之后，表示判断在字符串中的最后一个字符（第一个参数）是否出现在指定位置上（第二个参数）</li>
+<li>用来判断当前字符串是否是以另外一个给定的子字符串==开头==的，根据判断结果返回 true 或 false。</li>
+<li>加上第二个参数之后，表示判断在字符串中的首字符（第一个参数）是否出现在原始字符串的指定位置上（第二个参数）</li>
 </ul>
 <p><strong>参数</strong>：</p>
 <ul>
-<li>参数一：需要判断的子字符串（可以是一个字符，也可以是一个空字符）</li>
-<li>参数二：可以不填，需要判断的字符串中（第一个参数）的最后一个字符在原始字符串中的位置（以1开头，而不是以0开头）</li>
+<li><code>searchString</code> ：需要判断的子字符串（可以是一个字符，也可以是一个空字符）</li>
+<li><code>position</code>：可以不填，需要判断的字符串中（第一个参数）的==首个字符==否出现在原始字符串的指定位置上（第二个参数）（以0开头）</li>
 </ul>
 <p><strong>备注</strong>：</p>
 <ol>
 <li>如果第一个参数为空字符则默认返回结果为true，不管第二个参数存不存在</li>
 <li>第一个参数可以是其它数据类型，该方法会自动将其转换为String类型（利用toString方法）。</li>
-<li>第二个参数不填时，该方法默认它的值为原始字符串的长度</li>
-<li>原始字符串是以第一个参数结尾，如果第二个参数超出原始字符串的长度，返回值默认是true</li>
+<li>第二个参数不填时，该方法默认它的值为0</li>
+<li>如果第二个参数小于0（为负数）， 该方法会重新设置它的值为0</li>
 <li>第二个参数可以是其它数据类型，该方法会自动会将其转换为Number类型（利用Number方法）</li>
-<li>第二个参数小于原始字符串的最小长度（负数），返回值默认是false</li>
+<li>大小写敏感</li>
+</ol>
+<p><strong>返回值</strong>：</p>
+<ul>
+<li>true：<ul>
+<li>如果传入的子字符串在搜索字符串的首部;</li>
+<li>如果第一个参数字符串的首字符个字符在指定位置上（第二个参数）</li>
+</ul>
+</li>
+<li>false:<ul>
+<li>如果传入的子字符串不在搜索字符串的首部;</li>
+<li>如果第一个参数字符串的首字符不在指定位置上（第二个参数）</li>
+</ul>
+</li>
+</ul>
+<p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.startsWith(<span class="string">""</span>)); =&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.startsWith(<span class="string">"h"</span>)); =&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.startsWith(<span class="string">"llo"</span>)); =&gt; <span class="literal">false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.startsWith(<span class="string">"h"</span>, <span class="number">0</span>)); =&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.startsWith(<span class="string">"e"</span>, <span class="number">2</span>)); =&gt; <span class="literal">false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.startsWith(<span class="string">"l"</span>, <span class="number">8</span>)); =&gt; <span class="literal">false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.startsWith(<span class="string">"l"</span>, <span class="number">2</span>)); =&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.startsWith(<span class="string">"h"</span>, <span class="number">-9</span>)); =&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello1"</span>.startsWith(<span class="number">1</span>, <span class="number">5</span>)); =&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello1"</span>.startsWith(<span class="number">1</span>, <span class="string">"5"</span>)); =&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello"</span>.startsWith(<span class="string">"h"</span>, <span class="number">0</span>)); =&gt; <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>startsWith方法的实现原理<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*! http://mths.be/startswith v0.2.0 by @mathias */</span></span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">String</span>.prototype.startsWith) &#123;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">    'use strict'</span>; <span class="comment">// needed to support `apply`/`call` with `undefined`/`null`</span></span><br><span class="line">    <span class="keyword">var</span> defineProperty = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// IE 8 only supports `Object.defineProperty` on DOM elements</span></span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> object = &#123;&#125;;</span><br><span class="line">        <span class="keyword">var</span> $defineProperty = <span class="built_in">Object</span>.defineProperty;</span><br><span class="line">        <span class="keyword">var</span> result = $defineProperty(object, object, object) &amp;&amp; $defineProperty;</span><br><span class="line">      &#125; <span class="keyword">catch</span>(error) &#123;&#125;</span><br><span class="line">      <span class="keyword">return</span> result;</span><br><span class="line">    &#125;());</span><br><span class="line">    <span class="keyword">var</span> toString = &#123;&#125;.toString;</span><br><span class="line">    <span class="keyword">var</span> startsWith = <span class="function"><span class="keyword">function</span>(<span class="params">search</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">this</span> == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="built_in">TypeError</span>();</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">var</span> string = <span class="built_in">String</span>(<span class="keyword">this</span>);</span><br><span class="line">      <span class="keyword">if</span> (search &amp;&amp; toString.call(search) == <span class="string">'[object RegExp]'</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="built_in">TypeError</span>();</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">var</span> stringLength = string.length;</span><br><span class="line">      <span class="keyword">var</span> searchString = <span class="built_in">String</span>(search);</span><br><span class="line">      <span class="keyword">var</span> searchLength = searchString.length;</span><br><span class="line">      <span class="keyword">var</span> position = <span class="built_in">arguments</span>.length &gt; <span class="number">1</span> ? <span class="built_in">arguments</span>[<span class="number">1</span>] : <span class="literal">undefined</span>;</span><br><span class="line">      <span class="comment">// `ToInteger`</span></span><br><span class="line">      <span class="keyword">var</span> pos = position ? <span class="built_in">Number</span>(position) : <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">if</span> (pos != pos) &#123; <span class="comment">// better `isNaN`</span></span><br><span class="line">        pos = <span class="number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">var</span> start = <span class="built_in">Math</span>.min(<span class="built_in">Math</span>.max(pos, <span class="number">0</span>), stringLength);</span><br><span class="line">      <span class="comment">// Avoid the `indexOf` call if no match is possible</span></span><br><span class="line">      <span class="keyword">if</span> (searchLength + start &gt; stringLength) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">var</span> index = <span class="number">-1</span>;</span><br><span class="line">      <span class="keyword">while</span> (++index &lt; searchLength) &#123;</span><br><span class="line">        <span class="keyword">if</span> (string.charCodeAt(start + index) != searchString.charCodeAt(index)) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">if</span> (defineProperty) &#123;</span><br><span class="line">      defineProperty(<span class="built_in">String</span>.prototype, <span class="string">'startsWith'</span>, &#123;</span><br><span class="line">        <span class="string">'value'</span>: startsWith,</span><br><span class="line">        <span class="string">'configurable'</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="string">'writable'</span>: <span class="literal">true</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">String</span>.prototype.startsWith = startsWith;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<hr>
+<h5 id="endsWith-f-endsWith-searchString-endPosition"><a href="#endsWith-f-endsWith-searchString-endPosition" class="headerlink" title="endsWith: f endsWith(searchString, ?endPosition)"></a><strong><em><code>endsWith: f endsWith(searchString, ?endPosition)</code></em></strong></h5><blockquote>
+<p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>：</p>
+<ul>
+<li>用来判断当前字符串是否是以另外一个给定的子字符串==结尾==的，根据判断结果返回 true 或 false。</li>
+<li>加上第二个参数之后，表示判断在字符串中的==最后一个字符==（第一个参数）是否出现在指定位置上（第二个参数）</li>
+</ul>
+<p><strong>参数</strong>：</p>
+<ul>
+<li>参数一：需要判断的子字符串（可以是一个字符，也可以是一个空字符）</li>
+<li>参数二：可以不填，需要判断的字符串中（第一个参数）的最后一个字符是否出现在原始字符串的指定位置上（第二个参数）（以1开头，而不是以0开头）</li>
+</ul>
+<p><strong>备注</strong>：</p>
+<ol>
+<li>如果第一个参数为空字符则默认返回结果为true，不管第二个参数存不存在</li>
+<li>第一个参数可以是其它数据类型，该方法会自动将其转换为String类型（利用toString方法）。</li>
+<li>第二个参数不填时，该方法默认它的值为==原始字符串的长度==</li>
+<li>如果第二个参数超出原始字符串的长度，则重新设第二个参数为原始字符串的长度</li>
+<li>第二个参数可以是其它数据类型，该方法会自动会将其转换为Number类型（利用Number方法）</li>
 <li>大小写敏感</li>
 </ol>
 <p><strong>返回值</strong>：</p>
@@ -712,151 +767,68 @@
 </ul>
 <p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.endsWith(<span class="string">"h"</span>)); =&gt; <span class="literal">false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.endsWith(<span class="string">"llo"</span>)); =&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.endsWith(<span class="string">"to"</span>)); =&gt; <span class="literal">false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.endsWith(<span class="string">"h"</span>, <span class="number">1</span>)); =&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.endsWith(<span class="string">"e"</span>, <span class="number">1</span>)); =&gt; <span class="literal">false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.endsWith(<span class="string">"lo"</span>, <span class="number">8</span>)); =&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.endsWith(<span class="string">"h"</span>, <span class="number">-1</span>)); =&gt; <span class="literal">false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello1"</span>.endsWith(<span class="number">1</span>, <span class="number">6</span>)); =&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello1"</span>.endsWith(<span class="number">1</span>, <span class="string">"6"</span>)); =&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello"</span>.endsWith(<span class="string">"h"</span>, <span class="number">1</span>)); =&gt; <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<hr>
-<h5 id="includes-f-includes-searchString-position"><a href="#includes-f-includes-searchString-position" class="headerlink" title="includes: f includes(searchString, ?position)"></a><strong><em><code>includes: f includes(searchString, ?position)</code></em></strong></h5><blockquote>
-<p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>： 方法用于判断一个字符串是否包含在原始字符串中，根据情况返回 true 或 false。</p>
-<ul>
-<li>如果第二个参数存在，则用于判断字符串（第一个参数）是否包含在子字符串中（从原始字符串的某个索引位置【第二个参数：从0开始】开始截取子字符串）</li>
-</ul>
-<p><strong>参数</strong>：</p>
-<ul>
-<li>参数一：需要判断的子字符串（可以是一个字符，也可以是一个空字符）</li>
-<li>参数二：可以不填，表示在原始字符串中开始查找的位置。可以是任意整数。默认值为 0</li>
-</ul>
-<p><strong>备注</strong>：</p>
-<ol>
-<li>如果第一个参数为空字符则默认返回结果为true，不管第二个参数存不存在</li>
-<li>第一个参数可以是其它数据类型，该方法会自动将其转换为String类型（利用toString方法）。</li>
-<li>第二个参数不填时，该方法默认它的值为0</li>
-<li>原始字符串包含第一个参数，如果第二个参数小于原始字符串的长度的最小值（负数），返回值默认是true</li>
-<li>第二个参数可以是其它数据类型，该方法会自动会将其转换为Number类型（利用Number方法）</li>
-<li>第二个参数大于原始字符串的长度，返回值默认是false</li>
-<li>大小写敏感</li>
-</ol>
-<p><strong>返回值</strong>：</p>
-<ul>
-<li>true：<ul>
-<li>如果传入的子字符串包含在原始字符串中;</li>
-<li>如果第一个参数字符串包含在原始子字符串（从第二个参数值开始截取原始字符串）中</li>
-</ul>
-</li>
-<li>false:<ul>
-<li>如果传入的子字符串包含不在原始字符串中;</li>
-<li>如果第一个参数字符串包含不在原始子字符串（从第二个参数值开始截取原始字符串）中</li>
-</ul>
-</li>
-</ul>
-<p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.includes(<span class="string">"h"</span>)); =&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.includes(<span class="string">"to"</span>)); =&gt; <span class="literal">false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.includes(<span class="string">"he"</span>, <span class="number">1</span>)); =&gt; <span class="literal">false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.includes(<span class="string">"ello"</span>, <span class="number">1</span>)); =&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.includes(<span class="string">"lo"</span>, <span class="number">8</span>)); =&gt; <span class="literal">false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.includes(<span class="string">"he"</span>, <span class="number">-1</span>)); =&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello1"</span>.includes(<span class="number">1</span>, <span class="number">5</span>)); =&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello1"</span>.includes(<span class="number">1</span>, <span class="string">"5"</span>)); =&gt; <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello"</span>.includes(<span class="string">"h"</span>, <span class="number">0</span>)); =&gt; <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>endsWith方法的实现原理<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">if</span> (!<span class="built_in">String</span>.prototype.endsWith) &#123;</span><br><span class="line">	<span class="built_in">String</span>.prototype.endsWith = <span class="function"><span class="keyword">function</span>(<span class="params">search, this_len</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (this_len === <span class="literal">undefined</span> || this_len &gt; <span class="keyword">this</span>.length) &#123;</span><br><span class="line">			this_len = <span class="keyword">this</span>.length;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.substring(this_len - search.length, this_len) === search;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <hr>
-<h5 id="indexOf-f-indexOf-searchString-position"><a href="#indexOf-f-indexOf-searchString-position" class="headerlink" title="indexOf:  f indexOf(searchString, ?position)"></a><strong><em><code>indexOf:  f indexOf(searchString, ?position)</code></em></strong></h5><blockquote>
-<p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>： </p>
+<h4 id="按照指定字符来填充原始字符串的方法"><a href="#按照指定字符来填充原始字符串的方法" class="headerlink" title="按照指定字符来填充原始字符串的方法"></a>按照指定字符来填充原始字符串的方法</h4><h5 id="padEnd-f-padEnd-maxLength-fillString"><a href="#padEnd-f-padEnd-maxLength-fillString" class="headerlink" title="padEnd: f padEnd(maxLength, ?fillString)"></a><strong><em><code>padEnd: f padEnd(maxLength, ?fillString)</code></em></strong></h5><blockquote>
+<p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>： 用一个字符串填充当前字符串（如果需要的话则重复填充）,从当前字符串的==末尾（右侧）==开始填充。<br><strong>参数</strong>：</p>
 <ul>
-<li>用于判断子字符串（第一个参数）是否在原始字符串中出现过；<ul>
-<li>如果不存在，则返回-1;</li>
-<li>如果存在，则返回子字符串中的第一个字符在原始字符串中==第一次==出现的位置索引（从0开始）。</li>
+<li><code>maxLength</code>: 当前字符串需要填充到的目标长度。<ul>
+<li>如果这个数值小于当前字符串的长度，则返回当前字符串本身。</li>
 </ul>
 </li>
-<li>如果第二个参数存在，则用于判断字符串（第一个参数）是否包含在子字符串中（从原始字符串的某个索引位置【第二个参数：从0开始】开始截取子字符串）<ul>
-<li>如果不包含，则返回-1；</li>
-<li>如果包含，则返回子字符串（的第一个字符）在原始字符串中第一次出现的位置索引（从0开始）【与子字符串本身相关，不只是单个字符的索引位置，而是整个子字符串的第一位索引值】。</li>
-</ul>
-</li>
-</ul>
-<p><strong>参数</strong>：</p>
-<ul>
-<li>参数一：需要判断的子字符串（可以是一个字符，也可以是一个空字符）</li>
-<li>参数二：可以不填，表示在原始字符串中开始查找的位置。可以是任意整数。默认值为 0</li>
+<li><code>fillString</code>: 可选, 用来填充的字符串。当参数不是Number类型的数据时，该方法会用<code>toString()</code>方法将参数转换为字符串类型</li>
 </ul>
 <p><strong>备注</strong>：</p>
-<ol>
-<li>第一个参数可以是其它数据类型，该方法会自动将其转换为String类型（利用toString方法）。</li>
-<li>第一个参数为空字符串时：<ul>
-<li>没有设置第二个参数：默认返回值为0</li>
-<li>第二个参数 &gt; 0 &amp;&amp; 第二个参数 &lt; 原始字符串的长度：默认返回值为第二个参数值；</li>
-<li>第二个参数 &gt;= 原始字符串的长度：默认返回值为原始字符串的长度</li>
+<ul>
+<li>如果fillString字符串太长，使填充后的字符串长度超过了目标长度，则只保留最左侧的部分，其他部分会被截断。此参数的缺省值为 “ “（U+0020）空格。</li>
 </ul>
-</li>
-<li>第二个参数可以是其它数据类型，该方法会自动会将其转换为Number类型（利用Number方法）</li>
-<li>第二个参数不填时或第二个参数 &lt;= 0：该方法默认它的值为0</li>
-<li>第一个参数不为空字符串时, 第二个参数 &gt;= 原始字符串的长度：默认返回值为-1</li>
-<li>大小写敏感</li>
-</ol>
 <p><strong>返回值</strong>：</p>
 <ul>
-<li>子字符串（第一个参数）的第一个字符在原始字符串中第一次出现的位置索引（从0开始）【与子字符串本身相关，不只是单个字符的索引位置，而是整个子字符串的第一位索引值】。</li>
-<li>如果没有找到， 则返回-1。</li>
+<li>在原字符串末尾填充指定的填充字符串直到目标长度所形成的新字符串。</li>
 </ul>
-<p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.indexOf(<span class="string">""</span>)); =&gt; <span class="number">0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.indexOf(<span class="string">""</span>, <span class="number">-2</span>)); =&gt; <span class="number">0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.indexOf(<span class="string">""</span>, <span class="number">4</span>)); =&gt; <span class="number">4</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.indexOf(<span class="string">""</span>, <span class="number">8</span>)); =&gt; <span class="number">5</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.indexOf(<span class="string">"h"</span>)); =&gt; <span class="number">0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.indexOf(<span class="string">"l"</span>)); =&gt; <span class="number">2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.indexOf(<span class="string">"to"</span>)); =&gt; <span class="number">-1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.indexOf(<span class="string">"he"</span>, <span class="number">1</span>)); =&gt; <span class="number">-1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.indexOf(<span class="string">"ello"</span>, <span class="number">1</span>)); =&gt; <span class="number">1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.indexOf(<span class="string">"lo"</span>, <span class="number">8</span>)); =&gt; <span class="number">-1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.indexOf(<span class="string">"he"</span>, <span class="number">-1</span>)); =&gt; <span class="number">0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello1"</span>.indexOf(<span class="number">1</span>, <span class="number">5</span>)); =&gt; <span class="number">5</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello1"</span>.indexOf(<span class="number">1</span>, <span class="string">"5"</span>)); =&gt; <span class="number">5</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello"</span>.indexOf(<span class="string">"h"</span>, <span class="number">0</span>)); =&gt; <span class="number">-1</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.padEnd(<span class="number">-1</span>)); =&gt; <span class="string">"hello"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.padEnd(<span class="number">8</span>)); =&gt; <span class="string">"hello   "</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.padEnd(<span class="number">8</span>, <span class="string">"a"</span>)); =&gt; <span class="string">"helloaaa"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.padEnd(<span class="number">8</span>, <span class="number">2</span>)); =&gt; <span class="string">"hello222"</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <hr>
-<h5 id="lastIndexOf-f-lastIndexOf-searchString-position"><a href="#lastIndexOf-f-lastIndexOf-searchString-position" class="headerlink" title="lastIndexOf: f lastIndexOf(searchString, ?position)"></a><strong><em><code>lastIndexOf: f lastIndexOf(searchString, ?position)</code></em></strong></h5><blockquote>
-<p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>： </p>
+<p> <strong><em><code>padStart: f padStart(maxLength, ?fillString)</code></em></strong></p>
+<blockquote>
+<p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>： 用一个字符串填充当前字符串（如果需要的话则重复填充）,从当前字符串的==首部（左侧）==开始填充。<br><strong>参数</strong>：</p>
 <ul>
-<li>用于判断子字符串（第一个参数）是否在原始字符串中出现过；<ul>
-<li>如果不存在，则返回-;</li>
-<li>如果存在，则返回子字符串中的第一个字符在原始字符串中==最后一次==出现的位置索引（从0开始）。</li>
+<li><code>maxLength</code>: 当前字符串需要填充到的目标长度。<ul>
+<li>如果这个数值小于当前字符串的长度，则返回当前字符串本身。</li>
 </ul>
 </li>
-<li>如果第二个参数存在，则用于判断字符串（第一个参数）是否包含在子字符串中（从原始字符串的某个索引位置【第二个参数：从0开始】向前开始截取子字符串）<ul>
-<li>如果不包含，则返回-1；</li>
-<li>如果包含，则返回子字符串（的第一个字符）在原始字符串中最后一次出现的位置索引（从0开始）【与子字符串本身相关，不只是单个字符的索引位置，而是整个子字符串的第一位索引值】。</li>
-</ul>
-</li>
-</ul>
-<p><strong>参数</strong>：</p>
-<ul>
-<li>参数一：需要判断的子字符串（可以是一个字符，也可以是一个空字符）</li>
-<li>参数二：可以不填，表示在原始字符串中开始查找的位置（从指定位置向前查找）。可以是任意整数。默认值为原始字符串的长度</li>
-<li>注意：<ul>
-<li>参数二 &lt; 0: 该方法会默认它的值为0；</li>
-<li>参数二不填 或 第参数二 &gt;= 原始字符串的长度：该方法默认它的值为原始字符串的长度</li>
-</ul>
-</li>
+<li><code>fillString</code>: 可选, 用来填充的字符串。当参数不是Number类型的数据时，该方法会用<code>toString()</code>方法将参数转换为字符串类型</li>
 </ul>
 <p><strong>备注</strong>：</p>
-<ol>
-<li>第一个参数可以是其它数据类型，该方法会自动将其转换为String类型（利用toString方法）。</li>
-<li>第一个参数为空字符串时：<ul>
-<li>没有设置第二个参数：默认返回值为原始字符串的长度;</li>
-<li>第二个参数 &lt; 0: 默认返回值为0;</li>
-<li>第二个参数 &gt; 0 &amp;&amp; 第二个参数 &lt; 原始字符串的长度：默认返回值为第二个参数值；</li>
-<li>第二个参数 &gt;= 原始字符串的长度：默认返回值为原始字符串的长度</li>
+<ul>
+<li>如果fillString字符串太长，使填充后的字符串长度超过了目标长度，则只保留最右侧的部分（从后往前开始计算），其他部分会被截断。此参数的缺省值为 “ “（U+0020）空格。</li>
 </ul>
-</li>
-<li>第二个参数可以是其它数据类型，该方法会自动会将其转换为Number类型（利用Number方法）</li>
-<li>大小写敏感</li>
-<li>var i = str.lastIndexOf(p1,p2)可以等效为var i = str.indexOf(p1); i = i &gt; p2? -1 : i;</li>
-</ol>
 <p><strong>返回值</strong>：</p>
 <ul>
-<li>子字符串（第一个参数）的第一个字符在原始字符串中最后一次出现的位置索引（从0开始）【与子字符串本身相关，不只是单个字符的索引位置，而是整个子字符串的第一位索引值】。</li>
-<li>如果没有找到， 则返回-1。</li>
+<li>在原字符串末尾填充指定的填充字符串直到目标长度所形成的新字符串。</li>
 </ul>
-<p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.lastIndexOf(<span class="string">""</span>)); =&gt; <span class="number">5</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.lastIndexOf(<span class="string">""</span>, <span class="number">-2</span>)); =&gt; <span class="number">0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.lastIndexOf(<span class="string">""</span>, <span class="number">4</span>)); =&gt; <span class="number">4</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.lastIndexOf(<span class="string">""</span>, <span class="number">8</span>)); =&gt; <span class="number">5</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.lastIndexOf(<span class="string">"h"</span>)); =&gt; <span class="number">0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.lastIndexOf(<span class="string">"l"</span>)); =&gt; <span class="number">3</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.lastIndexOf(<span class="string">"to"</span>)); =&gt; <span class="number">-1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.lastIndexOf(<span class="string">"he"</span>, <span class="number">-1</span>)); =&gt; <span class="number">0</span>, (<span class="number">-1</span> =&gt; <span class="number">0</span>)，对应备注第五条</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello1"</span>.lastIndexOf(<span class="number">1</span>, <span class="number">5</span>)); =&gt; <span class="number">5</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello1"</span>.lastIndexOf(<span class="number">1</span>, <span class="string">"5"</span>)); =&gt; <span class="number">5</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello"</span>.lastIndexOf(<span class="string">"h"</span>, <span class="number">0</span>)); =&gt; <span class="number">-1</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.padStart(<span class="number">-1</span>)); =&gt; <span class="string">"hello"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.padStart(<span class="number">8</span>)); =&gt; <span class="string">"   hello"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.padStart(<span class="number">8</span>, <span class="string">"a"</span>)); =&gt; <span class="string">"aaahello"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.padStart(<span class="number">8</span>, <span class="number">2</span>)); =&gt; <span class="string">"222hello"</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <hr>
-<h4 id="其它方法"><a href="#其它方法" class="headerlink" title="其它方法"></a>其它方法</h4><h5 id="localeCompare-f-localeCompare-compareString-locales-options"><a href="#localeCompare-f-localeCompare-compareString-locales-options" class="headerlink" title="localeCompare: f localeCompare(compareString, ?locales, ?options)"></a><strong><em><code>localeCompare: f localeCompare(compareString, ?locales, ?options)</code></em></strong></h5><blockquote>
-<p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>：用本地特定的顺序来比较两个字符串。<br><strong>参数</strong>：</p>
+<h4 id="其它常用的方法"><a href="#其它常用的方法" class="headerlink" title="其它常用的方法"></a>其它常用的方法</h4><h5 id="concat-f-concat-string2-string3-stringN"><a href="#concat-f-concat-string2-string3-stringN" class="headerlink" title="concat: f concat(string2, string3[, ..., stringN])"></a><strong><em><code>concat: f concat(string2, string3[, ..., stringN])</code></em></strong></h5><blockquote>
+<p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>： 将原始字符串和参数字符串拼接成为一个新的字符串<br><strong>参数</strong>： 0到多个任意类型的值</p>
 <ul>
-<li><code>compareString</code>: 用来比较的字符串</li>
-<li><code>locales</code>: 可选。 用来表示一种或多种语言或区域的一个符合 BCP 47 标准的字符串或一个字符串数组。 locales参数的一般形式与解释， 详情请参考 Intl page.</li>
-<li><code>options</code>: 可选。 支持下列的一些或全部属性的一个对象:</li>
-</ul>
-<p><strong>备注</strong>：</p>
-<ol>
-<li>返回一个数字表示是否原始字符串在排序中位于比较字符串的前面，后面，或者二者相同。</li>
-<li>当原始字符串在比较字符串前面时,返回 -1</li>
-<li>当原始字符串在比较字符串后面时,返回 1</li>
-<li>当原始字符串和比较字符串相同时,或根据本地排序规则没有区别，返回 0</li>
-<li>切勿依赖于 -1 或 1 这样特定的返回值。不同浏览器之间（以及不同浏览器版本之间） 返回的正负数的值各有不同，因为W3C规范中只要求返回值是正值和负值，而没有规定具体的值。一些浏览器可能返回-2或2或其他一些负的、正的值。</li>
+<li>含义: 指定的位置的索引</li>
+<li>备注：<ol>
+<li>该方法会自动将参数装换为String类型，利用==toString()==方法，因此它接收任意类型的参数<ol start="2">
+<li>如果没有传递参数，则返回的新字符串为原始字符串（可以用于复制字符串）</li>
 </ol>
-<p><strong>返回值</strong>：返回一个数字来指示一个参考字符串是否在排序顺序前面或之后或与给定字符串相同。</p>
-<ul>
-<li>如果引用字符存在于比较字符之前则为负数;</li>
-<li>如果引用字符存在于比较字符之后则为正数; 相等的时候返回 0 .</li>
+</li>
+</ol>
+</li>
 </ul>
-<p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.localCompare(<span class="string">"a"</span>)); =&gt; <span class="number">1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.localeCompare(<span class="string">"g"</span>)); =&gt; <span class="number">-1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.localeCompare(<span class="string">"hello"</span>)); =&gt; <span class="number">0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"北京"</span>.localeCompare(<span class="string">"北京"</span>)); =&gt; <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>备注</strong>：原始字符串不会被改变, 将拼接好的新字符串返回<br><strong>返回值</strong>：</p>
+<ul>
+<li>返回新拼接好的字符串</li>
+</ul>
+<p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.concat()); =&gt; <span class="string">"hello"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.concat(<span class="string">" world"</span>)); =&gt; <span class="string">"hello world"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.concat(<span class="number">2</span>)); =&gt; <span class="string">"hello2"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.concat([<span class="number">1</span>])); =&gt; <span class="string">"hello1"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.concat(&#123;<span class="attr">age</span>: <span class="number">20</span>&#125;)); =&gt; <span class="string">"hello[object Object]"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.concat(<span class="regexp">/^\d$/</span>)); =&gt; <span class="string">"hello/^\d$/"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.concat(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)); =&gt; <span class="string">"hellofunction()&#123;&#125;"</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <hr>
 <h5 id="match-f-match-regexp"><a href="#match-f-match-regexp" class="headerlink" title="match: ƒ match(regexp)"></a><strong><em><code>match: ƒ match(regexp)</code></em></strong></h5><blockquote>
@@ -897,94 +869,6 @@
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'</span>.match(<span class="regexp">/[A-E]/gi</span>));</span><br><span class="line">  =&gt; 分组捕获  [<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>, <span class="string">"D"</span>, <span class="string">"E"</span>, <span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"d"</span>, <span class="string">"e"</span>]</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'hello'</span>.match());</span><br><span class="line">  =&gt; 分组捕获</span><br><span class="line">         <span class="number">0</span>: <span class="string">""</span></span><br><span class="line">         groups: <span class="literal">undefined</span></span><br><span class="line">         index: <span class="number">0</span></span><br><span class="line">         input: <span class="string">"hello"</span></span><br><span class="line">         length: <span class="number">1</span></span><br><span class="line">         __proto__: <span class="built_in">Array</span>(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello world 12345"</span>, str2 = <span class="string">"NaN means not a number. Infinity contains -Infinity and +Infinity in JavaScript"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.match(<span class="string">"hello"</span>)); </span><br><span class="line"><span class="comment">//=&gt; ["hello", index: 0, input: "hello world 12345", groups: undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(str2.match(<span class="literal">NaN</span>)); </span><br><span class="line"><span class="comment">//=&gt; ["NaN", index: 0, input: "NaN means not a number. Infinity contains -Infinity and +Infinity in JavaScript", groups: undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(str2.match(<span class="literal">Infinity</span>)); </span><br><span class="line"><span class="comment">//=&gt; ["Infinity", index: 24, input: "NaN means not a number. Infinity contains -Infinity and +Infinity in JavaScript", groups: undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(str2.match(+<span class="literal">Infinity</span>)); </span><br><span class="line"><span class="comment">//=&gt; ["Infinity", index: 24, input: "NaN means not a number. Infinity contains -Infinity and +Infinity in JavaScript", groups: undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(str2.match(-<span class="literal">Infinity</span>)); </span><br><span class="line"><span class="comment">//=&gt; ["-Infinity", index: 42, input: "NaN means not a number. Infinity contains -Infinity and +Infinity in JavaScript", groups: undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(str.match(<span class="number">12345</span>)); </span><br><span class="line"><span class="comment">//=&gt; ["12345", index: 12, input: "hello world 12345", groups: undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(str.match(+<span class="number">12345</span>)); </span><br><span class="line"><span class="comment">//=&gt; ["12345", index: 12, input: "hello world 12345", groups: undefined]</span></span><br><span class="line"><span class="built_in">console</span>.log(str.match(<span class="number">-12345</span>));</span><br><span class="line"><span class="comment">//=&gt; null</span></span><br><span class="line"><span class="built_in">console</span>.log(str.match(<span class="literal">null</span>)); </span><br><span class="line"><span class="comment">//=&gt; null</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h5 id="normalize-f-normalize-form"><a href="#normalize-f-normalize-form" class="headerlink" title="normalize: f normalize([form])"></a><strong><em><code>normalize: f normalize([form])</code></em></strong></h5><blockquote>
-<p>属性： 是一个方法<br>含义： 用来将字符的不同表示形式统一为相同的形式，也就是按照指定的一种 Unicode 正规形式将当前字符串正规化.</p>
-<ul>
-<li>对于那些拥有语调和重音符号的字符，Unicode提供了两种表示方法。一种是直接提供带重音符号的字符。比如”Ǒ”（字符编码\u01D1），</li>
-<li>另一种是原字符和重音符号合成一个字符，即”O”和”ˇ”，后者的字符编码表示为\u004F\u030C。</li>
-<li>这两种表示方法，在语义和视觉上都是等价的，但是JavaScript无法正确识别。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     <span class="string">"\u01D1"</span> === <span class="string">"\u004F\u030C"</span>; <span class="comment">// false</span></span><br><span class="line">        <span class="string">"\u01D1"</span>.length; <span class="comment">// 1</span></span><br><span class="line">        <span class="string">"\u004F\u030C"</span>.length; <span class="comment">// 2</span></span><br><span class="line">        <span class="string">"\u01D1"</span>.normalize() === <span class="string">"\u004F\u030C"</span>.normalize(); <span class="comment">// true</span></span><br><span class="line">参数：</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>form: 四种 Unicode 正规形式：”NFC”, “NFD”, “NFKC”, 以及 “NFKD” 其中的一个, 默认值为 “NFC”.<ol>
-<li>NFC - Normalization Form Canonical Composition.  规范化形式规范组合。<ul>
-<li>NFC，默认参数，表示“标准等价合成”，返回多个简单字符的合成。所谓的“标准等价”指的是视觉和语义上的等价。<br><code>&quot;\u004F\u030C&quot;.normalize().length === 1; // true，合成一个字符</code></li>
-</ul>
-</li>
-<li>NFD - Normalization Form Canonical Decomposition. 规范化形式规范分解。</li>
-</ol>
-<ul>
-<li>NFD，表示“标准等价分解”，即在标准等价的前提下，将合成字符分解成多个简单字符。<br><code>&quot;\u01D1&quot;.normalize(&#39;NFD&#39;).length === 2; // true，分解成两个字符</code></li>
-</ul>
-<ol start="3">
-<li>NFKC - Normalization Form Compatibility Composition. 规范化形式兼容性组合。</li>
-</ol>
-<ul>
-<li>NFKC，表示“兼容等价合成”，返回合成字符，所谓的“兼容等价”指的是语义上等价，但视觉上不等价。</li>
-</ul>
-<ol start="4">
-<li>NFKD - Normalization Form Compatibility Decomposition. 规范化形式兼容性分解。</li>
-</ol>
-<ul>
-<li>NFKD，表示“兼容等价分解”，返回分解字符，在“兼容等价”的前提下，将合成字符分解为多个简单字符。</li>
-</ul>
-</li>
-</ul>
-<p>备注：</p>
-<ol>
-<li>如果给 form 传入了非法的参数值, 则会抛出 RangeError 异常.</li>
-<li>String.prototype.normalize()方法目前只能识别2个字符的合成。</li>
-</ol>
-<p>返回值：</p>
-<ul>
-<li>正规化完成的字符串</li>
-</ul>
-<p>运用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"\u1E9B\u0323"</span>.normalize(<span class="string">"NFC"</span>)); =&gt; <span class="string">"\u1E9B\u0323"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"\u1E9B\u0323"</span>.normalize(<span class="string">"NFD"</span>)); =&gt; <span class="string">"\u017F\u0323\u0307"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"\u1E9B\u0323"</span>.normalize(<span class="string">"NFKC"</span>)); =&gt; <span class="string">"\u1E69"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"\u1E9B\u0323"</span>.normalize(<span class="string">"NFKD"</span>)); =&gt; <span class="string">"\u0073\u0323\u0307"</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<hr>
-<h4 id="按照指定字符来填充原始字符串"><a href="#按照指定字符来填充原始字符串" class="headerlink" title="按照指定字符来填充原始字符串"></a>按照指定字符来填充原始字符串</h4><h5 id="padEnd-f-padEnd-maxLength-fillString"><a href="#padEnd-f-padEnd-maxLength-fillString" class="headerlink" title="padEnd: f padEnd(maxLength, ?fillString)"></a><strong><em><code>padEnd: f padEnd(maxLength, ?fillString)</code></em></strong></h5><blockquote>
-<p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>： 用一个字符串填充当前字符串（如果需要的话则重复填充）,从当前字符串的==末尾（右侧）==开始填充。<br><strong>参数</strong>：</p>
-<ul>
-<li><code>maxLength</code>: 当前字符串需要填充到的目标长度。<ul>
-<li>如果这个数值小于当前字符串的长度，则返回当前字符串本身。</li>
-</ul>
-</li>
-<li><code>fillString</code>: 可选, 用来填充的字符串。当参数不是Number类型的数据时，该方法会用<code>toString()</code>方法将参数转换为字符串类型</li>
-</ul>
-<p><strong>备注</strong>：</p>
-<ul>
-<li>如果fillString字符串太长，使填充后的字符串长度超过了目标长度，则只保留最左侧的部分，其他部分会被截断。此参数的缺省值为 “ “（U+0020）空格。</li>
-</ul>
-<p><strong>返回值</strong>：</p>
-<ul>
-<li>在原字符串末尾填充指定的填充字符串直到目标长度所形成的新字符串。</li>
-</ul>
-<p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.padEnd(<span class="number">-1</span>)); =&gt; <span class="string">"hello"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.padEnd(<span class="number">8</span>)); =&gt; <span class="string">"hello   "</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.padEnd(<span class="number">8</span>, <span class="string">"a"</span>)); =&gt; <span class="string">"helloaaa"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.padEnd(<span class="number">8</span>, <span class="number">2</span>)); =&gt; <span class="string">"hello222"</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<hr>
-<p> <strong><em><code>padStart: f padStart(maxLength, ?fillString)</code></em></strong></p>
-<blockquote>
-<p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>： 用一个字符串填充当前字符串（如果需要的话则重复填充）,从当前字符串的==首部（左侧）==开始填充。<br><strong>参数</strong>：</p>
-<ul>
-<li><code>maxLength</code>: 当前字符串需要填充到的目标长度。<ul>
-<li>如果这个数值小于当前字符串的长度，则返回当前字符串本身。</li>
-</ul>
-</li>
-<li><code>fillString</code>: 可选, 用来填充的字符串。当参数不是Number类型的数据时，该方法会用<code>toString()</code>方法将参数转换为字符串类型</li>
-</ul>
-<p><strong>备注</strong>：</p>
-<ul>
-<li>如果fillString字符串太长，使填充后的字符串长度超过了目标长度，则只保留最右侧的部分（从后往前开始计算），其他部分会被截断。此参数的缺省值为 “ “（U+0020）空格。</li>
-</ul>
-<p><strong>返回值</strong>：</p>
-<ul>
-<li>在原字符串末尾填充指定的填充字符串直到目标长度所形成的新字符串。</li>
-</ul>
-<p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.padStart(<span class="number">-1</span>)); =&gt; <span class="string">"hello"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.padStart(<span class="number">8</span>)); =&gt; <span class="string">"   hello"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.padStart(<span class="number">8</span>, <span class="string">"a"</span>)); =&gt; <span class="string">"aaahello"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.padStart(<span class="number">8</span>, <span class="number">2</span>)); =&gt; <span class="string">"222hello"</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
 <hr>
 <h5 id="repeat-f-repeat-count"><a href="#repeat-f-repeat-count" class="headerlink" title="repeat: f repeat(count)"></a><strong><em><code>repeat: f repeat(count)</code></em></strong></h5><blockquote>
 <p>属性： 是一个方法<br>含义： 构造并返回一个新字符串，该字符串包含被连接在一起的指定数量的原始字符串的副本<br>参数：</p>
@@ -1084,6 +968,112 @@
 <p>这是因为 <code>&#39;$&amp;&#39;.toLowerCase()</code> 会先被解析成字符串字面量（这会导致相同的’$&amp;’)而不是当作一个模式。</p>
 </blockquote>
 <hr>
+<h5 id="split-f-split-separator-limit"><a href="#split-f-split-separator-limit" class="headerlink" title="split: f split([separator[, limit]])"></a><strong><em><code>split: f split([separator[, limit]])</code></em></strong></h5><blockquote>
+<p><strong>属性</strong>：这是一个方法<br><strong>含义</strong>：使用指定的分隔符字符串将一个String对象分割成字符串数组，以将字符串分隔为子字符串，以确定每个拆分的位置，不修改原始字符串<br><strong>参数</strong>：</p>
+<ul>
+<li>无参数：返回一个原始字符串填充的字符串数组</li>
+<li><code>separator</code>:  参数指定使用怎样的字符作为分隔符，可以是一个字符，也可以是一个字符串，也可以是一个正则表达式<ul>
+<li>如果是多个字符组成的字符串作为分隔符，则必须找到整个字符串来表示分割点</li>
+<li>如果原始字符串中没有出现分隔符，则返回的数组包含一个由整个字符组成的元素。</li>
+<li>如果分隔符为空字符串，则将原始字符串中的每一个字符组成的数组返回</li>
+</ul>
+</li>
+<li><code>limit</code>：一个整数，限定返回的分割片段数量。当提供此参数时，split 方法会在指定分隔符的每次出现时分割该字符串，但在限制条目已放入数组时停止。如果在达到指定限制之前达到字符串的末尾，它可能仍然包含少于限制的条目。新数组中不返回剩下的文本。</li>
+</ul>
+<p><strong>备注</strong>：</p>
+<ul>
+<li>找到分隔符后，将其从字符串中删除，并将子字符串的数组返回。</li>
+<li>如果没有找到或者省略了分隔符，则该数组包含一个由整个字符串组成的元素。</li>
+<li>当字符串为空时，split（）返回一个包含一个空字符串的数组，而不是一个空数组，如果字符串和分隔符都是空字符串，则返回一个空数组。</li>
+<li>如果分隔符出现在字符串的开始或结尾，或两者都分开，分别以空字符串开头，结尾或两者开始和结束。因此，如果字符串仅由一个分隔符实例组成，则该数组由两个空字符串组成。</li>
+<li>如果分隔符是包含捕获括号的正则表达式，则每次分隔符匹配时，捕获括号的结果（包括任何未定义的结果）将被拼接到输出数组中。但是，并不是所有浏览器都支持此功能。</li>
+</ul>
+<p><strong>返回值</strong>：</p>
+<ul>
+<li>返回源字符串以分隔符出现位置分隔而成的一个 Array </li>
+</ul>
+<p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.split()); <span class="comment">//["hello"]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.split(<span class="string">""</span>)); <span class="comment">//["h", "e", "l", "l", "o"]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.split(<span class="string">"l"</span>)); <span class="comment">//["he", "", "o"]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.split(<span class="string">"ll"</span>)); <span class="comment">//["he", "o"]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.split(<span class="regexp">/llo$/</span>)); <span class="comment">//["he", ""]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.split(<span class="regexp">/h/</span>)); <span class="comment">//["", "ello"]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.split(<span class="regexp">/o/</span>)); <span class="comment">//["hell", ""]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.split(<span class="regexp">/l/</span>, <span class="number">2</span>)); <span class="comment">//["he", ""]</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>下例中，split() 方法会查找“0 或多个空白符接着的分号，再接着 0 或多个空白符”模式的字符串，找到后，就将空白符从字符串中移除，nameList 是 split 的返回数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> names = <span class="string">"Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand "</span>;</span><br><span class="line"><span class="built_in">console</span>.log(names);</span><br><span class="line"><span class="keyword">var</span> re = <span class="regexp">/\s*(?:;|$)\s*/</span>;</span><br><span class="line"><span class="keyword">var</span> nameList = names.split(re);</span><br><span class="line"><span class="built_in">console</span>.log(nameList);</span><br><span class="line"><span class="comment">//上例输出两行，第一行输出原始字符串，第二行输出结果数组。</span></span><br><span class="line"><span class="comment">//Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand </span></span><br><span class="line">[ <span class="string">"Harry Trump"</span>, <span class="string">"Fred Barney"</span>, <span class="string">"Helen Rigby"</span>, <span class="string">"Bill Abel"</span>, <span class="string">"Chris Hand"</span>, <span class="string">""</span> ]</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>下例中，split 查找字符串中的 0 或多个空格，并返回找到的前 3 个分割元素（splits）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myString = <span class="string">"Hello World. How are you doing?"</span>;</span><br><span class="line"><span class="keyword">var</span> splits = myString.split(<span class="string">" "</span>, <span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(splits); <span class="comment">//["Hello", "World.", "How"]</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>如果 separator 包含捕获括号（capturing parentheses），则其匹配结果将会包含在返回的数组中。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myString = <span class="string">"Hello 1 word. Sentence number 2."</span>;</span><br><span class="line"><span class="keyword">var</span> splits = myString.split(<span class="regexp">/(\d)/</span>);</span><br><span class="line"><span class="built_in">console</span>.log(splits);</span><br><span class="line"><span class="comment">//[ "Hello ", "1", " word. Sentence number ", "2", "." ]</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<hr>
+<h4 id="其它不常用的方法"><a href="#其它不常用的方法" class="headerlink" title="其它不常用的方法"></a>其它不常用的方法</h4><h5 id="localeCompare-f-localeCompare-compareString-locales-options"><a href="#localeCompare-f-localeCompare-compareString-locales-options" class="headerlink" title="localeCompare: f localeCompare(compareString, ?locales, ?options)"></a><strong><em><code>localeCompare: f localeCompare(compareString, ?locales, ?options)</code></em></strong></h5><blockquote>
+<p><strong>属性</strong>： 是一个方法<br><strong>含义</strong>：用本地特定的顺序来比较两个字符串。<br><strong>参数</strong>：</p>
+<ul>
+<li><code>compareString</code>: 用来比较的字符串</li>
+<li><code>locales</code>: 可选。 用来表示一种或多种语言或区域的一个符合 BCP 47 标准的字符串或一个字符串数组。 locales参数的一般形式与解释， 详情请参考 Intl page.</li>
+<li><code>options</code>: 可选。 支持下列的一些或全部属性的一个对象:</li>
+</ul>
+<p><strong>备注</strong>：</p>
+<ol>
+<li>返回一个数字表示是否原始字符串在排序中位于比较字符串的前面，后面，或者二者相同。</li>
+<li>当原始字符串在比较字符串前面时,返回 -1</li>
+<li>当原始字符串在比较字符串后面时,返回 1</li>
+<li>当原始字符串和比较字符串相同时,或根据本地排序规则没有区别，返回 0</li>
+<li>切勿依赖于 -1 或 1 这样特定的返回值。不同浏览器之间（以及不同浏览器版本之间） 返回的正负数的值各有不同，因为W3C规范中只要求返回值是正值和负值，而没有规定具体的值。一些浏览器可能返回-2或2或其他一些负的、正的值。</li>
+</ol>
+<p><strong>返回值</strong>：返回一个数字来指示一个参考字符串是否在排序顺序前面或之后或与给定字符串相同。</p>
+<ul>
+<li>如果引用字符存在于比较字符之前则为负数;</li>
+<li>如果引用字符存在于比较字符之后则为正数; 相等的时候返回 0 .</li>
+</ul>
+<p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.localCompare(<span class="string">"a"</span>)); =&gt; <span class="number">1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.localeCompare(<span class="string">"g"</span>)); =&gt; <span class="number">-1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.localeCompare(<span class="string">"hello"</span>)); =&gt; <span class="number">0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"北京"</span>.localeCompare(<span class="string">"北京"</span>)); =&gt; <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<hr>
+<h5 id="normalize-f-normalize-form"><a href="#normalize-f-normalize-form" class="headerlink" title="normalize: f normalize([form])"></a><strong><em><code>normalize: f normalize([form])</code></em></strong></h5><blockquote>
+<p>属性： 是一个方法<br>含义： 用来将字符的不同表示形式统一为相同的形式，也就是按照指定的一种 Unicode 正规形式将当前字符串正规化.</p>
+<ul>
+<li>对于那些拥有语调和重音符号的字符，Unicode提供了两种表示方法。一种是直接提供带重音符号的字符。比如”Ǒ”（字符编码\u01D1），</li>
+<li>另一种是原字符和重音符号合成一个字符，即”O”和”ˇ”，后者的字符编码表示为\u004F\u030C。</li>
+<li>这两种表示方法，在语义和视觉上都是等价的，但是JavaScript无法正确识别。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     <span class="string">"\u01D1"</span> === <span class="string">"\u004F\u030C"</span>; <span class="comment">// false</span></span><br><span class="line">        <span class="string">"\u01D1"</span>.length; <span class="comment">// 1</span></span><br><span class="line">        <span class="string">"\u004F\u030C"</span>.length; <span class="comment">// 2</span></span><br><span class="line">        <span class="string">"\u01D1"</span>.normalize() === <span class="string">"\u004F\u030C"</span>.normalize(); <span class="comment">// true</span></span><br><span class="line">参数：</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>form: 四种 Unicode 正规形式：”NFC”, “NFD”, “NFKC”, 以及 “NFKD” 其中的一个, 默认值为 “NFC”.<ol>
+<li>NFC - Normalization Form Canonical Composition.  规范化形式规范组合。<ul>
+<li>NFC，默认参数，表示“标准等价合成”，返回多个简单字符的合成。所谓的“标准等价”指的是视觉和语义上的等价。<br><code>&quot;\u004F\u030C&quot;.normalize().length === 1; // true，合成一个字符</code></li>
+</ul>
+</li>
+<li>NFD - Normalization Form Canonical Decomposition. 规范化形式规范分解。</li>
+</ol>
+<ul>
+<li>NFD，表示“标准等价分解”，即在标准等价的前提下，将合成字符分解成多个简单字符。<br><code>&quot;\u01D1&quot;.normalize(&#39;NFD&#39;).length === 2; // true，分解成两个字符</code></li>
+</ul>
+<ol start="3">
+<li>NFKC - Normalization Form Compatibility Composition. 规范化形式兼容性组合。</li>
+</ol>
+<ul>
+<li>NFKC，表示“兼容等价合成”，返回合成字符，所谓的“兼容等价”指的是语义上等价，但视觉上不等价。</li>
+</ul>
+<ol start="4">
+<li>NFKD - Normalization Form Compatibility Decomposition. 规范化形式兼容性分解。</li>
+</ol>
+<ul>
+<li>NFKD，表示“兼容等价分解”，返回分解字符，在“兼容等价”的前提下，将合成字符分解为多个简单字符。</li>
+</ul>
+</li>
+</ul>
+<p>备注：</p>
+<ol>
+<li>如果给 form 传入了非法的参数值, 则会抛出 RangeError 异常.</li>
+<li>String.prototype.normalize()方法目前只能识别2个字符的合成。</li>
+</ol>
+<p>返回值：</p>
+<ul>
+<li>正规化完成的字符串</li>
+</ul>
+<p>运用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"\u1E9B\u0323"</span>.normalize(<span class="string">"NFC"</span>)); =&gt; <span class="string">"\u1E9B\u0323"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"\u1E9B\u0323"</span>.normalize(<span class="string">"NFD"</span>)); =&gt; <span class="string">"\u017F\u0323\u0307"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"\u1E9B\u0323"</span>.normalize(<span class="string">"NFKC"</span>)); =&gt; <span class="string">"\u1E69"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"\u1E9B\u0323"</span>.normalize(<span class="string">"NFKD"</span>)); =&gt; <span class="string">"\u0073\u0323\u0307"</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<hr>
 
       
     </div>
@@ -1118,8 +1108,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/16/DOM2级事件/" rel="next" title="DOM2级事件">
-                <i class="fa fa-chevron-left"></i> DOM2级事件
+              <a href="/2019/02/18/String原型上的方法和属性详细讲解（二）/" rel="next" title="String原型上的方法以及属性详细讲解(二)">
+                <i class="fa fa-chevron-left"></i> String原型上的方法以及属性详细讲解(二)
               </a>
             
           </div>
@@ -1205,7 +1195,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1294,7 +1284,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">1.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#constructor-f-String-native-code"><span class="nav-number">1.1.</span> <span class="nav-text">constructor: ƒ String() { [native code] }</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#length"><span class="nav-number">1.2.</span> <span class="nav-text">length:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为原始字符串包裹一个标签（并添加某个属性）"><span class="nav-number">2.</span> <span class="nav-text">为原始字符串包裹一个标签（并添加某个属性）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#anchor-f-anchor-name"><span class="nav-number">2.1.</span> <span class="nav-text">anchor: f anchor(name)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#link-f-link-url"><span class="nav-number">2.2.</span> <span class="nav-text">link: f link(url)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#big-f-big"><span class="nav-number">2.3.</span> <span class="nav-text">big: f big()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#blink-f-blink"><span class="nav-number">2.4.</span> <span class="nav-text">blink: f blink()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bold-f-bold"><span class="nav-number">2.5.</span> <span class="nav-text">bold: f bold()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#fixed-f-fixed"><span class="nav-number">2.6.</span> <span class="nav-text">fixed: f fixed()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#fontcolor-f-fontcolor-color"><span class="nav-number">2.7.</span> <span class="nav-text">fontcolor: f fontcolor(color)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#fontsize-f-fontsize-size"><span class="nav-number">2.8.</span> <span class="nav-text">fontsize: f fontsize(size)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#italics-f-italics"><span class="nav-number">2.9.</span> <span class="nav-text">italics: f italics()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据位置索引，在原始字符串中查找对应字符（以Unicode编码表示）"><span class="nav-number">3.</span> <span class="nav-text">根据位置索引，在原始字符串中查找对应字符（以Unicode编码表示）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#charAt-f-charAt-pos"><span class="nav-number">3.1.</span> <span class="nav-text">charAt: f charAt(pos)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#charCodeAt-f-charCodeAt-index"><span class="nav-number">3.2.</span> <span class="nav-text">charCodeAt: f charCodeAt(index)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#codePointAt-f-codePointAt-pos"><span class="nav-number">3.3.</span> <span class="nav-text">codePointAt: f codePointAt(pos)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#concat-f-concat-string2-string3-stringN"><span class="nav-number">3.4.</span> <span class="nav-text">concat: f concat(string2, string3[, ..., stringN])</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断子字符串时候包含在原始字符串中（返回子字符串中第一个字符串在原始字符串中的索引）"><span class="nav-number">4.</span> <span class="nav-text">判断子字符串时候包含在原始字符串中（返回子字符串中第一个字符串在原始字符串中的索引）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#endsWith-f-endsWith-searchString-endPosition"><span class="nav-number">4.1.</span> <span class="nav-text">endsWith: f endsWith(searchString, ?endPosition)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#includes-f-includes-searchString-position"><span class="nav-number">4.2.</span> <span class="nav-text">includes: f includes(searchString, ?position)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#indexOf-f-indexOf-searchString-position"><span class="nav-number">4.3.</span> <span class="nav-text">indexOf:  f indexOf(searchString, ?position)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lastIndexOf-f-lastIndexOf-searchString-position"><span class="nav-number">4.4.</span> <span class="nav-text">lastIndexOf: f lastIndexOf(searchString, ?position)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其它方法"><span class="nav-number">5.</span> <span class="nav-text">其它方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#localeCompare-f-localeCompare-compareString-locales-options"><span class="nav-number">5.1.</span> <span class="nav-text">localeCompare: f localeCompare(compareString, ?locales, ?options)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#match-f-match-regexp"><span class="nav-number">5.2.</span> <span class="nav-text">match: ƒ match(regexp)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#normalize-f-normalize-form"><span class="nav-number">5.3.</span> <span class="nav-text">normalize: f normalize([form])</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按照指定字符来填充原始字符串"><span class="nav-number">6.</span> <span class="nav-text">按照指定字符来填充原始字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#padEnd-f-padEnd-maxLength-fillString"><span class="nav-number">6.1.</span> <span class="nav-text">padEnd: f padEnd(maxLength, ?fillString)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#repeat-f-repeat-count"><span class="nav-number">6.2.</span> <span class="nav-text">repeat: f repeat(count)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#replace-f-replace-regexp-substr-newSubStr-function"><span class="nav-number">6.3.</span> <span class="nav-text">replace: f replace(regexp|substr, newSubStr|function)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">1.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#constructor-f-String-native-code"><span class="nav-number">1.1.</span> <span class="nav-text">constructor: ƒ String() { [native code] }</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#length"><span class="nav-number">1.2.</span> <span class="nav-text">length:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为原始字符串包裹一个标签（并添加某个属性）"><span class="nav-number">2.</span> <span class="nav-text">为原始字符串包裹一个标签（并添加某个属性）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#anchor-f-anchor-name"><span class="nav-number">2.1.</span> <span class="nav-text">anchor: f anchor(name)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#link-f-link-url"><span class="nav-number">2.2.</span> <span class="nav-text">link: f link(url)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#big-f-big"><span class="nav-number">2.3.</span> <span class="nav-text">big: f big()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#small-f-small"><span class="nav-number">2.4.</span> <span class="nav-text">small: f small)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#blink-f-blink"><span class="nav-number">2.5.</span> <span class="nav-text">blink: f blink()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bold-f-bold"><span class="nav-number">2.6.</span> <span class="nav-text">bold: f bold()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#fixed-f-fixed"><span class="nav-number">2.7.</span> <span class="nav-text">fixed: f fixed()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#strike-f-strike"><span class="nav-number">2.8.</span> <span class="nav-text">strike: f strike()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sub-f-sub"><span class="nav-number">2.9.</span> <span class="nav-text">sub: f sub()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sub-f-sup"><span class="nav-number">2.10.</span> <span class="nav-text">sub: f sup()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#fontcolor-f-fontcolor-color"><span class="nav-number">2.11.</span> <span class="nav-text">fontcolor: f fontcolor(color)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#fontsize-f-fontsize-size"><span class="nav-number">2.12.</span> <span class="nav-text">fontsize: f fontsize(size)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#italics-f-italics"><span class="nav-number">2.13.</span> <span class="nav-text">italics: f italics()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据位置索引，返回对应字符-以Unicode编码表示的方法"><span class="nav-number">3.</span> <span class="nav-text">根据位置索引，返回对应字符 | 以Unicode编码表示的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#charAt-f-charAt-pos"><span class="nav-number">3.1.</span> <span class="nav-text">charAt: f charAt(pos)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#charCodeAt-f-charCodeAt-index"><span class="nav-number">3.2.</span> <span class="nav-text">charCodeAt: f charCodeAt(index)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#codePointAt-f-codePointAt-pos"><span class="nav-number">3.3.</span> <span class="nav-text">codePointAt: f codePointAt(pos)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断是否以某一个字符串开头（结尾）的方法"><span class="nav-number">4.</span> <span class="nav-text">判断是否以某一个字符串开头（结尾）的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#startsWith-f-startsWith-searchString-position"><span class="nav-number">4.1.</span> <span class="nav-text">startsWith: f startsWith(searchString [, position])</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#endsWith-f-endsWith-searchString-endPosition"><span class="nav-number">4.2.</span> <span class="nav-text">endsWith: f endsWith(searchString, ?endPosition)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按照指定字符来填充原始字符串的方法"><span class="nav-number">5.</span> <span class="nav-text">按照指定字符来填充原始字符串的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#padEnd-f-padEnd-maxLength-fillString"><span class="nav-number">5.1.</span> <span class="nav-text">padEnd: f padEnd(maxLength, ?fillString)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其它常用的方法"><span class="nav-number">6.</span> <span class="nav-text">其它常用的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#concat-f-concat-string2-string3-stringN"><span class="nav-number">6.1.</span> <span class="nav-text">concat: f concat(string2, string3[, ..., stringN])</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#match-f-match-regexp"><span class="nav-number">6.2.</span> <span class="nav-text">match: ƒ match(regexp)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#repeat-f-repeat-count"><span class="nav-number">6.3.</span> <span class="nav-text">repeat: f repeat(count)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#replace-f-replace-regexp-substr-newSubStr-function"><span class="nav-number">6.4.</span> <span class="nav-text">replace: f replace(regexp|substr, newSubStr|function)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#split-f-split-separator-limit"><span class="nav-number">6.5.</span> <span class="nav-text">split: f split([separator[, limit]])</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其它不常用的方法"><span class="nav-number">7.</span> <span class="nav-text">其它不常用的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#localeCompare-f-localeCompare-compareString-locales-options"><span class="nav-number">7.1.</span> <span class="nav-text">localeCompare: f localeCompare(compareString, ?locales, ?options)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#normalize-f-normalize-form"><span class="nav-number">7.2.</span> <span class="nav-text">normalize: f normalize([form])</span></a></li></ol></li></ol></div>
             
 
           </div>
