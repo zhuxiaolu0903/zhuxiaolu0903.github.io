@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="判断指定字符串是否包含在原始字符串中的方法search: f search(regexp) 属性：这是一个方法含义：search()方法检索指定字符串是否包含在原始字符串中参数：  regexp: 一个正则表达式（regular expression）对象。如果传入一个非正则表达式对象，则使用 new RegExp(obj) 隐式地将其转换为正则表达式对象（new RegExp(obj) 隐式转">
+<meta name="description" content="判断指定字符串是否包含在原始字符串中的方法search: f search(regexp) 属性：这是一个方法含义：search()方法检索指定字符串是否包含在原始字符串中参数：  regexp: 一个正则表达式（regular expression）对象。如果传入一个非正则表达式对象，则使用 new RegExp(obj) 隐式地将其转换为正则表达式对象（new RegExp(obj) 隐式转换">
 <meta name="keywords" content="前端,JS语法,JS基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="String原型上的方法以及属性详细讲解(二)">
 <meta property="og:url" content="http://yoursite.com/2019/02/18/String原型上的方法和属性详细讲解（二）/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="判断指定字符串是否包含在原始字符串中的方法search: f search(regexp) 属性：这是一个方法含义：search()方法检索指定字符串是否包含在原始字符串中参数：  regexp: 一个正则表达式（regular expression）对象。如果传入一个非正则表达式对象，则使用 new RegExp(obj) 隐式地将其转换为正则表达式对象（new RegExp(obj) 隐式转">
+<meta property="og:description" content="判断指定字符串是否包含在原始字符串中的方法search: f search(regexp) 属性：这是一个方法含义：search()方法检索指定字符串是否包含在原始字符串中参数：  regexp: 一个正则表达式（regular expression）对象。如果传入一个非正则表达式对象，则使用 new RegExp(obj) 隐式地将其转换为正则表达式对象（new RegExp(obj) 隐式转换">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-21T07:09:34.893Z">
+<meta property="og:updated_time" content="2019-02-21T07:15:07.998Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String原型上的方法以及属性详细讲解(二)">
-<meta name="twitter:description" content="判断指定字符串是否包含在原始字符串中的方法search: f search(regexp) 属性：这是一个方法含义：search()方法检索指定字符串是否包含在原始字符串中参数：  regexp: 一个正则表达式（regular expression）对象。如果传入一个非正则表达式对象，则使用 new RegExp(obj) 隐式地将其转换为正则表达式对象（new RegExp(obj) 隐式转">
+<meta name="twitter:description" content="判断指定字符串是否包含在原始字符串中的方法search: f search(regexp) 属性：这是一个方法含义：search()方法检索指定字符串是否包含在原始字符串中参数：  regexp: 一个正则表达式（regular expression）对象。如果传入一个非正则表达式对象，则使用 new RegExp(obj) 隐式地将其转换为正则表达式对象（new RegExp(obj) 隐式转换">
 
 
 
@@ -454,8 +454,7 @@
       
 
       
-        <a id="more"></a>
-<h4 id="判断指定字符串是否包含在原始字符串中的方法"><a href="#判断指定字符串是否包含在原始字符串中的方法" class="headerlink" title="判断指定字符串是否包含在原始字符串中的方法"></a>判断指定字符串是否包含在原始字符串中的方法</h4><h5 id="search-f-search-regexp"><a href="#search-f-search-regexp" class="headerlink" title="search: f search(regexp)"></a><strong><em><code>search: f search(regexp)</code></em></strong></h5><blockquote>
+        <h4 id="判断指定字符串是否包含在原始字符串中的方法"><a href="#判断指定字符串是否包含在原始字符串中的方法" class="headerlink" title="判断指定字符串是否包含在原始字符串中的方法"></a>判断指定字符串是否包含在原始字符串中的方法</h4><h5 id="search-f-search-regexp"><a href="#search-f-search-regexp" class="headerlink" title="search: f search(regexp)"></a><strong><em><code>search: f search(regexp)</code></em></strong></h5><blockquote>
 <p><strong>属性</strong>：这是一个方法<br><strong>含义</strong>：search()方法检索指定字符串是否包含在原始字符串中<br><strong>参数</strong>：</p>
 <ul>
 <li><code>regexp</code>: 一个正则表达式（regular expression）对象。如果传入一个非正则表达式对象，则使用 <code>new RegExp(obj)</code> 隐式地将其转换为正则表达式对象（new RegExp(obj) 隐式转换会先使用<code>toString()</code>方法，将参数值转换为字符串(String类型的值)，再进行处理）。<ul>
@@ -463,6 +462,7 @@
 </ul>
 </li>
 </ul>
+<a id="more"></a>
 <p><strong>备注</strong>：</p>
 <ul>
 <li>当你想要知道字符串中是否存在某个模式（pattern）时可使用 <code>search</code>，类似于正则表达式的 <code>test</code> 方法。当要了解更多匹配信息时，可使用 <code>match</code>（会更慢），该方法类似于正则表达式的 <code>exec</code> 方法。</li>
@@ -816,8 +816,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/16/DOM2级事件/" rel="next" title="DOM2级事件">
-                <i class="fa fa-chevron-left"></i> DOM2级事件
+              <a href="/2019/02/16/JSON及操作/" rel="next" title="JS基础之JSON及操作">
+                <i class="fa fa-chevron-left"></i> JS基础之JSON及操作
               </a>
             
           </div>

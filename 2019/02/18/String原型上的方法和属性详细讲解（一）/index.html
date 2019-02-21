@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="属性constructor: ƒ String() { [native code] } 属性： 是一个属性含义： 返回创建实例对象的 ==String ==构造函数的引用备注：  每一个对象所属类的原型上都有一个constructor属性，属性值是当前对象所属类（函数）的本身 此属性的值是当前对象所属类（函数）本身的引用，而不是一个包含函数名称的字符串。">
+<meta name="description" content="属性constructor: ƒ String() { [native code] } 属性： 是一个属性含义： 返回创建实例对象的 ==String ==构造函数的引用备注：  每一个对象所属类的原型上都有一个constructor属性，属性值是当前对象所属类（函数）的本身 此属性的值是当前对象所属类（函数）本身的引用，而不是一个包含函数名称的字符串。  返回值：  当前对象所属类（函数）[St">
 <meta name="keywords" content="前端,JS语法,JS基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="String原型上的方法以及属性详细讲解(一)">
 <meta property="og:url" content="http://yoursite.com/2019/02/18/String原型上的方法和属性详细讲解（一）/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="属性constructor: ƒ String() { [native code] } 属性： 是一个属性含义： 返回创建实例对象的 ==String ==构造函数的引用备注：  每一个对象所属类的原型上都有一个constructor属性，属性值是当前对象所属类（函数）的本身 此属性的值是当前对象所属类（函数）本身的引用，而不是一个包含函数名称的字符串。">
+<meta property="og:description" content="属性constructor: ƒ String() { [native code] } 属性： 是一个属性含义： 返回创建实例对象的 ==String ==构造函数的引用备注：  每一个对象所属类的原型上都有一个constructor属性，属性值是当前对象所属类（函数）的本身 此属性的值是当前对象所属类（函数）本身的引用，而不是一个包含函数名称的字符串。  返回值：  当前对象所属类（函数）[St">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-21T07:09:21.180Z">
+<meta property="og:updated_time" content="2019-02-21T07:14:49.666Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String原型上的方法以及属性详细讲解(一)">
-<meta name="twitter:description" content="属性constructor: ƒ String() { [native code] } 属性： 是一个属性含义： 返回创建实例对象的 ==String ==构造函数的引用备注：  每一个对象所属类的原型上都有一个constructor属性，属性值是当前对象所属类（函数）的本身 此属性的值是当前对象所属类（函数）本身的引用，而不是一个包含函数名称的字符串。">
+<meta name="twitter:description" content="属性constructor: ƒ String() { [native code] } 属性： 是一个属性含义： 返回创建实例对象的 ==String ==构造函数的引用备注：  每一个对象所属类的原型上都有一个constructor属性，属性值是当前对象所属类（函数）的本身 此属性的值是当前对象所属类（函数）本身的引用，而不是一个包含函数名称的字符串。  返回值：  当前对象所属类（函数）[St">
 
 
 
@@ -458,8 +458,7 @@
 <p><strong>属性</strong>： 是一个属性<br><strong>含义</strong>： 返回创建实例对象的 ==String ==构造函数的引用<br><strong>备注</strong>：</p>
 <ol>
 <li>每一个对象所属类的原型上都有一个constructor属性，属性值是当前对象所属类（函数）的本身</li>
-<li>此属性的值是当前对象所属类（函数）本身的引用，而不是一个包含函数名称的字符串。<a id="more"></a>
-</li>
+<li>此属性的值是当前对象所属类（函数）本身的引用，而不是一个包含函数名称的字符串。</li>
 </ol>
 <p><strong>返回值</strong>：</p>
 <ul>
@@ -467,6 +466,7 @@
 </ul>
 <p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.constructor); =&gt; ƒ <span class="built_in">String</span>() &#123; [native code] &#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
+<a id="more"></a>
 <hr>
 <h5 id="length"><a href="#length" class="headerlink" title="length:"></a><strong><em><code>length:</code></em></strong></h5><blockquote>
 <p><strong>属性</strong>：是一个属性<br><strong>含义</strong>: 表示原始字符串的长度<br><strong>备注</strong>：</p>
