@@ -330,7 +330,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/JS中的原型链模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/JS中的小知识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -349,7 +349,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/16/JS中的原型链模式/" itemprop="url">JS中的原型链模式</a></h1>
+                <a class="post-title-link" href="/2019/02/16/JS中的小知识/" itemprop="url">JS中的小知识</a></h1>
         
 
         <div class="post-meta">
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k
+                  724
                 </span>
               
 
@@ -431,7 +431,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  2
                 </span>
               
             </div>
@@ -453,10 +453,20 @@
 
       
         
-          <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Create</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.x = <span class="number">1000</span>;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line">Create.prototype.writeJS = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"i will write JS, my name is "</span> + <span class="keyword">this</span>.name + <span class="string">", my age is "</span> + <span class="keyword">this</span>.age);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Create(<span class="string">'朱小露'</span>, <span class="number">20</span>);</span><br><span class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Create(<span class="string">'肖暖'</span>, <span class="number">20</span>);</span><br><span class="line"><span class="built_in">console</span>.log(p1.writeJS === p2.writeJS); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+          <blockquote>
+<p>内嵌导入和外链导入不能合并在一起，如果当前是外链导入，那么在script脚本块中编写的所有代码都不会被执行了。<br> 真实项目中我们一般都会把CSS放在BODY的上面，把JS放在BODY的末尾（约定俗成的规范）<br>BODY中编写的都是HTML标签，JS很多时候需要操作这些元素，，首先我们要保证元素加载成功，才可以在JS中获取到（JS放在结构之后加载，JS放在BODY的末尾）<br> 如果把JS放在HTML标签前面了，如何等到结构加载完成再加载JS？</p>
+<ul>
+<li>方法一：JS:window.onload=function(){}页面中所有的资源文件都加载完成执行操作</li>
+<li>方法二：JQ：$(doucument).ready(function(){}) 页面中的结构加载完成就会执行操作  <ul>
+<li>window.addEventListener(‘load’, function(){}, false)</li>
+<li>window.attachEvent(‘onreadystatechange’, function(){})</li>
+</ul>
+</li>
+</ul>
+</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/02/16/JS中的原型链模式/#more" rel="contents">
+            <a class="btn" href="/2019/02/16/JS中的小知识/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1985,7 +1995,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/jQuery动画/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/call方法深入/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -2004,7 +2014,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/16/jQuery动画/" itemprop="url">jQuery动画</a></h1>
+                <a class="post-title-link" href="/2019/02/16/call方法深入/" itemprop="url">JS函数原型上的方法之call方法深入</a></h1>
         
 
         <div class="post-meta">
@@ -2070,7 +2080,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.1k
+                  610
                 </span>
               
 
@@ -2086,7 +2096,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  2
                 </span>
               
             </div>
@@ -2108,10 +2118,15 @@
 
       
         
-          <p><strong><code>AJAX</code></strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">'jsonData.txt?_='</span> + <span class="built_in">Math</span>.random(),</span><br><span class="line">    type: <span class="string">'get'</span>,</span><br><span class="line">    dataType: <span class="string">'json'</span>,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+          <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>: <span class="string">'朱小露'</span>, <span class="attr">age</span>: <span class="number">20</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果想要把fn中的this改变为obj，该如何做：</p>
+</blockquote>
+<blockquote>
+<p><code>obj.fn()</code> 报错： Uncaught TypeError: obj.fn is not  a function<br></p></blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/02/16/jQuery动画/#more" rel="contents">
+            <a class="btn" href="/2019/02/16/call方法深入/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>

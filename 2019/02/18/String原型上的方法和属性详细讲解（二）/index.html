@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="判断指定字符串是否包含在原始字符串中的方法search: f search(regexp) 属性：这是一个方法含义：search()方法检索指定字符串是否包含在原始字符串中参数：  regexp: 一个正则表达式（regular expression）对象。如果传入一个非正则表达式对象，则使用 new RegExp(obj) 隐式地将其转换为正则表达式对象（new RegExp(obj) 隐式转换">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-21T07:15:07.998Z">
+<meta property="og:updated_time" content="2019-02-21T07:16:25.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String原型上的方法以及属性详细讲解(二)">
 <meta name="twitter:description" content="判断指定字符串是否包含在原始字符串中的方法search: f search(regexp) 属性：这是一个方法含义：search()方法检索指定字符串是否包含在原始字符串中参数：  regexp: 一个正则表达式（regular expression）对象。如果传入一个非正则表达式对象，则使用 new RegExp(obj) 隐式地将其转换为正则表达式对象（new RegExp(obj) 隐式转换">
@@ -462,7 +462,6 @@
 </ul>
 </li>
 </ul>
-<a id="more"></a>
 <p><strong>备注</strong>：</p>
 <ul>
 <li>当你想要知道字符串中是否存在某个模式（pattern）时可使用 <code>search</code>，类似于正则表达式的 <code>test</code> 方法。当要了解更多匹配信息时，可使用 <code>match</code>（会更慢），该方法类似于正则表达式的 <code>exec</code> 方法。</li>
@@ -473,6 +472,7 @@
 </ul>
 <p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.search(<span class="string">""</span>)); <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.search(<span class="regexp">/e/</span>)); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.search(<span class="regexp">/l/</span>)); <span class="comment">// 2  </span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.search(<span class="regexp">/y/</span>)); <span class="comment">// -1  </span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.search(<span class="string">"l"</span>); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
+<a id="more"></a>
 <blockquote>
 <p>下例记录了一个消息字符串，该字符串的内容取决于匹配是否成功。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testinput</span>(<span class="params">re, str</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> midstring;</span><br><span class="line">  <span class="keyword">if</span> (str.search(re) != <span class="number">-1</span>)&#123;</span><br><span class="line">    midstring = <span class="string">" contains "</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    midstring = <span class="string">" does not contain "</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log (str + midstring + re);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
@@ -816,8 +816,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/16/JSON及操作/" rel="next" title="JS基础之JSON及操作">
-                <i class="fa fa-chevron-left"></i> JS基础之JSON及操作
+              <a href="/2019/02/16/JSONP/" rel="next" title="JSONP请求">
+                <i class="fa fa-chevron-left"></i> JSONP请求
               </a>
             
           </div>

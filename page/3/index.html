@@ -330,7 +330,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/call方法深入/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/jQuery动画/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -349,7 +349,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/16/call方法深入/" itemprop="url">JS函数原型上的方法之call方法深入</a></h1>
+                <a class="post-title-link" href="/2019/02/16/jQuery动画/" itemprop="url">jQuery动画</a></h1>
         
 
         <div class="post-meta">
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  610
+                  1.1k
                 </span>
               
 
@@ -431,7 +431,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  4
                 </span>
               
             </div>
@@ -453,15 +453,10 @@
 
       
         
-          <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>: <span class="string">'朱小露'</span>, <span class="attr">age</span>: <span class="number">20</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如果想要把fn中的this改变为obj，该如何做：</p>
-</blockquote>
-<blockquote>
-<p><code>obj.fn()</code> 报错： Uncaught TypeError: obj.fn is not  a function<br></p></blockquote>
+          <p><strong><code>AJAX</code></strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">'jsonData.txt?_='</span> + <span class="built_in">Math</span>.random(),</span><br><span class="line">    type: <span class="string">'get'</span>,</span><br><span class="line">    dataType: <span class="string">'json'</span>,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/02/16/call方法深入/#more" rel="contents">
+            <a class="btn" href="/2019/02/16/jQuery动画/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -869,7 +864,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/JSONP/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/HTTP报文/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -888,7 +883,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/16/JSONP/" itemprop="url">JSONP请求</a></h1>
+                <a class="post-title-link" href="/2019/02/16/HTTP报文/" itemprop="url">HTTP报文</a></h1>
         
 
         <div class="post-meta">
@@ -923,8 +918,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JSONP/" itemprop="url" rel="index">
-                    <span itemprop="name">JSONP</span>
+                  <a href="/categories/网络知识/" itemprop="url" rel="index">
+                    <span itemprop="name">网络知识</span>
                   </a>
                 </span>
 
@@ -954,7 +949,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  30
+                  546
                 </span>
               
 
@@ -970,7 +965,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -992,10 +987,13 @@
 
       
         
-          <p><img src="/2019/02/16/JSONP/1548579976210.png" alt="Alt text"><br></p>
+          <blockquote>
+<p><img src="/2019/02/16/HTTP报文/1547816050235.png" alt="Alt text"></p>
+</blockquote>
+<p><strong>[Request Headers]    view source</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">GET /index.html HTTP/<span class="number">1.1</span>  请求起始行 HTTP method(请求方式)、请求地址、使用的HTTP传输协议版本号</span><br><span class="line"></span><br><span class="line">请求首部：客户端会把一些信息放在请求首部中传递给服务器端，服务器端就可以在请求首部中获取到相关内容【客户端设置 服务器端获取】</span><br><span class="line">Host: localhost:<span class="number">1000</span></span><br><span class="line">Connection: keep-alive</span><br><span class="line">Cache-Control: max-age=<span class="number">0</span></span><br><span class="line">Upgrade-Insecure-Requests: <span class="number">1</span></span><br><span class="line">User-Agent: Mozilla/<span class="number">5.0</span> (Windows NT <span class="number">10.0</span>; WOW64) AppleWebKit/<span class="number">537.36</span> (KHTML, like Gecko) Chrome/<span class="number">70.0</span><span class="number">.3538</span><span class="number">.67</span> Safari/<span class="number">537.36</span></span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=<span class="number">0.9</span>,image/webp,image/apng,*<span class="comment">/*;q=0.8</span></span><br><span class="line"><span class="comment">Accept-Encoding: gzip, deflate, br</span></span><br><span class="line"><span class="comment">Accept-Language: zh-CN,zh;q=0.9,en;q=0.8</span></span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/02/16/JSONP/#more" rel="contents">
+            <a class="btn" href="/2019/02/16/HTTP报文/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
