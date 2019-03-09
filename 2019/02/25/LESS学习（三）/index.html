@@ -91,13 +91,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/02/25/LESS学习（三）/1552117964392.png">
 <meta property="og:image" content="http://yoursite.com/2019/02/25/LESS学习（三）/1552118027983.png">
 <meta property="og:image" content="http://yoursite.com/2019/02/25/LESS学习（三）/1552118114907.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/LESS学习（三）/1552118027983.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/LESS学习（三）/1552118027983.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/LESS学习（三）/1552118027983.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/LESS学习（三）/1552118027983.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/LESS学习（三）/1552118027983.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/LESS学习（三）/1552118027983.png">
-<meta property="og:updated_time" content="2019-03-09T08:08:14.000Z">
+<meta property="og:updated_time" content="2019-03-09T08:22:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LESS学习(三)——LESS中常用的方法">
 <meta name="twitter:description" content="杂项函数color 解析颜色，因此表示颜色的字符串变为颜色。  参数： string 指定颜色的字符串返回： color例：1color(&quot;#aaa&quot;); 输出：1#aaa">
@@ -428,7 +422,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5.5k
+                  5.1k
                 </span>
               
 
@@ -444,7 +438,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  23
+                  21
                 </span>
               
             </div>
@@ -573,8 +567,8 @@
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">get-unit</span>(<span class="number">5</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//nothing</span><br></pre></td></tr></table></figure></p>
 <hr>
-<h3 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h3><p>####escape</p>
-<blockquote>
+<p>###字符串函数</p>
+<h4 id="escape"><a href="#escape" class="headerlink" title="escape"></a>escape</h4><blockquote>
 <p>将URL编码应用于输入字符串中的特殊字符</p>
 </blockquote>
 <p>这些字符不编码：<code>,</code>，<code>/</code>，<code>?</code>，<code>@</code>，<code>&amp;</code>，<code>+</code>，<code>&#39;</code>，<code>~</code>，<code>!</code>和<code>$</code>。<br>最常见的编码的字符：<code>\&lt;space\&gt;</code>，<code>#</code>，<code>^</code>，<code>(</code>，<code>)</code>，<code>{</code>，<code>}</code>，<code>|</code>，<code>:</code>，<code>&gt;</code>，<code>&lt;</code>，<code>;</code>，<code>]</code>，<code>[</code>和<code>=</code>。<br>参数：</p>
@@ -607,8 +601,7 @@
 <blockquote>
 <p>注意：该函数还接受<code>~&quot;&quot;</code>转义值和数字作为参数。其他任何东西都会返回错误。</p>
 </blockquote>
-<p>####% format</p>
-<blockquote>
+<h4 id="format"><a href="#format" class="headerlink" title="% format"></a>% format</h4><blockquote>
 <p>该函数%(string, arguments …)格式化一个字符串。</p>
 </blockquote>
 <p>第一个参数是带占位符的字符串。所有占位符与百分号开始<code>%</code>，然后字母<code>s</code>，<code>S</code>，<code>d</code>，<code>D</code>，<code>a</code>，或<code>A</code>。剩余的参数包含替换占位符的表达式。如果您需要打印百分比符号，请将其转义另一个百​​分比<code>%%</code>。</p>
@@ -629,8 +622,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">format-a-d</span>: %(<span class="string">"repetitions: %a file: %d"</span>, <span class="number">1</span> + <span class="number">2</span>, <span class="string">"directory/file.less"</span>);</span><br><span class="line"><span class="attribute">format-a-d-upper</span>: %(<span class="string">'repetitions: %A file: %D'</span>, <span class="number">1</span> + <span class="number">2</span>, <span class="string">"directory/file.less"</span>);</span><br><span class="line"><span class="attribute">format-s</span>: %(<span class="string">"repetitions: %s file: %s"</span>, <span class="number">1</span> + <span class="number">2</span>, <span class="string">"directory/file.less"</span>);</span><br><span class="line"><span class="attribute">format-s-upper</span>: %(<span class="string">'repetitions: %S file: %S'</span>, <span class="number">1</span> + <span class="number">2</span>, <span class="string">"directory/file.less"</span>);</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">format-a-d: "repetitions: 3 file: "directory/file.less"";</span><br><span class="line"><span class="selector-tag">format-a-d-upper</span>: "<span class="selector-tag">repetitions</span>: 3 <span class="selector-tag">file</span>: %22<span class="selector-tag">directory</span>%2<span class="selector-tag">Ffile</span><span class="selector-class">.less</span>%22";</span><br><span class="line">format-s: "repetitions: 3 file: directory/file.less";</span><br><span class="line"><span class="selector-tag">format-s-upper</span>: "<span class="selector-tag">repetitions</span>: 3 <span class="selector-tag">file</span>: <span class="selector-tag">directory</span>%2<span class="selector-tag">Ffile</span><span class="selector-class">.less</span>";</span><br></pre></td></tr></table></figure></p>
-<p>####replace</p>
-<blockquote>
+<h4 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h4><blockquote>
 <p>替换字符串中的文本。</p>
 </blockquote>
 <p>参数：</p>
@@ -647,8 +639,7 @@
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">replace</span>(<span class="string">"Hello, Mars?"</span>, <span class="string">"Mars\?"</span>, <span class="string">"Earth!"</span>);</span><br><span class="line"><span class="selector-tag">replace</span>(<span class="string">"One + one = 4"</span>, <span class="string">"one"</span>, <span class="string">"2"</span>, <span class="string">"gi"</span>);</span><br><span class="line"><span class="selector-tag">replace</span>(<span class="string">'This is a string.'</span>, <span class="string">"(string)\.$"</span>, <span class="string">"new $1."</span>);</span><br><span class="line"><span class="selector-tag">replace</span>(<span class="string">~"bar-1"</span>, <span class="string">'1'</span>, <span class="string">'2'</span>);</span><br></pre></td></tr></table></figure></p>
 <p>结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;Hello, Earth!&quot;;</span><br><span class="line">&quot;2 + 2 = 4&quot;;</span><br><span class="line">&apos;This is a new string.&apos;;</span><br><span class="line">bar-2;</span><br></pre></td></tr></table></figure></p>
 <hr>
-<h3 id="列表函数"><a href="#列表函数" class="headerlink" title="列表函数"></a>列表函数</h3><p>####length</p>
-<blockquote>
+<h3 id="列表函数"><a href="#列表函数" class="headerlink" title="列表函数"></a>列表函数</h3><h4 id="length"><a href="#length" class="headerlink" title="length"></a>length</h4><blockquote>
 <p>返回值列表中的元素数</p>
 </blockquote>
 <p>参数：</p>
@@ -663,8 +654,7 @@
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure></p>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@list:</span> <span class="string">"banana"</span>, <span class="string">"tomato"</span>, <span class="string">"potato"</span>, <span class="string">"peach"</span>;</span><br><span class="line"><span class="attribute">n</span>: length(<span class="variable">@list</span>);</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n: 4;</span><br></pre></td></tr></table></figure></p>
-<p>####extract</p>
-<blockquote>
+<h4 id="extract"><a href="#extract" class="headerlink" title="extract"></a>extract</h4><blockquote>
 <p>返回列表中指定位置的值。</p>
 </blockquote>
 <p>参数：</p>
@@ -681,8 +671,7 @@
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@list:</span> apple, pear, coconut, orange;</span><br><span class="line"><span class="attribute">value</span>: extract(<span class="variable">@list</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value: coconut;</span><br></pre></td></tr></table></figure></p>
 <hr>
-<h3 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h3><p>####ceil</p>
-<blockquote>
+<h3 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h3><h4 id="ceil"><a href="#ceil" class="headerlink" title="ceil"></a>ceil</h4><blockquote>
 <p>上升到下一个最高整数，向上取整。</p>
 </blockquote>
 <p>参数：</p>
@@ -695,8 +684,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ceil</span>(<span class="number">2.4</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure></p>
-<p>####floor</p>
-<blockquote>
+<h4 id="floor"><a href="#floor" class="headerlink" title="floor"></a>floor</h4><blockquote>
 <p>向下舍入到下一个最小整数，向下取整。</p>
 </blockquote>
 <p>参数：</p>
@@ -709,8 +697,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">floor</span>(<span class="number">2.6</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure></p>
-<p>####percentage</p>
-<blockquote>
+<h4 id="percentage"><a href="#percentage" class="headerlink" title="percentage"></a>percentage</h4><blockquote>
 <p>将浮点数转换为百分比字符串。</p>
 </blockquote>
 <p>参数：</p>
@@ -723,8 +710,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">percentage</span>(<span class="number">0.5</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">50%</span><br></pre></td></tr></table></figure></p>
-<p>####round</p>
-<blockquote>
+<h4 id="round"><a href="#round" class="headerlink" title="round"></a>round</h4><blockquote>
 <p>适用四舍五入。</p>
 </blockquote>
 <p>参数：</p>
@@ -740,8 +726,7 @@
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure></p>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">round</span>(<span class="number">1.67</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.7</span><br></pre></td></tr></table></figure></p>
-<p>####sqrt</p>
-<blockquote>
+<h4 id="sqrt"><a href="#sqrt" class="headerlink" title="sqrt"></a>sqrt</h4><blockquote>
 <p>计算数字的平方根。保持单位不变。</p>
 </blockquote>
 <p>参数：</p>
@@ -756,8 +741,7 @@
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5cm</span><br></pre></td></tr></table></figure></p>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">sqrt</span>(<span class="number">18.6%</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4.312771730569565%;</span><br></pre></td></tr></table></figure></p>
-<p>####abs</p>
-<blockquote>
+<h4 id="abs"><a href="#abs" class="headerlink" title="abs"></a>abs</h4><blockquote>
 <p>计算数字的绝对值。保持单位不变。</p>
 </blockquote>
 <p>参数：</p>
@@ -772,8 +756,7 @@
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">25cm</span><br></pre></td></tr></table></figure></p>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">abs</span>(-<span class="number">18.6%</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">18.6%;</span><br></pre></td></tr></table></figure></p>
-<p>####sin</p>
-<blockquote>
+<h4 id="sin"><a href="#sin" class="headerlink" title="sin"></a>sin</h4><blockquote>
 <p>计算正弦函数。</p>
 </blockquote>
 <p>假设没有单位的数字的弧度。</p>
@@ -787,8 +770,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">sin</span>(<span class="number">1</span>); <span class="comment">// sine of 1 radian</span></span><br><span class="line"><span class="selector-tag">sin</span>(<span class="number">1deg</span>); <span class="comment">// sine of 1 degree</span></span><br><span class="line"><span class="selector-tag">sin</span>(<span class="number">1grad</span>); <span class="comment">// sine of 1 gradian</span></span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0.8414709848078965; // sine of 1 radian</span><br><span class="line">0.01745240643728351; // sine of 1 degree</span><br><span class="line">0.015707317311820675; // sine of 1 gradian</span><br></pre></td></tr></table></figure></p>
-<p>####asin</p>
-<blockquote>
+<h4 id="asin"><a href="#asin" class="headerlink" title="asin"></a>asin</h4><blockquote>
 <p>计算反正弦（正弦反函数）函数。</p>
 </blockquote>
 <p>以弧度为单位返回数字，例如<code>-π/2</code>和之间的数字<code>π/2</code>。</p>
@@ -802,8 +784,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">asin</span>(-<span class="number">0.8414709848078965</span>)</span><br><span class="line"><span class="selector-tag">asin</span>(<span class="number">0</span>)</span><br><span class="line"><span class="selector-tag">asin</span>(<span class="number">2</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-1rad</span><br><span class="line">0rad</span><br><span class="line">NaNrad</span><br></pre></td></tr></table></figure></p>
-<p>####cos</p>
-<blockquote>
+<h4 id="cos"><a href="#cos" class="headerlink" title="cos"></a>cos</h4><blockquote>
 <p>计算余弦函数。</p>
 </blockquote>
 <p>假设没有单位的数字的弧度。</p>
@@ -817,8 +798,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">cos</span>(<span class="number">1</span>) <span class="comment">// cosine of 1 radian</span></span><br><span class="line"><span class="selector-tag">cos</span>(<span class="number">1deg</span>) <span class="comment">// cosine of 1 degree</span></span><br><span class="line"><span class="selector-tag">cos</span>(<span class="number">1grad</span>) <span class="comment">// cosine of 1 gradian</span></span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0.5403023058681398 // cosine of 1 radian</span><br><span class="line">0.9998476951563913 // cosine of 1 degree</span><br><span class="line">0.9998766324816606 // cosine of 1 gradian</span><br></pre></td></tr></table></figure></p>
-<p>####acos</p>
-<blockquote>
+<h4 id="acos"><a href="#acos" class="headerlink" title="acos"></a>acos</h4><blockquote>
 <p>计算反余弦（余弦的倒数）函数。</p>
 </blockquote>
 <p>以弧度为单位返回数字，例如<code>0</code>到<code>π</code>之间的数字。</p>
@@ -832,8 +812,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">acos</span>(<span class="number">0.5403023058681398</span>)</span><br><span class="line"><span class="selector-tag">acos</span>(<span class="number">1</span>)</span><br><span class="line"><span class="selector-tag">acos</span>(<span class="number">2</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1rad</span><br><span class="line">0rad</span><br><span class="line">NaNrad</span><br></pre></td></tr></table></figure></p>
-<p>####tan</p>
-<blockquote>
+<h4 id="tan"><a href="#tan" class="headerlink" title="tan"></a>tan</h4><blockquote>
 <p>计算切线函数。</p>
 </blockquote>
 <p>假设没有单位的数字的弧度。</p>
@@ -847,8 +826,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">tan</span>(<span class="number">1</span>) <span class="comment">// tangent of 1 radian</span></span><br><span class="line"><span class="selector-tag">tan</span>(<span class="number">1deg</span>) <span class="comment">// tangent of 1 degree</span></span><br><span class="line"><span class="selector-tag">tan</span>(<span class="number">1grad</span>) <span class="comment">// tangent of 1 gradian</span></span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.5574077246549023   // tangent of 1 radian</span><br><span class="line">0.017455064928217585 // tangent of 1 degree</span><br><span class="line">0.015709255323664916 // tangent of 1 gradian</span><br></pre></td></tr></table></figure></p>
-<p>####atan</p>
-<blockquote>
+<h4 id="atan"><a href="#atan" class="headerlink" title="atan"></a>atan</h4><blockquote>
 <p>计算反正切（反正切）函数。</p>
 </blockquote>
 <p>以弧度为单位返回数字，例如<code>-π/2</code>和之间的数字<code>π/2</code>。</p>
@@ -862,8 +840,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">atan</span>(-<span class="number">1.5574077246549023</span>)</span><br><span class="line"><span class="selector-tag">atan</span>(<span class="number">0</span>)</span><br><span class="line"><span class="selector-tag">round</span>(atan(<span class="number">22</span>), <span class="number">6</span>) <span class="comment">// arctangent of 22 rounded to 6 decimal places</span></span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-1rad</span><br><span class="line">0rad</span><br><span class="line">1.525373rad;</span><br></pre></td></tr></table></figure></p>
-<p>####pi</p>
-<blockquote>
+<h4 id="pi"><a href="#pi" class="headerlink" title="pi"></a>pi</h4><blockquote>
 <p>返回π（pi）;</p>
 </blockquote>
 <p>参数： </p>
@@ -876,8 +853,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">pi</span>()</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3.141592653589793</span><br></pre></td></tr></table></figure></p>
-<p>####pow</p>
-<blockquote>
+<h4 id="pow"><a href="#pow" class="headerlink" title="pow"></a>pow</h4><blockquote>
 <p>返回第一个参数的值，该值是第二个参数的幂。</p>
 </blockquote>
 <p>返回值与第一个参数具有相同的维度，并忽略第二个参数的维度。</p>
@@ -892,8 +868,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">pow</span>(<span class="number">0cm</span>, <span class="number">0px</span>)</span><br><span class="line"><span class="selector-tag">pow</span>(<span class="number">25</span>, -<span class="number">2</span>)</span><br><span class="line"><span class="selector-tag">pow</span>(<span class="number">25</span>, <span class="number">0.5</span>)</span><br><span class="line"><span class="selector-tag">pow</span>(-<span class="number">25</span>, <span class="number">0.5</span>)</span><br><span class="line"><span class="selector-tag">pow</span>(-<span class="number">25%</span>, -<span class="number">0.5</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1cm</span><br><span class="line">0.0016</span><br><span class="line">5</span><br><span class="line">NaN</span><br><span class="line">NaN%</span><br></pre></td></tr></table></figure></p>
-<p>####mod</p>
-<blockquote>
+<h4 id="mod"><a href="#mod" class="headerlink" title="mod"></a>mod</h4><blockquote>
 <p>返回第一个参数模数第二个参数的值。</p>
 </blockquote>
 <p>返回值与第一个参数具有相同的维度，忽略第二个参数的维度。该函数还能够处理负点和浮点数。</p>
@@ -908,8 +883,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">mod</span>(<span class="number">0cm</span>, <span class="number">0px</span>)</span><br><span class="line"><span class="selector-tag">mod</span>(<span class="number">11cm</span>, <span class="number">6px</span>);</span><br><span class="line"><span class="selector-tag">mod</span>(-<span class="number">26%</span>, -<span class="number">5</span>);</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">NaNcm;</span><br><span class="line">5cm</span><br><span class="line">-1%;</span><br></pre></td></tr></table></figure></p>
-<p>####min</p>
-<blockquote>
+<h4 id="min"><a href="#min" class="headerlink" title="min"></a>min</h4><blockquote>
 <p>返回一个或多个值中的最小值。</p>
 </blockquote>
 <p>参数：</p>
@@ -924,8 +898,7 @@
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5</span><br></pre></td></tr></table></figure></p>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">min</span>(<span class="number">3px</span>, <span class="number">42px</span>, <span class="number">1px</span>, <span class="number">16px</span>);</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1px</span><br></pre></td></tr></table></figure></p>
-<p>####max</p>
-<blockquote>
+<h4 id="max"><a href="#max" class="headerlink" title="max"></a>max</h4><blockquote>
 <p>返回一个或多个值中的最高值。</p>
 </blockquote>
 <p>参数：</p>
@@ -941,8 +914,7 @@
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">max</span>(<span class="number">3%</span>, <span class="number">42%</span>, <span class="number">1%</span>, <span class="number">16%</span>);</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">42%</span><br></pre></td></tr></table></figure></p>
 <hr>
-<h3 id="类型函数"><a href="#类型函数" class="headerlink" title="类型函数"></a>类型函数</h3><p>####isnumber</p>
-<blockquote>
+<h3 id="类型函数"><a href="#类型函数" class="headerlink" title="类型函数"></a>类型函数</h3><h4 id="isnumber"><a href="#isnumber" class="headerlink" title="isnumber"></a>isnumber</h4><blockquote>
 <p>如果值是数字则返回true，否则返回false。</p>
 </blockquote>
 <p>参数：</p>
@@ -954,8 +926,7 @@
 <li>如果值是数字则返回<code>true</code>，否则返回<code>false</code>。</li>
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">isnumber</span>(<span class="number">#ff0</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isnumber</span>(blue);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isnumber</span>(<span class="string">"string"</span>); <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isnumber</span>(<span class="number">1234</span>);     <span class="comment">// true</span></span><br><span class="line"><span class="selector-tag">isnumber</span>(<span class="number">56px</span>);     <span class="comment">// true</span></span><br><span class="line"><span class="selector-tag">isnumber</span>(<span class="number">7.8%</span>);     <span class="comment">// true</span></span><br><span class="line"><span class="selector-tag">isnumber</span>(keyword);  <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isnumber</span>(url(<span class="string">...</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
-<p>####isstring</p>
-<blockquote>
+<h4 id="isstring"><a href="#isstring" class="headerlink" title="isstring"></a>isstring</h4><blockquote>
 <p>如果值是字符串则返回true，否则返回false。</p>
 </blockquote>
 <p>参数：</p>
@@ -967,8 +938,7 @@
 <li>如果值是字符串则返回<code>true</code>，否则返回<code>false</code>。</li>
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">isstring</span>(<span class="number">#ff0</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isstring</span>(blue);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isstring</span>(<span class="string">"string"</span>); <span class="comment">// true</span></span><br><span class="line"><span class="selector-tag">isstring</span>(<span class="number">1234</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isstring</span>(<span class="number">56px</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isstring</span>(<span class="number">7.8%</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isstring</span>(keyword);  <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isstring</span>(url(<span class="string">...</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
-<p>####iscolor</p>
-<blockquote>
+<h4 id="iscolor"><a href="#iscolor" class="headerlink" title="iscolor"></a>iscolor</h4><blockquote>
 <p>如果值是颜色则返回true，否则返回false。</p>
 </blockquote>
 <p>参数：</p>
@@ -980,8 +950,7 @@
 <li>如果值是颜色则返回<code>true</code>，否则返回<code>false</code>。</li>
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">iscolor</span>(<span class="number">#ff0</span>);     <span class="comment">// true</span></span><br><span class="line"><span class="selector-tag">iscolor</span>(blue);     <span class="comment">// true</span></span><br><span class="line"><span class="selector-tag">iscolor</span>(<span class="string">"string"</span>); <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">iscolor</span>(<span class="number">1234</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">iscolor</span>(<span class="number">56px</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">iscolor</span>(<span class="number">7.8%</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">iscolor</span>(keyword);  <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">iscolor</span>(url(<span class="string">...</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
-<p>####iskeyword</p>
-<blockquote>
+<h4 id="iskeyword"><a href="#iskeyword" class="headerlink" title="iskeyword"></a>iskeyword</h4><blockquote>
 <p>如果值是关键字则返回true，否则返回false。</p>
 </blockquote>
 <p>参数：</p>
@@ -993,8 +962,7 @@
 <li>如果值是关键字则返回<code>true</code>，否则返回<code>false</code>。</li>
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">iskeyword</span>(<span class="number">#ff0</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">iskeyword</span>(blue);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">iskeyword</span>(<span class="string">"string"</span>); <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">iskeyword</span>(<span class="number">1234</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">iskeyword</span>(<span class="number">56px</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">iskeyword</span>(<span class="number">7.8%</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">iskeyword</span>(keyword);  <span class="comment">// true</span></span><br><span class="line"><span class="selector-tag">iskeyword</span>(url(<span class="string">...</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
-<p>####isurl</p>
-<blockquote>
+<h4 id="isurl"><a href="#isurl" class="headerlink" title="isurl"></a>isurl</h4><blockquote>
 <p>如果值是url则返回true，否则返回false。</p>
 </blockquote>
 <p>参数：</p>
@@ -1006,8 +974,7 @@
 <li>如果值是url则返回<code>true</code>，否则返回<code>false</code>。</li>
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">isurl</span>(<span class="number">#ff0</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isurl</span>(blue);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isurl</span>(<span class="string">"string"</span>); <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isurl</span>(<span class="number">1234</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isurl</span>(<span class="number">56px</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isurl</span>(<span class="number">7.8%</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isurl</span>(keyword);  <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isurl</span>(url(<span class="string">...</span>)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
-<p>####ispixel</p>
-<blockquote>
+<h4 id="ispixel"><a href="#ispixel" class="headerlink" title="ispixel"></a>ispixel</h4><blockquote>
 <p>如果值是以像素为单位的数字则返回true，否则返回false。</p>
 </blockquote>
 <p>参数：</p>
@@ -1019,8 +986,7 @@
 <li>如果值是像素则返回<code>true</code>，否则返回<code>false</code>。</li>
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ispixel</span>(<span class="number">#ff0</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">ispixel</span>(blue);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">ispixel</span>(<span class="string">"string"</span>); <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">ispixel</span>(<span class="number">1234</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">ispixel</span>(<span class="number">56px</span>);     <span class="comment">// true</span></span><br><span class="line"><span class="selector-tag">ispixel</span>(<span class="number">7.8%</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">ispixel</span>(keyword);  <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">ispixel</span>(url(<span class="string">...</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
-<p>####isem</p>
-<blockquote>
+<h4 id="isem"><a href="#isem" class="headerlink" title="isem"></a>isem</h4><blockquote>
 <p>如果值是em值则返回true，否则返回false。</p>
 </blockquote>
 <p>参数：</p>
@@ -1032,8 +998,7 @@
 <li>如果值是em值则返回<code>true</code>，否则返回<code>false</code>。</li>
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">isem</span>(<span class="number">#ff0</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isem</span>(blue);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isem</span>(<span class="string">"string"</span>); <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isem</span>(<span class="number">1234</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isem</span>(<span class="number">56px</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isem</span>(<span class="number">7.8em</span>);    <span class="comment">// true</span></span><br><span class="line"><span class="selector-tag">isem</span>(keyword);  <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isem</span>(url(<span class="string">...</span>)); <span class="comment">// fal</span></span><br></pre></td></tr></table></figure></p>
-<p>####ispercentage</p>
-<blockquote>
+<h4 id="ispercentage"><a href="#ispercentage" class="headerlink" title="ispercentage"></a>ispercentage</h4><blockquote>
 <p>如果值是百分比值则返回true，否则返回false。</p>
 </blockquote>
 <p>参数：</p>
@@ -1045,8 +1010,7 @@
 <li>如果值是百分比值字则返回<code>true</code>，否则返回<code>false</code>。</li>
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ispercentage</span>(<span class="number">#ff0</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">ispercentage</span>(blue);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">ispercentage</span>(<span class="string">"string"</span>); <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">ispercentage</span>(<span class="number">1234</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">ispercentage</span>(<span class="number">56px</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">ispercentage</span>(<span class="number">7.8%</span>);     <span class="comment">// true</span></span><br><span class="line"><span class="selector-tag">ispercentage</span>(keyword);  <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">ispercentage</span>(url(<span class="string">...</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
-<p>####isunit</p>
-<blockquote>
+<h4 id="isunit"><a href="#isunit" class="headerlink" title="isunit"></a>isunit</h4><blockquote>
 <p>如果值是指定单位的数字则返回true，否则返回false。</p>
 </blockquote>
 <p>参数：</p>
@@ -1059,8 +1023,7 @@
 <li>如果值是指定单位的数字则返回<code>true</code>，否则返回<code>false</code>。</li>
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">isunit</span>(<span class="number">11px</span>, px);  <span class="comment">// true</span></span><br><span class="line"><span class="selector-tag">isunit</span>(<span class="number">2.2%</span>, px);  <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isunit</span>(<span class="number">33px</span>, rem); <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isunit</span>(<span class="number">4rem</span>, rem); <span class="comment">// true</span></span><br><span class="line"><span class="selector-tag">isunit</span>(<span class="number">56px</span>, <span class="string">"%"</span>); <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isunit</span>(<span class="number">7.8%</span>, <span class="string">'%'</span>); <span class="comment">// true</span></span><br><span class="line"><span class="selector-tag">isunit</span>(<span class="number">1234</span>, em);  <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isunit</span>(<span class="number">#ff0</span>, pt);  <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isunit</span>(<span class="string">"mm"</span>, mm);  <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
-<p>####isruleset</p>
-<blockquote>
+<h4 id="isruleset"><a href="#isruleset" class="headerlink" title="isruleset"></a>isruleset</h4><blockquote>
 <p>如果值是规则集则返回true，否则返回false。</p>
 </blockquote>
 <p>参数：</p>
@@ -1073,8 +1036,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@rules:</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">isruleset(<span class="variable">@rules</span>);   <span class="comment">// true</span></span><br><span class="line"><span class="selector-tag">isruleset</span>(<span class="number">#ff0</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isruleset</span>(blue);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isruleset</span>(<span class="string">"string"</span>); <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isruleset</span>(<span class="number">1234</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isruleset</span>(<span class="number">56px</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isruleset</span>(<span class="number">7.8%</span>);     <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isruleset</span>(keyword);  <span class="comment">// false</span></span><br><span class="line"><span class="selector-tag">isruleset</span>(url(<span class="string">...</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
 <hr>
-<h3 id="颜色定义函数"><a href="#颜色定义函数" class="headerlink" title="颜色定义函数"></a>颜色定义函数</h3><p>####rgb</p>
-<blockquote>
+<h3 id="颜色定义函数"><a href="#颜色定义函数" class="headerlink" title="颜色定义函数"></a>颜色定义函数</h3><h4 id="rgb"><a href="#rgb" class="headerlink" title="rgb"></a>rgb</h4><blockquote>
 <p>从十进制红色，绿色和蓝色（RGB）值创建不透明的颜色对象。</p>
 </blockquote>
 <p>例如，标准<code>HTML / CSS</code>格式的文字颜色值也可用于定义颜色<code>#ff0000</code>。</p>
@@ -1090,8 +1052,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">rgb</span>(<span class="number">90</span>, <span class="number">129</span>, <span class="number">32</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#5a8120</span><br></pre></td></tr></table></figure></p>
-<p>####rgba</p>
-<blockquote>
+<h4 id="rgba"><a href="#rgba" class="headerlink" title="rgba"></a>rgba</h4><blockquote>
 <p>从十进制红色，绿色，蓝色和alpha（RGBA）值创建透明颜色对象。</p>
 </blockquote>
 <p>参数：</p>
@@ -1107,8 +1068,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">rgba</span>(<span class="number">90</span>, <span class="number">129</span>, <span class="number">32</span>, <span class="number">0.5</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rgba(90, 129, 32, 0.5)</span><br></pre></td></tr></table></figure></p>
-<p>####argb</p>
-<blockquote>
+<h4 id="argb"><a href="#argb" class="headerlink" title="argb"></a>argb</h4><blockquote>
 <p>以#AARRGGBB格式（不是 #RRGGBBAA！）创建颜色的十六进制表示。</p>
 </blockquote>
 <p>参数：</p>
@@ -1121,8 +1081,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">argb</span>(rgba(<span class="number">90</span>, <span class="number">23</span>, <span class="number">148</span>, <span class="number">0.5</span>));</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#805a1794</span><br></pre></td></tr></table></figure></p>
-<p>####hsl</p>
-<blockquote>
+<h4 id="hsl"><a href="#hsl" class="headerlink" title="hsl"></a>hsl</h4><blockquote>
 <p>根据色调，饱和度和亮度（HSL）值创建不透明的颜色对象。</p>
 </blockquote>
 <p>参数：</p>
@@ -1140,8 +1099,7 @@
 <blockquote>
 <p>如果您想基于另一种颜色的通道创建新颜色，这非常有用，例如： <code>@new: hsl(hue(@old), 45%, 90%)</code>; <code>@new</code>会有自己<code>@old</code>的色调，还有自己的饱和感和轻盈感。</p>
 </blockquote>
-<p>####hsla</p>
-<blockquote>
+<h4 id="hsla"><a href="#hsla" class="headerlink" title="hsla"></a>hsla</h4><blockquote>
 <p>根据色调，饱和度，亮度和alpha（HSLA）值创建透明颜色对象。</p>
 </blockquote>
 <p>参数：</p>
@@ -1154,8 +1112,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">hsl</span>(<span class="number">90</span>, <span class="number">100%</span>, <span class="number">50%</span>, <span class="number">0.5</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rgba(128, 255, 0, 0.5)</span><br></pre></td></tr></table></figure></p>
-<p>####hsv</p>
-<blockquote>
+<h4 id="hsv"><a href="#hsv" class="headerlink" title="hsv"></a>hsv</h4><blockquote>
 <p>根据色调，饱和度和值（HSV）值创建不透明的颜色对象。</p>
 </blockquote>
 <p>请注意，这是Photoshop中可用的颜色空间，与…不同<code>hsl</code>。</p>
@@ -1168,8 +1125,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">hsv</span>(<span class="number">90</span>, <span class="number">100%</span>, <span class="number">50%</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#408000</span><br></pre></td></tr></table></figure></p>
-<p>####hsva</p>
-<blockquote>
+<h4 id="hsva"><a href="#hsva" class="headerlink" title="hsva"></a>hsva</h4><blockquote>
 <p>根据色调，饱和度，值和alpha（HSVA）值创建透明颜色对象。</p>
 </blockquote>
 <p>参数：</p>
@@ -1184,8 +1140,7 @@
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rgba(64, 128, 0, 0.5)</span><br></pre></td></tr></table></figure></p>
 <hr>
 <h3 id="颜色操作函数"><a href="#颜色操作函数" class="headerlink" title="颜色操作函数"></a>颜色操作函数</h3><p>颜色操作通常采用与其更改值相同的单位参数，百分比作为绝对值处理，因此将10％值增加10％会产生20％。将选项方法参数设置为相对百分比的相对值。当使用相对百分比时，10％的值增加10％，结果为11％。值被限制在允许的范围内; 他们没有环绕。在显示返回值的地方，除了通常使用的十六进制版本之外，我们还使用了能够清楚地表明每个函数已完成的内容的格式。</p>
-<p>####saturate</p>
-<blockquote>
+<h4 id="saturate"><a href="#saturate" class="headerlink" title="saturate"></a>saturate</h4><blockquote>
 <p>以绝对量增加HSL颜色空间中颜色的饱和度。</p>
 </blockquote>
 <p>参数：</p>
@@ -1201,8 +1156,7 @@
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">saturate</span>(hsl(<span class="number">90</span>, <span class="number">80%</span>, <span class="number">50%</span>), <span class="number">20%</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#80ff00 // hsl(90, 100%, 50%)</span><br></pre></td></tr></table></figure></p>
 <p><img src="/2019/02/25/LESS学习（三）/1552117903906.png" alt="Alt text"></p>
-<p>####desaturate</p>
-<blockquote>
+<h4 id="desaturate"><a href="#desaturate" class="headerlink" title="desaturate"></a>desaturate</h4><blockquote>
 <p>降低HSL颜色空间中颜色的饱和度绝对量。</p>
 </blockquote>
 <p>参数：</p>
@@ -1218,8 +1172,7 @@
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">desaturate</span>(hsl(<span class="number">90</span>, <span class="number">80%</span>, <span class="number">50%</span>), <span class="number">20%</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#80cc33 // hsl(90, 60%, 50%)</span><br></pre></td></tr></table></figure></p>
 <p><img src="/2019/02/25/LESS学习（三）/1552117964392.png" alt="Alt text"></p>
-<p>####lighten</p>
-<blockquote>
+<h4 id="lighten"><a href="#lighten" class="headerlink" title="lighten"></a>lighten</h4><blockquote>
 <p>以绝对量增加HSL颜色空间中颜色的亮度。</p>
 </blockquote>
 <p>参数：</p>
@@ -1235,8 +1188,7 @@
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">lighten</span>(hsl(<span class="number">90</span>, <span class="number">80%</span>, <span class="number">50%</span>), <span class="number">20%</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#b3f075 // hsl(90, 80%, 70%)</span><br></pre></td></tr></table></figure></p>
 <p><img src="/2019/02/25/LESS学习（三）/1552118027983.png" alt="Alt text"></p>
-<p>####darken</p>
-<blockquote>
+<h4 id="darken"><a href="#darken" class="headerlink" title="darken"></a>darken</h4><blockquote>
 <p>以绝对量减少HSL颜色空间中颜色的亮度。</p>
 </blockquote>
 <p>参数：</p>
@@ -1252,8 +1204,7 @@
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">darken</span>(hsl(<span class="number">90</span>, <span class="number">80%</span>, <span class="number">50%</span>), <span class="number">20%</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#4d8a0f // hsl(90, 80%, 30%)</span><br></pre></td></tr></table></figure></p>
 <p><img src="/2019/02/25/LESS学习（三）/1552118114907.png" alt="Alt text"></p>
-<p>####fadein</p>
-<blockquote>
+<h4 id="fadein"><a href="#fadein" class="headerlink" title="fadein"></a>fadein</h4><blockquote>
 <p>降低颜色的透明度（或增加不透明度），使其更不透明。</p>
 </blockquote>
 <p>对不透明的颜色没有影响。要在另一个方向淡出使用<code>fadeout</code>。</p>
@@ -1269,8 +1220,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">fadein</span>(hsla(<span class="number">90</span>, <span class="number">90%</span>, <span class="number">50%</span>, <span class="number">0.5</span>), <span class="number">10%</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rgba(128, 242, 13, 0.6) // hsla(90, 90%, 50%, 0.6)</span><br></pre></td></tr></table></figure></p>
-<p>####fadeout</p>
-<blockquote>
+<h4 id="fadeout"><a href="#fadeout" class="headerlink" title="fadeout"></a>fadeout</h4><blockquote>
 <p>增加颜色的透明度（或降低不透明度），使其不透明。要在另一个方向淡出使用fadein。</p>
 </blockquote>
 <p>参数：</p>
@@ -1285,8 +1235,7 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">fadeout</span>(hsla(<span class="number">90</span>, <span class="number">90%</span>, <span class="number">50%</span>, <span class="number">0.5</span>), <span class="number">10%</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rgba(128, 242, 13, 0.4) // hsla(90, 90%, 50%, 0.4)</span><br></pre></td></tr></table></figure></p>
-<p>####fade</p>
-<blockquote>
+<h4 id="fade"><a href="#fade" class="headerlink" title="fade"></a>fade</h4><blockquote>
 <p>设置颜色的绝对透明度。可以应用于颜色，无论它们是否已具有不透明度值。</p>
 </blockquote>
 <p>参数：</p>
@@ -1300,108 +1249,6 @@
 </ul>
 <p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">fade</span>(hsl(<span class="number">90</span>, <span class="number">90%</span>, <span class="number">50%</span>), <span class="number">10%</span>)</span><br></pre></td></tr></table></figure></p>
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rgba(128, 242, 13, 0.1) //hsla(90, 90%, 50%, 0.1)</span><br></pre></td></tr></table></figure></p>
-<p>####spin</p>
-<blockquote>
-<p>以绝对量增加HSL颜色空间中颜色的亮度。</p>
-</blockquote>
-<p>参数：</p>
-<ul>
-<li><code>color</code>：一个颜色对象。</li>
-<li><code>amount</code>：百分比0-100％。</li>
-<li><code>method</code>：可选，设置<code>relative</code>为使调整相对于当前值。</li>
-</ul>
-<p>返回：</p>
-<ul>
-<li><code>color</code></li>
-</ul>
-<p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">lighten</span>(hsl(<span class="number">90</span>, <span class="number">80%</span>, <span class="number">50%</span>), <span class="number">20%</span>)</span><br></pre></td></tr></table></figure></p>
-<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#b3f075 // hsl(90, 80%, 70%)</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/02/25/LESS学习（三）/1552118027983.png" alt="Alt text"></p>
-<p>####mix</p>
-<blockquote>
-<p>以绝对量增加HSL颜色空间中颜色的亮度。</p>
-</blockquote>
-<p>参数：</p>
-<ul>
-<li><code>color</code>：一个颜色对象。</li>
-<li><code>amount</code>：百分比0-100％。</li>
-<li><code>method</code>：可选，设置<code>relative</code>为使调整相对于当前值。</li>
-</ul>
-<p>返回：</p>
-<ul>
-<li><code>color</code></li>
-</ul>
-<p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">lighten</span>(hsl(<span class="number">90</span>, <span class="number">80%</span>, <span class="number">50%</span>), <span class="number">20%</span>)</span><br></pre></td></tr></table></figure></p>
-<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#b3f075 // hsl(90, 80%, 70%)</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/02/25/LESS学习（三）/1552118027983.png" alt="Alt text"></p>
-<p>####tint</p>
-<blockquote>
-<p>以绝对量增加HSL颜色空间中颜色的亮度。</p>
-</blockquote>
-<p>参数：</p>
-<ul>
-<li><code>color</code>：一个颜色对象。</li>
-<li><code>amount</code>：百分比0-100％。</li>
-<li><code>method</code>：可选，设置<code>relative</code>为使调整相对于当前值。</li>
-</ul>
-<p>返回：</p>
-<ul>
-<li><code>color</code></li>
-</ul>
-<p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">lighten</span>(hsl(<span class="number">90</span>, <span class="number">80%</span>, <span class="number">50%</span>), <span class="number">20%</span>)</span><br></pre></td></tr></table></figure></p>
-<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#b3f075 // hsl(90, 80%, 70%)</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/02/25/LESS学习（三）/1552118027983.png" alt="Alt text"></p>
-<p>####shade</p>
-<blockquote>
-<p>以绝对量增加HSL颜色空间中颜色的亮度。</p>
-</blockquote>
-<p>参数：</p>
-<ul>
-<li><code>color</code>：一个颜色对象。</li>
-<li><code>amount</code>：百分比0-100％。</li>
-<li><code>method</code>：可选，设置<code>relative</code>为使调整相对于当前值。</li>
-</ul>
-<p>返回：</p>
-<ul>
-<li><code>color</code></li>
-</ul>
-<p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">lighten</span>(hsl(<span class="number">90</span>, <span class="number">80%</span>, <span class="number">50%</span>), <span class="number">20%</span>)</span><br></pre></td></tr></table></figure></p>
-<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#b3f075 // hsl(90, 80%, 70%)</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/02/25/LESS学习（三）/1552118027983.png" alt="Alt text"></p>
-<p>####greyscale</p>
-<blockquote>
-<p>以绝对量增加HSL颜色空间中颜色的亮度。</p>
-</blockquote>
-<p>参数：</p>
-<ul>
-<li><code>color</code>：一个颜色对象。</li>
-<li><code>amount</code>：百分比0-100％。</li>
-<li><code>method</code>：可选，设置<code>relative</code>为使调整相对于当前值。</li>
-</ul>
-<p>返回：</p>
-<ul>
-<li><code>color</code></li>
-</ul>
-<p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">lighten</span>(hsl(<span class="number">90</span>, <span class="number">80%</span>, <span class="number">50%</span>), <span class="number">20%</span>)</span><br></pre></td></tr></table></figure></p>
-<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#b3f075 // hsl(90, 80%, 70%)</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/02/25/LESS学习（三）/1552118027983.png" alt="Alt text"></p>
-<p>####contrast</p>
-<blockquote>
-<p>以绝对量增加HSL颜色空间中颜色的亮度。</p>
-</blockquote>
-<p>参数：</p>
-<ul>
-<li><code>color</code>：一个颜色对象。</li>
-<li><code>amount</code>：百分比0-100％。</li>
-<li><code>method</code>：可选，设置<code>relative</code>为使调整相对于当前值。</li>
-</ul>
-<p>返回：</p>
-<ul>
-<li><code>color</code></li>
-</ul>
-<p>例：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">lighten</span>(hsl(<span class="number">90</span>, <span class="number">80%</span>, <span class="number">50%</span>), <span class="number">20%</span>)</span><br></pre></td></tr></table></figure></p>
-<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#b3f075 // hsl(90, 80%, 70%)</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/02/25/LESS学习（三）/1552118027983.png" alt="Alt text"></p>
 
       
     </div>
@@ -1614,7 +1461,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#杂项函数"><span class="nav-number">1.</span> <span class="nav-text">杂项函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#color"><span class="nav-number">1.1.</span> <span class="nav-text">color</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#image-size"><span class="nav-number">1.2.</span> <span class="nav-text">image-size</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#image-width"><span class="nav-number">2.</span> <span class="nav-text">image-width</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#image-height"><span class="nav-number">2.1.</span> <span class="nav-text">image-height</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#convert"><span class="nav-number">2.2.</span> <span class="nav-text">convert</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#data-uri"><span class="nav-number">2.3.</span> <span class="nav-text">data-uri</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#default"><span class="nav-number">2.4.</span> <span class="nav-text">default</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unit"><span class="nav-number">2.5.</span> <span class="nav-text">unit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#get-unit"><span class="nav-number">2.6.</span> <span class="nav-text">get-unit</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串函数"><span class="nav-number">3.</span> <span class="nav-text">字符串函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#e"><span class="nav-number">3.1.</span> <span class="nav-text">e</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表函数"><span class="nav-number">4.</span> <span class="nav-text">列表函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数学函数"><span class="nav-number">5.</span> <span class="nav-text">数学函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型函数"><span class="nav-number">6.</span> <span class="nav-text">类型函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#颜色定义函数"><span class="nav-number">7.</span> <span class="nav-text">颜色定义函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#颜色操作函数"><span class="nav-number">8.</span> <span class="nav-text">颜色操作函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#杂项函数"><span class="nav-number">1.</span> <span class="nav-text">杂项函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#color"><span class="nav-number">1.1.</span> <span class="nav-text">color</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#image-size"><span class="nav-number">1.2.</span> <span class="nav-text">image-size</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#image-width"><span class="nav-number">2.</span> <span class="nav-text">image-width</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#image-height"><span class="nav-number">2.1.</span> <span class="nav-text">image-height</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#convert"><span class="nav-number">2.2.</span> <span class="nav-text">convert</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#data-uri"><span class="nav-number">2.3.</span> <span class="nav-text">data-uri</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#default"><span class="nav-number">2.4.</span> <span class="nav-text">default</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unit"><span class="nav-number">2.5.</span> <span class="nav-text">unit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#get-unit"><span class="nav-number">2.6.</span> <span class="nav-text">get-unit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#escape"><span class="nav-number">2.7.</span> <span class="nav-text">escape</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e"><span class="nav-number">2.8.</span> <span class="nav-text">e</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#format"><span class="nav-number">2.9.</span> <span class="nav-text">% format</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#replace"><span class="nav-number">2.10.</span> <span class="nav-text">replace</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表函数"><span class="nav-number">3.</span> <span class="nav-text">列表函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#length"><span class="nav-number">3.1.</span> <span class="nav-text">length</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#extract"><span class="nav-number">3.2.</span> <span class="nav-text">extract</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数学函数"><span class="nav-number">4.</span> <span class="nav-text">数学函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ceil"><span class="nav-number">4.1.</span> <span class="nav-text">ceil</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#floor"><span class="nav-number">4.2.</span> <span class="nav-text">floor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#percentage"><span class="nav-number">4.3.</span> <span class="nav-text">percentage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#round"><span class="nav-number">4.4.</span> <span class="nav-text">round</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sqrt"><span class="nav-number">4.5.</span> <span class="nav-text">sqrt</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#abs"><span class="nav-number">4.6.</span> <span class="nav-text">abs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sin"><span class="nav-number">4.7.</span> <span class="nav-text">sin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#asin"><span class="nav-number">4.8.</span> <span class="nav-text">asin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cos"><span class="nav-number">4.9.</span> <span class="nav-text">cos</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#acos"><span class="nav-number">4.10.</span> <span class="nav-text">acos</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tan"><span class="nav-number">4.11.</span> <span class="nav-text">tan</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#atan"><span class="nav-number">4.12.</span> <span class="nav-text">atan</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pi"><span class="nav-number">4.13.</span> <span class="nav-text">pi</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pow"><span class="nav-number">4.14.</span> <span class="nav-text">pow</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mod"><span class="nav-number">4.15.</span> <span class="nav-text">mod</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#min"><span class="nav-number">4.16.</span> <span class="nav-text">min</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#max"><span class="nav-number">4.17.</span> <span class="nav-text">max</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型函数"><span class="nav-number">5.</span> <span class="nav-text">类型函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#isnumber"><span class="nav-number">5.1.</span> <span class="nav-text">isnumber</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isstring"><span class="nav-number">5.2.</span> <span class="nav-text">isstring</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iscolor"><span class="nav-number">5.3.</span> <span class="nav-text">iscolor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iskeyword"><span class="nav-number">5.4.</span> <span class="nav-text">iskeyword</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isurl"><span class="nav-number">5.5.</span> <span class="nav-text">isurl</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ispixel"><span class="nav-number">5.6.</span> <span class="nav-text">ispixel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isem"><span class="nav-number">5.7.</span> <span class="nav-text">isem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ispercentage"><span class="nav-number">5.8.</span> <span class="nav-text">ispercentage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isunit"><span class="nav-number">5.9.</span> <span class="nav-text">isunit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isruleset"><span class="nav-number">5.10.</span> <span class="nav-text">isruleset</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#颜色定义函数"><span class="nav-number">6.</span> <span class="nav-text">颜色定义函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rgb"><span class="nav-number">6.1.</span> <span class="nav-text">rgb</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rgba"><span class="nav-number">6.2.</span> <span class="nav-text">rgba</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#argb"><span class="nav-number">6.3.</span> <span class="nav-text">argb</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hsl"><span class="nav-number">6.4.</span> <span class="nav-text">hsl</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hsla"><span class="nav-number">6.5.</span> <span class="nav-text">hsla</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hsv"><span class="nav-number">6.6.</span> <span class="nav-text">hsv</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hsva"><span class="nav-number">6.7.</span> <span class="nav-text">hsva</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#颜色操作函数"><span class="nav-number">7.</span> <span class="nav-text">颜色操作函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#saturate"><span class="nav-number">7.1.</span> <span class="nav-text">saturate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#desaturate"><span class="nav-number">7.2.</span> <span class="nav-text">desaturate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lighten"><span class="nav-number">7.3.</span> <span class="nav-text">lighten</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#darken"><span class="nav-number">7.4.</span> <span class="nav-text">darken</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fadein"><span class="nav-number">7.5.</span> <span class="nav-text">fadein</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fadeout"><span class="nav-number">7.6.</span> <span class="nav-text">fadeout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fade"><span class="nav-number">7.7.</span> <span class="nav-text">fade</span></a></li></ol></li></ol></div>
             
 
           </div>
