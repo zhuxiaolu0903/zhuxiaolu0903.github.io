@@ -516,7 +516,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/区分JS中的undefined,null,”“,0和false/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/判断操作语句/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -535,7 +535,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/16/区分JS中的undefined,null,”“,0和false/" itemprop="url">区分JS中的undefined,null,"",0和false</a></h1>
+                <a class="post-title-link" href="/2019/02/16/判断操作语句/" itemprop="url">JS中的判断操作语句</a></h1>
         
 
         <div class="post-meta">
@@ -601,7 +601,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  665
+                  381
                 </span>
               
 
@@ -617,7 +617,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -639,16 +639,33 @@
 
       
         
-          <blockquote>
-<p>在程序语言中定义的各种各样的数据类型中，我们都会为其定义一个”空值”或”假值”，比如对象类型的空值null，.NET Framework中数据库字段的空值DBNull，boolean类型的假值false等等。在JavaScript中也有很多种的”空值”和”假值”，那么它们都有什么共同点和不同点呢？</p>
+          
+            <p><strong><code>if \ else if \ else</code></strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(条件<span class="number">1</span>)&#123;</span><br><span class="line">   <span class="comment">//=&gt;条件1成立执行的操作</span></span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(条件<span class="number">2</span>)&#123;</span><br><span class="line">   <span class="comment">//=&gt;上面条件不成立，条件2成立，执行的操作</span></span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">   <span class="comment">//=&gt; 以上条件都不成立执行的操作</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line">如果好几个条件都成立了，只把第一个成立的条件执行，后面成立的条件忽略不管</span><br><span class="line"></span><br><span class="line">条件：</span><br><span class="line">A == B、 A != B 、A &gt;= B 、A &lt; B</span><br><span class="line"><span class="keyword">if</span>(A)&#123;&#125; <span class="comment">//先把A转换为布尔类型，判断真假以此来决定条件是否成立</span></span><br><span class="line"><span class="keyword">if</span>(A &gt; B &amp;&amp; A &lt; <span class="number">10</span>)&#123;&#125; <span class="comment">//只有两个小条件都是真的，整体条件才为真</span></span><br><span class="line"><span class="keyword">if</span>(A &gt; B || A == <span class="number">0</span>)&#123;&#125; <span class="comment">//只有其中一个小条件成立，整体条件就是真</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p><strong><code>BAT面试题</code></strong><br><img src="/2019/02/16/判断操作语句/1531386162630.png" alt="Alt text"><br>请问最后的结果是什么？<br>答案是：字符串0  <strong><code>&#39;0&#39;</code></strong><br><strong><code>parseFloat(&#39;width:12.5px&#39;);    //-&gt; 结果为NaN</code></strong><br>且<strong><code>NaN != NaN</code></strong></p>
+<hr>
+<p><strong><code>三元运算符</code></strong></p>
+<blockquote>
+<p>条件？条件成立执行：条件不成立执行；<br> if(条件){}else1{}: 三元运算符就是这种简单if、else的另一种写法<br>举例1：<br><img src="/2019/02/16/判断操作语句/1531386730365.png" alt="Alt text"><br>举例2：<br><img src="/2019/02/16/判断操作语句/1531386757615.png" alt="Alt text"><br>举例3：<br><img src="/2019/02/16/判断操作语句/1531386990825.png" alt="Alt text"><br>举例4：<br><img src="/2019/02/16/判断操作语句/1531387159288.png" alt="Alt text"><br>举例5：<br><img src="/2019/02/16/判断操作语句/1531387313181.png" alt="Alt text"></p>
 </blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/16/区分JS中的undefined,null,”“,0和false/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+<hr>
+<p><strong><code>switch case</code></strong></p>
+<blockquote>
+<p> switch case 应用于if、else中一个变量在不同值情况下的不同操作<br><img src="/2019/02/16/判断操作语句/1531387814750.png" alt="Alt text"><br>案例1：<br><img src="/2019/02/16/判断操作语句/1531388190171.png" alt="Alt text"><br>案例2：<br><img src="/2019/02/16/判断操作语句/1531388342806.png" alt="Alt text"><br>案例3：<br><img src="/2019/02/16/判断操作语句/1531388508153.png" alt="Alt text"><br>案例4：<br><img src="/2019/02/16/判断操作语句/1531388710126.png" alt="Alt text"><br><img src="/2019/02/16/判断操作语句/1531388675443.png" alt="Alt text"><br><img src="/2019/02/16/判断操作语句/1531388821566.png" alt="Alt text"></p>
+</blockquote>
+<hr>
+<h3 id="循环操作语句"><a href="#循环操作语句" class="headerlink" title="循环操作语句"></a>循环操作语句</h3><hr>
+<blockquote>
+<p>循环： 重复做一件事情</p>
+</blockquote>
+<p><strong><code>for循环</code></strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(设置循环起始值；设置循环执行的条件；步长累加)&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//=&gt;循环体： 重复做的事情都在循环体中</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2019/02/16/判断操作语句/1531389536025.png" alt="Alt text"></p>
+<p><img src="/2019/02/16/判断操作语句/1531389914440.png" alt="Alt text"></p>
+<p><img src="/2019/02/16/判断操作语句/1531389970569.png" alt="Alt text"></p>
+<p><img src="/2019/02/16/判断操作语句/1531390050515.png" alt="Alt text"></p>
+<p><img src="/2019/02/16/判断操作语句/1531390108959.png" alt="Alt text"></p>
+<p><img src="/2019/02/16/判断操作语句/1531390363397.png" alt="Alt text"></p>
+
+          
         
       
     </div>
