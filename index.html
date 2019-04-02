@@ -453,11 +453,248 @@
 
       
         
-          <h3 id="PC端常用事件"><a href="#PC端常用事件" class="headerlink" title="PC端常用事件"></a>PC端常用事件</h3><blockquote>
-<p><code>click</code>(点击)、<code>mouseover</code>（鼠标滑进）、<code>mouseenter</code>（鼠标进入）、<code>mousedown</code>（鼠标按下）、<code>mouseup</code>（鼠标抬起）、<code>mouseout</code>（鼠标移出）、<code>mouseleave</code>（鼠标离开）、<code>mousemove</code>（鼠标移动）、<code>mousewheel</code>（鼠标滑轮滚动）、<code>keydown</code>（键盘按下）、<code>keyup</code>（键盘抬起）、<code>change</code>（输入框内容改变）、<code>scroll</code>（浏览器滚动条滚动）、<code>load</code>（加载完成）、<code>ready</code>（准备就绪）、<code>blur</code>（文本框失去焦点）、<code>focus</code>（文本框得到焦点）…<br></p></blockquote>
+          
+            <h3 id="PC端常用事件"><a href="#PC端常用事件" class="headerlink" title="PC端常用事件"></a>PC端常用事件</h3><blockquote>
+<p><code>click</code>(点击)、<code>mouseover</code>（鼠标滑进）、<code>mouseenter</code>（鼠标进入）、<code>mousedown</code>（鼠标按下）、<code>mouseup</code>（鼠标抬起）、<code>mouseout</code>（鼠标移出）、<code>mouseleave</code>（鼠标离开）、<code>mousemove</code>（鼠标移动）、<code>mousewheel</code>（鼠标滑轮滚动）、<code>keydown</code>（键盘按下）、<code>keyup</code>（键盘抬起）、<code>change</code>（输入框内容改变）、<code>scroll</code>（浏览器滚动条滚动）、<code>load</code>（加载完成）、<code>ready</code>（准备就绪）、<code>blur</code>（文本框失去焦点）、<code>focus</code>（文本框得到焦点）…</p>
+</blockquote>
+<hr>
+<h3 id="移动端常用事件"><a href="#移动端常用事件" class="headerlink" title="移动端常用事件"></a>移动端常用事件</h3><blockquote>
+<p><code>click</code>(点击)、<code>load</code>（加载完成）、<code>scroll</code>（滚动条滚动）、<code>blur</code>（文本框失去焦点）、<code>focus</code>（文本框失去焦点）、<code>change</code>（输入框内容发生改变 ）、<code>input</code>(文本框输入内容，代替keyup、keydown)…</p>
+</blockquote>
+<h4 id="touch事件模型"><a href="#touch事件模型" class="headerlink" title="touch事件模型"></a>touch事件模型</h4><blockquote>
+<p>处理单手指操作</p>
+</blockquote>
+<ol>
+<li><code>touchstart</code>：手指在屏幕中按下</li>
+<li><code>touchmove</code>：手指在屏幕中移动</li>
+<li><code>touchend</code>：手指离开屏幕</li>
+<li><code>touchcancle</code>：手指在屏幕中操作，设备突然故障（断电、程序闪退）</li>
+</ol>
+<h4 id="移动端的手指操作"><a href="#移动端的手指操作" class="headerlink" title="移动端的手指操作"></a>移动端的手指操作</h4><blockquote>
+<p>点击、单击、长按、滑动、左滑、右滑、上滑、下滑…</p>
+<ol>
+<li><code>单击和双击</code>（当用户的手指在第一次点击屏幕之后，等待<strong><em><code>300ms</code></em></strong>还没有等到用户的第二次点击，则认为是单击，否则认为是双击）</li>
+<li><code>点击和长按</code>（当用户的手指停留在屏幕上的事件超过<strong><em><code>750ms</code></em></strong>，则认为是长按，否则认为是点击）</li>
+<li><code>点击和滑动</code>（当用户的手指在屏幕上操作时，轨迹的X/Y轴偏移的距离在<strong><em><code>30px</code></em></strong>以内，则认为是点击，否则认为是滑动）</li>
+<li><code>左右滑动和上下滑动</code>（当用户的手指在屏幕上操作时，轨迹的<strong><em><code>X轴的距离 &gt; Y轴偏移的距离</code></em></strong>，则认为是左右滑动，否则认为是上下滑动）</li>
+<li><code>左滑和右滑</code>（当用户的手指在屏幕上操作时，轨迹在<strong><em><code>X轴的偏移距离 &gt;</code></em></strong> 0，则认为是右滑，否则认为是左滑）</li>
+<li><code>上滑和下滑</code>（当用户的手指在屏幕上操作时，轨迹在<strong><em><code>Y轴的偏移距离 &gt; 0</code></em></strong>，则认为是下滑，否则认为是上滑）</li>
+</ol>
+</blockquote>
+<h4 id="gesture事件模型"><a href="#gesture事件模型" class="headerlink" title="gesture事件模型"></a>gesture事件模型</h4><blockquote>
+<p>处理多手指操作</p>
+</blockquote>
+<ol>
+<li><code>gesturestart</code></li>
+<li><code>gesturechange</code></li>
+<li><code>gestureend</code></li>
+</ol>
+<hr>
+<h3 id="移动端的click事件与PC端的click事件的区别"><a href="#移动端的click事件与PC端的click事件的区别" class="headerlink" title="移动端的click事件与PC端的click事件的区别"></a>移动端的click事件与PC端的click事件的区别</h3><h3 id="移动端的click事件"><a href="#移动端的click事件" class="headerlink" title="移动端的click事件"></a>移动端的click事件</h3><blockquote>
+<p>属于单击事件，不是点击事件。在移动端的项目中，经常会区分单击做什么操作和双击做什么操作，所以移动端的浏览器在识别click的时候，只有确定是单击后才会执行对应的操作。<br><code>因此，在移动端使用click会存在300ms的延迟</code>；浏览器在第一次点击结束后，还需要等到300ms看是否触发了第二次点击，如果触发了第二次的点击，则当前事件就不属于单击事件了，只有没有触发第二次的点击才属于单击（click）。</p>
+</blockquote>
+<hr>
+<h3 id="移动端事件-Touch事件模型案例"><a href="#移动端事件-Touch事件模型案例" class="headerlink" title="移动端事件-Touch事件模型案例"></a>移动端事件-Touch事件模型案例</h3><figure class="highlight htmlbars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset="UTF-8"&gt;</span><br><span class="line">    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span><br><span class="line">    &lt;title&gt;移动端事件机制-touch事件模型&lt;/title&gt;</span><br><span class="line">    &lt;style type="text/css"&gt;</span><br><span class="line">        html,body&#123;</span><br><span class="line">            height: 100%;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">        &#125;</span><br><span class="line">        .box&#123;</span><br><span class="line">            /* 盒子水平垂直居中 */</span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">            right: 0;</span><br><span class="line">            bottom: 0;</span><br><span class="line">            margin: auto;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">            background-color: lightcoral;</span><br><span class="line">            /*为动画添加过渡效果*/</span><br><span class="line">            -webkit-transition: all 1s ease 0s;</span><br><span class="line">            transition: all 1s ease 0s;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class="box"&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="keyword">var</span> box = <span class="built_in">document</span>.querySelector(<span class="string">'.box'</span>);</span><br><span class="line">    <span class="comment">//移动端采用click有300ms的延迟</span></span><br><span class="line">    <span class="comment">// box.addEventListener('click', function(e)&#123;</span></span><br><span class="line">    <span class="comment">//     console.log(e); //e: MouseEvent</span></span><br><span class="line">    <span class="comment">// &#125;);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 使用touch事件模型实现点击操作（单击或双击）</span></span><br><span class="line"><span class="comment">     * @param curEle</span></span><br><span class="line"><span class="comment">     * @param evenType</span></span><br><span class="line"><span class="comment">     * @param fn</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">on</span>(<span class="params">curEle, evenType, fn</span>)</span>&#123;</span><br><span class="line">        curEle.addEventListener(evenType, fn);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * TouchEvent： 事件对象除了拥有一些其他事件对象都有的属性外，还存在一些区别:</span></span><br><span class="line"><span class="comment">     *      新增加了changedTouches属性集合和touches属性集合</span></span><br><span class="line"><span class="comment">     *      相同点：</span></span><br><span class="line"><span class="comment">     *          changeTouches和touches都是手指操作的信息集合（TouchList），</span></span><br><span class="line"><span class="comment">     *          集合中记录了每一根操作的手指的相关信息（包含触发点的坐标位置）。</span></span><br><span class="line"><span class="comment">     *      不同点：</span></span><br><span class="line"><span class="comment">     *          touches: 记录的信息只有手指在屏幕上才有，也就是手指离开屏幕的时候信息就消失了，</span></span><br><span class="line"><span class="comment">     *          changedTouches: 本意上记录的是改变的值，即使手指离开，信息值也在</span></span><br><span class="line"><span class="comment">     *      所以，想要在touchend事件中获取离开的瞬间坐标值，只能使用changeTouches</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    on(box, <span class="string">'touchstart'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>)</span>&#123;</span><br><span class="line">        <span class="comment">// console.log(ev); //ev: TouchEvent</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取手指的初始坐标值</span></span><br><span class="line">        <span class="keyword">var</span> point = ev.touches[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">this</span>[<span class="string">'strX'</span>] = point.clientX;</span><br><span class="line">        <span class="keyword">this</span>[<span class="string">'strY'</span>] = point.clientY;</span><br><span class="line">        <span class="comment">//设置一个标识，表示当前手指是否在屏幕上进行移动</span></span><br><span class="line">        <span class="keyword">this</span>.isMove = <span class="literal">false</span>;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    on(box, <span class="string">'touchmove'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>)</span>&#123;</span><br><span class="line">        <span class="comment">//获取最新的手指坐标位置</span></span><br><span class="line">        <span class="keyword">var</span> point = ev.touches[<span class="number">0</span>],</span><br><span class="line">            newX = point.clientX,</span><br><span class="line">            newY = point.clientY;</span><br><span class="line">        <span class="comment">//如果手指的最新坐标位置与初始接触屏幕的坐标在一定的误差范围内超出预定值，则认为此处动作为滑动，并不是点击</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">Math</span>.abs(newX - <span class="keyword">this</span>[<span class="string">'strX'</span>]) &gt; <span class="number">30</span> || <span class="built_in">Math</span>.abs(newY - <span class="keyword">this</span>[<span class="string">'strY'</span>]) &gt; <span class="number">30</span>)&#123;</span><br><span class="line">            <span class="comment">//改变标识的值</span></span><br><span class="line">            <span class="keyword">this</span>.isMove = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    on(box, <span class="string">'touchend'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>)</span>&#123;</span><br><span class="line">        <span class="comment">//手指没有移动</span></span><br><span class="line">        <span class="keyword">if</span>(!<span class="keyword">this</span>.isMove)&#123;</span><br><span class="line">            changeStyle(<span class="keyword">this</span>, <span class="string">'webkitTransform'</span>, <span class="string">'rotate(360deg)'</span>, <span class="string">'rotate(0deg)'</span>);</span><br><span class="line">            <span class="comment">// //盒子原地旋转360度</span></span><br><span class="line">            <span class="comment">// this.style.webkitTransitionDuration = '1s';</span></span><br><span class="line">            <span class="comment">// this.style.webkitTransform = 'rotate(360deg)';</span></span><br><span class="line">            <span class="comment">// window.setTimeout(function()&#123;</span></span><br><span class="line">            <span class="comment">//     //先将盒子的过渡效果去除掉</span></span><br><span class="line">            <span class="comment">//     this.style.webkitTransitionDuration = '0s';</span></span><br><span class="line">            <span class="comment">//     this.style.webkitTransform = 'rotate(0deg)';</span></span><br><span class="line">            <span class="comment">// &#125;.bind(this), 1000); //这里可以使用bind的方法可以将this进行替换，且不用立即执行（移动端不考虑兼容问题）</span></span><br><span class="line"></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123; <span class="comment">//手指发生了移动（这里理解为滑动操作）</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//改变背景颜色</span></span><br><span class="line">            changeStyle(<span class="keyword">this</span>, <span class="string">'backgroundColor'</span>, <span class="string">'lightblue'</span>, <span class="string">'lightcoral'</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// this.style.webkitTransitionDuration = '1s';</span></span><br><span class="line">            <span class="comment">// this.style.backgroundColor = 'lightblue';</span></span><br><span class="line">            <span class="comment">// window.setTimeout(function()&#123;</span></span><br><span class="line">            <span class="comment">//     this.style.webkitTransitionDuration = '0s';</span></span><br><span class="line">            <span class="comment">//     this.style.backgroundColor = 'lightcoral';</span></span><br><span class="line">            <span class="comment">// &#125;.bind(this), 1000); //这里可以使用bind的方法可以将this进行替换，且不用立即执行（移动端不考虑兼容问题）</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">changeStyle</span> (<span class="params">curEle, cssStyle, value1, value2</span>)</span>&#123;</span><br><span class="line">        curEle.style.webkitTransitionDuration = <span class="string">'1s'</span>;</span><br><span class="line">        curEle.style[cssStyle] = value1;</span><br><span class="line">        <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="comment">//先将盒子的过渡效果去除掉</span></span><br><span class="line">            <span class="keyword">this</span>.style.webkitTransitionDuration = <span class="string">'0s'</span>;</span><br><span class="line">            <span class="keyword">this</span>.style[cssStyle] = value2;</span><br><span class="line">        &#125;.bind(curEle), <span class="number">1000</span>); <span class="comment">//这里可以使用bind的方法可以将this进行替换，且不用立即执行（移动端不考虑兼容问题）</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="移动端的事件库"><a href="#移动端的事件库" class="headerlink" title="移动端的事件库"></a>移动端的事件库</h3><blockquote>
+<p>FastClick.js: 解决click事件的300ms的延迟<br>Touch.js: 百度云手势事件库<br>Hammer.js<br>Zepto.js</p>
+</blockquote>
+<h4 id="Touch-js"><a href="#Touch-js" class="headerlink" title="Touch.js"></a>Touch.js</h4><blockquote>
+<p><a href="https://github.com/Clouda-team/touch.code.baidu.com" target="_blank" rel="noopener">GitHub地址</a><br><img src="/2019/03/28/移动端事件基础/1553838775344.png" alt="Alt text"></p>
+</blockquote>
+<figure class="highlight htmlbars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang="en"&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset="UTF-8"&gt;</span><br><span class="line">    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span><br><span class="line">    &lt;title&gt;移动端事件机制-touch事件模型&lt;/title&gt;</span><br><span class="line">    &lt;style type="text/css"&gt;</span><br><span class="line">        html,body&#123;</span><br><span class="line">            height: 100%;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">        &#125;</span><br><span class="line">        .box&#123;</span><br><span class="line">            /* 盒子水平垂直居中 */</span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">            right: 0;</span><br><span class="line">            bottom: 0;</span><br><span class="line">            margin: auto;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">            background-color: lightcoral;</span><br><span class="line">            /*为动画添加过渡效果*/</span><br><span class="line">            -webkit-transition: all 1s ease 0s;</span><br><span class="line">            transition: all 1s ease 0s;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class="box"&gt;&lt;/div&gt;</span><br><span class="line">&lt;script type="text/javascript" src="js/touch.min.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type="text/javascript"&gt;</span><br><span class="line">    var oBox = document.querySelector('.box');</span><br><span class="line">    touch.on(oBox, 'tap', function(e)&#123; //点击事件</span><br><span class="line">        /**</span><br><span class="line">         * detail:</span><br><span class="line">         *      fingersCount (手指数)</span><br><span class="line">         *      position(手指的位置)</span><br><span class="line">         * position: &#123;x: 243, y: 282&#125;</span><br><span class="line">         */</span><br><span class="line">        // console.log(1, e); //e: CustomEvent</span><br><span class="line"></span><br><span class="line">        this.style.webkitTransitionDuration = '1s';</span><br><span class="line">        this.style.webkitTransform = 'rotate(360deg)';</span><br><span class="line">        var delaTimer = window.setTimeout(function()&#123;</span><br><span class="line">            this.style.webkitTransitionDuration = '0s';</span><br><span class="line">            this.style.webkitTransform = 'rotate(0deg)';</span><br><span class="line">        &#125;.bind(this), 1000);</span><br><span class="line">    &#125;);</span><br><span class="line">    touch.on(oBox, 'doubletap', function(e)&#123; //双击</span><br><span class="line">        this.style.backgroundColor = 'lightblue';</span><br><span class="line">    &#125;);</span><br><span class="line">    touch.on(oBox, 'hold', function(e)&#123; //长按</span><br><span class="line">        this.style.backgroundColor = 'lightgreen';</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="Zepto-js"><a href="#Zepto-js" class="headerlink" title="Zepto.js"></a>Zepto.js</h4><blockquote>
+<p><a href="https://zeptojs.bootcss.com/" target="_blank" rel="noopener">中文文档地址</a><br><a href="https://github.com/madrobby/zepto" target="_blank" rel="noopener">GitHub地址</a></p>
+</blockquote>
+<h5 id="zepto真正实现了让开发人员进行模块组合式开发"><a href="#zepto真正实现了让开发人员进行模块组合式开发" class="headerlink" title="zepto真正实现了让开发人员进行模块组合式开发"></a>zepto真正实现了让开发人员进行模块组合式开发</h5><p><cation>Zepto 模块</cation></p>
+<p><table><br>   <tr><br>      <td width="20%">module</td><br>      <td width="10%">default</td><br>      <td width="70%">description</td><br>   </tr><br>   <tr><br>      <td>zepto</td><br>      <td>✔</td><br>      <td>核心模块；包含许多方法</td><br>   </tr><br>   <tr><br>      <td>event</td><br>      <td>✔</td><br>      <td>通过on()&amp; off()处理事件</td><br>   </tr><br>   <tr><br>      <td>ajax</td><br>      <td>✔</td><br>      <td>XMLHttpRequest 和 JSONP 实用功能</td><br>   </tr><br>   <tr><br>      <td>form</td><br>      <td>✔</td><br>      <td>序列化 &amp; 提交web表单</td><br>   </tr><br>   <tr><br>      <td>ie</td><br>      <td>✔</td><br>      <td>增加支持桌面的Internet Explorer 10+和Windows Phone 8。</td><br>   </tr><br>   <tr><br>      <td>detect</td><br>      <td></td><br>      <td>提供\$.os和 $.browser消息</td><br>   </tr><br>   <tr><br>      <td>fx</td><br>      <td></td><br>      <td>The animate()方法</td><br>   </tr><br>   <tr><br>      <td>fx_methods</td><br>      <td></td><br>      <td>以动画形式的 show, hide, toggle, 和 fade*()方法.</td><br>   </tr><br>   <tr><br>      <td>assets</td><br>      <td></td><br>      <td>实验性支持从DOM中移除image元素后清理iOS的内存。</td><br>   </tr><br>   <tr><br>      <td>data</td><br>      <td></td><br>      <td>一个全面的 data()方法, 能够在内存中存储任意对象。</td><br>   </tr><br>   <tr><br>      <td>deferred</td><br>      <td></td><br>      <td>提供\$.Deferredpromises API.依赖”callbacks” 模块. 当包含这个模块时候, $ .ajax() 支持promise接口链式的回调。</td><br>   </tr><br>   <tr><br>      <td>callbacks</td><br>      <td></td><br>      <td>为”deferred”模块提供 $.Callbacks。</td><br>   </tr><br>   <tr><br>      <td>selector</td><br>      <td></td><br>      <td>实验性的支持 jQuery CSS 表达式 实用功能，比如 $(‘div:first’)和 el.is(‘:visible’)。</td><br>   </tr><br>   <tr><br>      <td>touch</td><br>      <td></td><br>      <td>在触摸设备上触发tap– 和 swipe– 相关事件。这适用于所有的<code>touch</code>(iOS, Android)和<code>pointer</code>事件(Windows Phone)。</td><br>   </tr><br>   <tr><br>      <td>gesture</td><br>      <td></td><br>      <td>在触摸设备上触发 pinch 手势事件。</td><br>   </tr><br>   <tr><br>      <td>stack</td><br>      <td></td><br>      <td>提供 andSelf&amp; end()链式调用方法</td><br>   </tr><br>   <tr><br>      <td>ios3</td><br>      <td></td><br>      <td>String.prototype.trim 和 Array.prototype.reduce 方法 (如果他们不存在) ，以兼容 iOS 3.x.</td><br>   </tr><br></table></p>
+<h5 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h5><figure class="highlight htmlbars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang="en"&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset="UTF-8"&gt;</span><br><span class="line">    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span><br><span class="line">    &lt;title&gt;Zepto.js的使用方法&lt;/title&gt;</span><br><span class="line">    &lt;style type="text/css"&gt;</span><br><span class="line">        html,body&#123;</span><br><span class="line">            height: 100%;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">        &#125;</span><br><span class="line">        .box&#123;</span><br><span class="line">            /* 盒子水平垂直居中 */</span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">            right: 0;</span><br><span class="line">            bottom: 0;</span><br><span class="line">            margin: auto;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">            background-color: lightcoral;</span><br><span class="line">            /*为动画添加过渡效果*/</span><br><span class="line">            /*-webkit-transition: all 1s ease 0s;*/</span><br><span class="line">            /*transition: all 1s ease 0s;*/</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class="box"&gt;&lt;/div&gt;</span><br><span class="line">&lt;script type="text/javascript" src="js/zepto.min.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type="text/javascript"&gt;</span><br><span class="line">    /**</span><br><span class="line">     * zepto.js中的事件有两种类型</span><br><span class="line">     *      1. 一种是提供用on方法绑定的事件，称为内置事件</span><br><span class="line">     *      2. 另外一种是zepto.js专门为移动端提供的事件方法，只能通过 $('').事件方法名(function()&#123;&#125;); 的方式调用</span><br><span class="line">     *</span><br><span class="line">     *  注意：1. 不能用这种方式调用: $('xxx').事件方法名 = function()&#123;&#125;;</span><br><span class="line">     *      2. 只有用原生js获取的对象才能用这种方式调用touch事件，jq对象和zepto对象都是不可以的</span><br><span class="line">     *     oBox.ontouchstart = function(e)&#123;</span><br><span class="line">     *        console.log(e);</span><br><span class="line">     *     &#125;</span><br><span class="line">     * @type &#123;jQuery.fn.init|jQuery|HTMLElement&#125;</span><br><span class="line">     */ </span><br><span class="line">    var $box = $('.box');</span><br><span class="line">    //singleTap //单击</span><br><span class="line">    $box.doubleTap = function(e)&#123; //双击</span><br><span class="line">        console.log(e);</span><br><span class="line">    &#125;;</span><br><span class="line">    $box.longTap(function(e)&#123; //长按</span><br><span class="line">        console.log(e);</span><br><span class="line">    &#125;);</span><br><span class="line">    $box.tap(function(e)&#123; //点击, 当手指抬起的时候，才会执行绑定的方法</span><br><span class="line">        //e: Event，不能获取具体的手指点击的位置</span><br><span class="line">        $(this).animate(&#123;</span><br><span class="line">            /**</span><br><span class="line">             *Zpeto.js支持css3动画</span><br><span class="line">             * translate(X|Y|Z|3d)</span><br><span class="line">             * rotate(X|Y|Z|3d)</span><br><span class="line">             * scale(X|Y|Z)</span><br><span class="line">             * matrix(3d)</span><br><span class="line">             * perspective</span><br><span class="line">             * skew(X|Y)</span><br><span class="line">             */</span><br><span class="line">            rotate: '360deg' //rotate &lt;=&gt; rotateZ</span><br><span class="line">        &#125;, 1000, 'linear', function()&#123;</span><br><span class="line">            //this: div.box</span><br><span class="line">            this.style.webkitTransform = 'rotate(0deg)';</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;).on('touchstart', function()&#123; //zepto.js支持链式写法</span><br><span class="line">        this.style.backgroundColor = 'lightblue';</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="zepto-js-与-jquery的区别"><a href="#zepto-js-与-jquery的区别" class="headerlink" title="zepto.js 与 jquery的区别"></a>zepto.js 与 jquery的区别</h5><blockquote>
+<p>zepto.js被誉为移动端的小型JQ库<br>JQ由于是在PC端使用的，所以代码中包含了大量的对于IE低版本浏览器的兼容处理，二zepto.js应用于移动端的开发，所以在JQ的基础上没有对于低版本的IE进行支持<br>JQ中提供了很多的选择器类型及DOM操作的方法，但是zepto中只是实现了部分常用的选择器和方法，例如：JQ中的动画方法有animate、hide、show、toggle、fadeIn、fadeOut、fadeToggle、slideUp、slideDown、slideToggle。。。但是在zepto中只实现了animate（但是在zepto的其他模块中实现了touch、show、hide、fade系列）<br>所以总体来说，zepto比JQ小的多，所以它更适合移动端的开发<br>zepto的特性：</p>
+<ol>
+<li>zepto的animate动画方法支持了css3动画的操作</li>
+<li>zepto专门准备了移动端常用的事件操作：tap、singleTap、doubleTap、longTap、swip、swipeUp、swipeDown、seipeLeft、swipeRight。。。</li>
+</ol>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/10/Hybrid App开发模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/10/Hybrid App开发模式/" itemprop="url">Hybrid App开发模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-10T00:00:00+08:00">
+                2019-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/移动端开发/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p><code>Hybrid App</code>（混合模式移动应用）是指介于web-app、native-app这两者之间的app，兼具“<strong>Native App良好用户交互体验的优势</strong>”和“<strong>Web App跨平台开发的优势</strong>”。</p>
+</blockquote>
+<h3 id="Native-App"><a href="#Native-App" class="headerlink" title="Native App"></a>Native App</h3><blockquote>
+<p>移动互联网刚开始兴起的时候，我们手机上的应用(App)都是通过Native App开发而成的。<br></p></blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/03/28/移动端事件基础/#more" rel="contents">
+            <a class="btn" href="/2019/03/10/Hybrid App开发模式/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -640,187 +877,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/03/10/移动端响应式布局开发常用知识/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/10/Hybrid App开发模式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/10/Hybrid App开发模式/" itemprop="url">Hybrid App开发模式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-10T00:00:00+08:00">
-                2019-03-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/移动端开发/" itemprop="url" rel="index">
-                    <span itemprop="name">移动端开发</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2.6k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  9
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p><code>Hybrid App</code>（混合模式移动应用）是指介于web-app、native-app这两者之间的app，兼具“<strong>Native App良好用户交互体验的优势</strong>”和“<strong>Web App跨平台开发的优势</strong>”。</p>
-</blockquote>
-<h3 id="Native-App"><a href="#Native-App" class="headerlink" title="Native App"></a>Native App</h3><blockquote>
-<p>移动互联网刚开始兴起的时候，我们手机上的应用(App)都是通过Native App开发而成的。<br></p></blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/10/Hybrid App开发模式/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1409,6 +1465,194 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/String原型上的方法和属性详细讲解（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/18/String原型上的方法和属性详细讲解（一）/" itemprop="url">String原型上的方法以及属性详细讲解(一)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-18T00:00:00+08:00">
+                2019-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS基础/" itemprop="url" rel="index">
+                    <span itemprop="name">JS基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  10k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  40
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><h5 id="constructor-f-String-native-code"><a href="#constructor-f-String-native-code" class="headerlink" title="constructor: ƒ String() { [native code] }"></a><strong><em><code>constructor: ƒ String() { [native code] }</code></em></strong></h5><blockquote>
+<p><strong>属性</strong>： 是一个属性<br><strong>含义</strong>： 返回创建实例对象的 ==String ==构造函数的引用<br><strong>备注</strong>：</p>
+<ol>
+<li>每一个对象所属类的原型上都有一个constructor属性，属性值是当前对象所属类（函数）的本身</li>
+<li>此属性的值是当前对象所属类（函数）本身的引用，而不是一个包含函数名称的字符串。</li>
+</ol>
+<p><strong>返回值</strong>：</p>
+<ul>
+<li>当前对象所属类（函数）[String]的本身</li>
+</ul>
+<p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.constructor); =&gt; ƒ <span class="built_in">String</span>() &#123; [native code] &#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/02/18/String原型上的方法和属性详细讲解（一）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/String原型上的方法和属性详细讲解（二）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1603,7 +1847,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/String原型上的方法和属性详细讲解（一）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/JS中的单例模式和工厂模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -1622,7 +1866,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/18/String原型上的方法和属性详细讲解（一）/" itemprop="url">String原型上的方法以及属性详细讲解(一)</a></h1>
+                <a class="post-title-link" href="/2019/02/16/JS中的单例模式和工厂模式/" itemprop="url">JS中的单例模式和工厂模式</a></h1>
         
 
         <div class="post-meta">
@@ -1634,8 +1878,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-18T00:00:00+08:00">
-                2019-02-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-16T00:00:00+08:00">
+                2019-02-16
               </time>
             
 
@@ -1657,8 +1901,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JS基础/" itemprop="url" rel="index">
-                    <span itemprop="name">JS基础</span>
+                  <a href="/categories/JS设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">JS设计模式</span>
                   </a>
                 </span>
 
@@ -1688,7 +1932,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  10k
+                  713
                 </span>
               
 
@@ -1704,7 +1948,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  40
+                  2
                 </span>
               
             </div>
@@ -1726,21 +1970,13 @@
 
       
         
-          <h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><h5 id="constructor-f-String-native-code"><a href="#constructor-f-String-native-code" class="headerlink" title="constructor: ƒ String() { [native code] }"></a><strong><em><code>constructor: ƒ String() { [native code] }</code></em></strong></h5><blockquote>
-<p><strong>属性</strong>： 是一个属性<br><strong>含义</strong>： 返回创建实例对象的 ==String ==构造函数的引用<br><strong>备注</strong>：</p>
-<ol>
-<li>每一个对象所属类的原型上都有一个constructor属性，属性值是当前对象所属类（函数）的本身</li>
-<li>此属性的值是当前对象所属类（函数）本身的引用，而不是一个包含函数名称的字符串。</li>
-</ol>
-<p><strong>返回值</strong>：</p>
-<ul>
-<li>当前对象所属类（函数）[String]的本身</li>
-</ul>
-<p><strong>运用</strong>：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello"</span>.constructor); =&gt; ƒ <span class="built_in">String</span>() &#123; [native code] &#125;</span><br></pre></td></tr></table></figure></p>
+          <p><strong><code>单例模式</code></strong></p>
+<blockquote>
+<p>对象数据类型的作用：<br><strong>把描述同一个事物（同一个对象）的属性和方法放在一个内存空间下，起到了分组的作用，这样，不同事物之间的属性即使属性名相同，相互也不会发生冲突</strong><br>我们把这种分组编写代码的模式叫做<code>单例模式</code><br>在单例模式中，我们把person1和person2也叫做<code>命名空间</code></p>
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/02/18/String原型上的方法和属性详细讲解（一）/#more" rel="contents">
+            <a class="btn" href="/2019/02/16/JS中的单例模式和工厂模式/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1918,186 +2154,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/02/16/JS中的原型链模式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/JS中的单例模式和工厂模式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/16/JS中的单例模式和工厂模式/" itemprop="url">JS中的单例模式和工厂模式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-16T00:00:00+08:00">
-                2019-02-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JS设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">JS设计模式</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  713
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong><code>单例模式</code></strong></p>
-<blockquote>
-<p>对象数据类型的作用：<br><strong>把描述同一个事物（同一个对象）的属性和方法放在一个内存空间下，起到了分组的作用，这样，不同事物之间的属性即使属性名相同，相互也不会发生冲突</strong><br>我们把这种分组编写代码的模式叫做<code>单例模式</code><br>在单例模式中，我们把person1和person2也叫做<code>命名空间</code></p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/16/JS中的单例模式和工厂模式/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
