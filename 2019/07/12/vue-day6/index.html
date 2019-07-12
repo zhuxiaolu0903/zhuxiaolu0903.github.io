@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Vue.js - day6注意：有时候使用npm i node-sass -D装不上，这时候，就必须使用 cnpm i node-sass -D 在普通页面中使用render函数渲染组件在webpack中配置.vue组件页面的解析 运行cnpm i vue -S将vue安装为运行依赖；  运行cnpm i vue-loader vue-template-compiler -D将解析转换vue的包安">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-12T03:49:53.649Z">
+<meta property="og:updated_time" content="2019-07-12T03:54:19.673Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue学习之旅——Day6">
 <meta name="twitter:description" content="Vue.js - day6注意：有时候使用npm i node-sass -D装不上，这时候，就必须使用 cnpm i node-sass -D 在普通页面中使用render函数渲染组件在webpack中配置.vue组件页面的解析 运行cnpm i vue -S将vue安装为运行依赖；  运行cnpm i vue-loader vue-template-compiler -D将解析转换vue的包安">
@@ -465,7 +465,8 @@
 <li><p>在<code>webpack.config.js</code>中，添加如下<code>module</code>规则：</p>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line">module: &#123;</span><br><span class="line"></span><br><span class="line">    rules: [</span><br><span class="line"></span><br><span class="line">      &#123; test: /\.css$/, use: [&apos;style-loader&apos;, &apos;css-loader&apos;] &#125;,</span><br><span class="line"></span><br><span class="line">      &#123; test: /\.vue$/, use: &apos;vue-loader&apos; &#125;</span><br><span class="line"></span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">module: &#123;</span><br><span class="line"></span><br><span class="line">    rules: [</span><br><span class="line"></span><br><span class="line">      &#123; test: /\.css$/, use: [&apos;style-loader&apos;, &apos;css-loader&apos;] &#125;,</span><br><span class="line"></span><br><span class="line">      &#123; test: /\.vue$/, use: &apos;vue-loader&apos; &#125;</span><br><span class="line"></span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <ol start="5">
 <li>创建<code>App.js</code>组件页面：</li>
 </ol>
