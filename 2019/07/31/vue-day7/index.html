@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="前端,JS语法,JS基础，JSONP,">
+  <meta name="keywords" content="vue自学,vue入门,">
 
 
 
@@ -79,24 +79,18 @@
 
 
 
-<meta name="keywords" content="前端,JS语法,JS基础，JSONP">
+<meta name="description" content="Vue.js - day7使用mui的tab-top-webview-main完成分类滑动栏兼容问题 和 App.vue 中的 router-link 身上的类名 mui-tab-item 存在兼容性问题，导致tab栏失效，可以把mui-tab-item改名为mui-tab-item1，并复制相关的类样式，来解决这个问题；">
+<meta name="keywords" content="vue自学,vue入门">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JSONP请求">
-<meta property="og:url" content="http://yoursite.com/2019/02/16/JSONP/index.html">
+<meta property="og:title" content="Vue学习之旅——Day7">
+<meta property="og:url" content="http://yoursite.com/2019/07/31/vue-day7/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Vue.js - day7使用mui的tab-top-webview-main完成分类滑动栏兼容问题 和 App.vue 中的 router-link 身上的类名 mui-tab-item 存在兼容性问题，导致tab栏失效，可以把mui-tab-item改名为mui-tab-item1，并复制相关的类样式，来解决这个问题；">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/02/16/JSONP/1548579976210.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/16/JSONP/1548580009477.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/16/JSONP/1548580036366.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/16/JSONP/1548580106359.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/16/JSONP/1548580146594.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/16/JSONP/1548580247860.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/16/JSONP/1548736376428.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/16/JSONP/1548736334602.png">
-<meta property="og:updated_time" content="2019-02-16T06:18:38.142Z">
+<meta property="og:updated_time" content="2019-07-31T08:57:18.504Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JSONP请求">
-<meta name="twitter:image" content="http://yoursite.com/2019/02/16/JSONP/1548579976210.png">
+<meta name="twitter:title" content="Vue学习之旅——Day7">
+<meta name="twitter:description" content="Vue.js - day7使用mui的tab-top-webview-main完成分类滑动栏兼容问题 和 App.vue 中的 router-link 身上的类名 mui-tab-item 存在兼容性问题，导致tab栏失效，可以把mui-tab-item改名为mui-tab-item1，并复制相关的类样式，来解决这个问题；">
 
 
 
@@ -126,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/16/JSONP/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/31/vue-day7/">
 
 
 
 
 
-  <title>JSONP请求 | Hexo</title>
+  <title>Vue学习之旅——Day7 | Hexo</title>
   
 
 
@@ -340,7 +334,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/JSONP/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/31/vue-day7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -357,7 +351,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JSONP请求</h1>
+          <h1 class="post-title" itemprop="name headline">Vue学习之旅——Day7</h1>
         
 
         <div class="post-meta">
@@ -369,8 +363,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-16T00:00:00+08:00">
-                2019-02-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-31T00:00:00+08:00">
+                2019-07-31
               </time>
             
 
@@ -392,8 +386,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JSONP/" itemprop="url" rel="index">
-                    <span itemprop="name">JSONP</span>
+                  <a href="/categories/Vue-js/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue.js</span>
                   </a>
                 </span>
 
@@ -423,7 +417,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  30
+                  409
                 </span>
               
 
@@ -460,12 +454,29 @@
       
 
       
-        <p><img src="/2019/02/16/JSONP/1548579976210.png" alt="Alt text"><br><a id="more"></a><br><img src="/2019/02/16/JSONP/1548580009477.png" alt="Alt text"><br><img src="/2019/02/16/JSONP/1548580036366.png" alt="Alt text"><br><img src="/2019/02/16/JSONP/1548580106359.png" alt="Alt text"></p>
-<blockquote>
-<p>如果用ajax发送非同源请求，则会报错：<br><img src="/2019/02/16/JSONP/1548580146594.png" alt="Alt text"><br><img src="/2019/02/16/JSONP/1548580247860.png" alt="Alt text"></p>
-</blockquote>
-<p><strong><code>JSONP的原理</code></strong><br><img src="/2019/02/16/JSONP/1548736376428.png" alt="Alt text"></p>
-<p><strong><code>利用元素JS写JSON的方法步骤</code></strong><br><img src="/2019/02/16/JSONP/1548736334602.png" alt="Alt text"></p>
+        <h1 id="Vue-js-day7"><a href="#Vue-js-day7" class="headerlink" title="Vue.js - day7"></a>Vue.js - day7</h1><h2 id="使用mui的tab-top-webview-main完成分类滑动栏"><a href="#使用mui的tab-top-webview-main完成分类滑动栏" class="headerlink" title="使用mui的tab-top-webview-main完成分类滑动栏"></a>使用mui的<code>tab-top-webview-main</code>完成分类滑动栏</h2><h3 id="兼容问题"><a href="#兼容问题" class="headerlink" title="兼容问题"></a>兼容问题</h3><ol>
+<li>和 App.vue 中的 <code>router-link</code> 身上的类名 <code>mui-tab-item</code> 存在兼容性问题，导致tab栏失效，可以把<code>mui-tab-item</code>改名为<code>mui-tab-item1</code>，并复制相关的类样式，来解决这个问题；</li>
+</ol>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">.mui-bar-tab .mui-tab-item1.mui-active &#123;</span><br><span class="line">  color: #007aff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.mui-bar-tab .mui-tab-item1 &#123;</span><br><span class="line">  display: table-cell;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  width: 1%;</span><br><span class="line">  height: 50px;</span><br><span class="line">  text-align: center;</span><br><span class="line">  vertical-align: middle;</span><br><span class="line">  white-space: nowrap;</span><br><span class="line">  text-overflow: ellipsis;</span><br><span class="line">  color: #929292;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.mui-bar-tab .mui-tab-item1 .mui-icon &#123;</span><br><span class="line">  top: 3px;</span><br><span class="line">  width: 24px;</span><br><span class="line">  height: 24px;</span><br><span class="line">  padding-top: 0;</span><br><span class="line">  padding-bottom: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.mui-bar-tab .mui-tab-item1 .mui-icon~.mui-tab-label &#123;</span><br><span class="line">  font-size: 11px;</span><br><span class="line">  display: block;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  text-overflow: ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p><code>tab-top-webview-main</code>组件第一次显示到页面中的时候，无法被滑动的解决方案：</p>
+<ul>
+<li><p>先导入 mui 的JS文件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import mui from &apos;../../../lib/mui/js/mui.min.js&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在 组件的 <code>mounted</code> 事件钩子中，注册 mui 的滚动事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mounted() &#123;</span><br><span class="line">  	// 需要在组件的 mounted 事件钩子中，注册 mui 的 scroll 滚动事件</span><br><span class="line">      mui(&apos;.mui-scroll-wrapper&apos;).scroll(&#123;</span><br><span class="line">        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006</span><br><span class="line">      &#125;);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>滑动的时候报警告：<code>Unable to preventDefault inside passive event listener due to target being treated as passive. See https://www.chromestatus.com/features/5093566007214080</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">解决方法，可以加上* &#123; touch-action: none; &#125; 这句样式去掉。</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>原因：（是chrome为了提高页面的滑动流畅度而新折腾出来的一个东西） <a href="http://www.cnblogs.com/pearl07/p/6589114.html" target="_blank" rel="noopener">http://www.cnblogs.com/pearl07/p/6589114.html</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/touch-action" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/CSS/touch-action</a></p>
+<h2 id="移除严格模式"><a href="#移除严格模式" class="headerlink" title="移除严格模式"></a>移除严格模式</h2><p><a href="https://github.com/genify/babel-plugin-transform-remove-strict-mode" target="_blank" rel="noopener">babel-plugin-transform-remove-strict-mode</a></p>
+<h2 id="vue-preview"><a href="#vue-preview" class="headerlink" title="vue-preview"></a><a href="https://github.com/LS1231/vue-preview" target="_blank" rel="noopener">vue-preview</a></h2><p>一个Vue集成PhotoSwipe图片预览插件</p>
 
       
     </div>
@@ -483,11 +494,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端/" rel="tag"># 前端</a>
+            <a href="/tags/vue自学/" rel="tag"># vue自学</a>
           
-            <a href="/tags/JS语法/" rel="tag"># JS语法</a>
-          
-            <a href="/tags/JS基础，JSONP/" rel="tag"># JS基础，JSONP</a>
+            <a href="/tags/vue入门/" rel="tag"># vue入门</a>
           
         </div>
       
@@ -500,8 +509,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/16/数组的基本结构/" rel="next" title="JS中数组的基本结构">
-                <i class="fa fa-chevron-left"></i> JS中数组的基本结构
+              <a href="/2019/07/31/vue-day8/" rel="next" title="Vue学习之旅——Day8">
+                <i class="fa fa-chevron-left"></i> Vue学习之旅——Day8
               </a>
             
           </div>
@@ -509,10 +518,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/16/对象数据类型object/" rel="prev" title="JS数据类型之对象数据类型">
-                JS数据类型之对象数据类型 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -564,8 +569,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -661,6 +675,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue-js-day7"><span class="nav-number">1.</span> <span class="nav-text">Vue.js - day7</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用mui的tab-top-webview-main完成分类滑动栏"><span class="nav-number">1.1.</span> <span class="nav-text">使用mui的tab-top-webview-main完成分类滑动栏</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容问题"><span class="nav-number">1.1.1.</span> <span class="nav-text">兼容问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移除严格模式"><span class="nav-number">1.2.</span> <span class="nav-text">移除严格模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-preview"><span class="nav-number">1.3.</span> <span class="nav-text">vue-preview</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

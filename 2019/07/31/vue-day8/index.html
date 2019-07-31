@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="前端,JS语法,JS基础，JSONP,">
+  <meta name="keywords" content="vue自学,vue入门,">
 
 
 
@@ -79,24 +79,18 @@
 
 
 
-<meta name="keywords" content="前端,JS语法,JS基础，JSONP">
+<meta name="description" content="Vue.js - day8开启Apache的gzip压缩要让apache支持gzip功能，要用到deflate_Module和headers_Module。打开apache的配置文件httpd.conf，大约在105行左右，找到以下两行内容：（这两行不是连续在一起的）12#LoadModule deflate_module modules/mod_deflate.so#LoadModule hea">
+<meta name="keywords" content="vue自学,vue入门">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JSONP请求">
-<meta property="og:url" content="http://yoursite.com/2019/02/16/JSONP/index.html">
+<meta property="og:title" content="Vue学习之旅——Day8">
+<meta property="og:url" content="http://yoursite.com/2019/07/31/vue-day8/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Vue.js - day8开启Apache的gzip压缩要让apache支持gzip功能，要用到deflate_Module和headers_Module。打开apache的配置文件httpd.conf，大约在105行左右，找到以下两行内容：（这两行不是连续在一起的）12#LoadModule deflate_module modules/mod_deflate.so#LoadModule hea">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/02/16/JSONP/1548579976210.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/16/JSONP/1548580009477.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/16/JSONP/1548580036366.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/16/JSONP/1548580106359.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/16/JSONP/1548580146594.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/16/JSONP/1548580247860.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/16/JSONP/1548736376428.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/16/JSONP/1548736334602.png">
-<meta property="og:updated_time" content="2019-02-16T06:18:38.142Z">
+<meta property="og:updated_time" content="2019-07-31T08:59:29.534Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JSONP请求">
-<meta name="twitter:image" content="http://yoursite.com/2019/02/16/JSONP/1548579976210.png">
+<meta name="twitter:title" content="Vue学习之旅——Day8">
+<meta name="twitter:description" content="Vue.js - day8开启Apache的gzip压缩要让apache支持gzip功能，要用到deflate_Module和headers_Module。打开apache的配置文件httpd.conf，大约在105行左右，找到以下两行内容：（这两行不是连续在一起的）12#LoadModule deflate_module modules/mod_deflate.so#LoadModule hea">
 
 
 
@@ -126,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/16/JSONP/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/31/vue-day8/">
 
 
 
 
 
-  <title>JSONP请求 | Hexo</title>
+  <title>Vue学习之旅——Day8 | Hexo</title>
   
 
 
@@ -340,7 +334,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/16/JSONP/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/31/vue-day8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -357,7 +351,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JSONP请求</h1>
+          <h1 class="post-title" itemprop="name headline">Vue学习之旅——Day8</h1>
         
 
         <div class="post-meta">
@@ -369,8 +363,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-16T00:00:00+08:00">
-                2019-02-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-31T00:00:00+08:00">
+                2019-07-31
               </time>
             
 
@@ -392,8 +386,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JSONP/" itemprop="url" rel="index">
-                    <span itemprop="name">JSONP</span>
+                  <a href="/categories/Vue-js/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue.js</span>
                   </a>
                 </span>
 
@@ -423,7 +417,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  30
+                  297
                 </span>
               
 
@@ -460,12 +454,11 @@
       
 
       
-        <p><img src="/2019/02/16/JSONP/1548579976210.png" alt="Alt text"><br><a id="more"></a><br><img src="/2019/02/16/JSONP/1548580009477.png" alt="Alt text"><br><img src="/2019/02/16/JSONP/1548580036366.png" alt="Alt text"><br><img src="/2019/02/16/JSONP/1548580106359.png" alt="Alt text"></p>
-<blockquote>
-<p>如果用ajax发送非同源请求，则会报错：<br><img src="/2019/02/16/JSONP/1548580146594.png" alt="Alt text"><br><img src="/2019/02/16/JSONP/1548580247860.png" alt="Alt text"></p>
-</blockquote>
-<p><strong><code>JSONP的原理</code></strong><br><img src="/2019/02/16/JSONP/1548736376428.png" alt="Alt text"></p>
-<p><strong><code>利用元素JS写JSON的方法步骤</code></strong><br><img src="/2019/02/16/JSONP/1548736334602.png" alt="Alt text"></p>
+        <h1 id="Vue-js-day8"><a href="#Vue-js-day8" class="headerlink" title="Vue.js - day8"></a>Vue.js - day8</h1><h2 id="开启Apache的gzip压缩"><a href="#开启Apache的gzip压缩" class="headerlink" title="开启Apache的gzip压缩"></a>开启Apache的gzip压缩</h2><p>要让apache支持gzip功能，要用到deflate_Module和headers_Module。打开apache的配置文件httpd.conf，大约在105行左右，找到以下两行内容：（这两行不是连续在一起的）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#LoadModule deflate_module modules/mod_deflate.so</span><br><span class="line">#LoadModule headers_module modules/mod_headers.so</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>然后将其前面的“#”注释删掉，表示开启gzip压缩功能。开启以后还需要进行相关配置。在httpd.conf文件的最后添加以下内容即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;IfModule deflate_module&gt;</span><br><span class="line">    #必须的，就像一个开关一样，告诉apache对传输到浏览器的内容进行压缩</span><br><span class="line">    SetOutputFilter DEFLATE</span><br><span class="line">    DeflateCompressionLevel 9</span><br><span class="line">&lt;/IfModule&gt;</span><br></pre></td></tr></table></figure></p>
+<p>最少需要加上以上内容，才可以生gzip功能生效。由于没有做其它的额外配置，所以其它相关的配置均使用Apache的默认设置。这里说一下参数“DeflateCompressionLevel”，它表示压缩级别，值从1到9，值越大表示压缩的越厉害。</p>
+<h2 id="使用ngrok将本机映射为一个外网的Web服务器"><a href="#使用ngrok将本机映射为一个外网的Web服务器" class="headerlink" title="使用ngrok将本机映射为一个外网的Web服务器"></a>使用ngrok将本机映射为一个外网的Web服务器</h2><p>注意：由于默认使用的美国的服务器进行中间转接，所以访问速度炒鸡慢，访问时可启用FQ软件，提高网页打开速度！</p>
 
       
     </div>
@@ -483,11 +476,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端/" rel="tag"># 前端</a>
+            <a href="/tags/vue自学/" rel="tag"># vue自学</a>
           
-            <a href="/tags/JS语法/" rel="tag"># JS语法</a>
-          
-            <a href="/tags/JS基础，JSONP/" rel="tag"># JS基础，JSONP</a>
+            <a href="/tags/vue入门/" rel="tag"># vue入门</a>
           
         </div>
       
@@ -500,8 +491,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/16/数组的基本结构/" rel="next" title="JS中数组的基本结构">
-                <i class="fa fa-chevron-left"></i> JS中数组的基本结构
+              <a href="/2019/07/12/vue-day6/" rel="next" title="Vue学习之旅——Day6">
+                <i class="fa fa-chevron-left"></i> Vue学习之旅——Day6
               </a>
             
           </div>
@@ -510,8 +501,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/16/对象数据类型object/" rel="prev" title="JS数据类型之对象数据类型">
-                JS数据类型之对象数据类型 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/31/vue-day7/" rel="prev" title="Vue学习之旅——Day7">
+                Vue学习之旅——Day7 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -564,8 +555,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -661,6 +661,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue-js-day8"><span class="nav-number">1.</span> <span class="nav-text">Vue.js - day8</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开启Apache的gzip压缩"><span class="nav-number">1.1.</span> <span class="nav-text">开启Apache的gzip压缩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用ngrok将本机映射为一个外网的Web服务器"><span class="nav-number">1.2.</span> <span class="nav-text">使用ngrok将本机映射为一个外网的Web服务器</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
